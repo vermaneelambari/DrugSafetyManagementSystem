@@ -1,0 +1,95 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Business.Organization;
+
+import Business.Disease.DiseaseCatalog;
+import Business.Employee.EmployeeDirectory;
+import Business.Role.Role;
+import Business.UserAccount.UserAccountDirectory;
+import Business.Request.Request;
+import Business.Request.RequestList;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Sumanth
+ */
+public abstract class Organization {
+
+    private String name;
+    private RequestList request;
+    private EmployeeDirectory employeeDirectory;
+    private UserAccountDirectory userAccountDirectory;
+    private int organizationID;
+    private static int counter;
+    private DiseaseCatalog diseaseCatalog;
+
+    public DiseaseCatalog getDiseaseCatalog() {
+        return diseaseCatalog;
+    }
+
+    public void setDiseaseCatalog(DiseaseCatalog diseaseCatalog) {
+        this.diseaseCatalog = diseaseCatalog;
+    }
+    
+    public enum Type{
+        Admin("Admin Organization"), Pharma("Pharma Organization"), Primary("Primary Test Organization"),Final("Final Test Organization"),Insurance("Insurance Organization");
+        private String value;
+        private Type(String value) {
+            this.value = value;
+        }
+        public String getValue() {
+            return value;
+        }
+    }
+
+    public Organization(String name) {
+        this.name = name;
+        request = new RequestList();
+        employeeDirectory = new EmployeeDirectory();
+        userAccountDirectory = new UserAccountDirectory();
+        organizationID = counter;
+        diseaseCatalog = new DiseaseCatalog();
+        ++counter;
+    }
+
+    public abstract ArrayList<Role> getSupportedRole();
+    
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public RequestList getRequest() {
+        return request;
+    }
+
+    public void setRequest(RequestList request) {
+        this.request = request;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+    
+    
+}
