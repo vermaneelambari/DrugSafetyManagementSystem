@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.SystemAdminWorkArea;
+package UserInterface.SystemAdminWorkArea.Disease;
 
+import UserInterface.SystemAdminWorkArea.Disease.ManageDiseaseCatalog;
 import Business.Disease.Disease;
 import Business.EcoSystem;
 import java.awt.CardLayout;
@@ -85,6 +86,7 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
         Disease disease = system.getDiseaseCatalog().addDisease();
         disease.setdName(name);
         JOptionPane.showMessageDialog(null, "Disease Added Successfully");
+        vacName.setText("");
     }//GEN-LAST:event_addBtnActionPerformed
 
 

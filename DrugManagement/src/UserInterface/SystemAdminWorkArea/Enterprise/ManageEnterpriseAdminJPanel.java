@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.SystemAdminWorkArea;
+package UserInterface.SystemAdminWorkArea.Enterprise;
 
 import Business.EcoSystem;
 import Business.Employee.Employee;
@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.UserAccount.UserAccount;
+import UserInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -236,7 +237,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        /*int selectedRow = enterpriseJTable.getSelectedRow();
+        int selectedRow = enterpriseJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
@@ -245,11 +246,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         UpdateEnterpriseUserJPanel manageVaccineCatalogJPanel = new UpdateEnterpriseUserJPanel(userProcessContainer, u);
         userProcessContainer.add("UpdateEnterpriseUserJPanel", manageVaccineCatalogJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);*/
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed
-        /*int selectedRow = enterpriseJTable.getSelectedRow();
+        int selectedRow = enterpriseJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
@@ -258,7 +259,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         UserAccount u  = (UserAccount) enterpriseJTable.getValueAt(selectedRow, 2);
         enterprise.getUserAccountDirectory().deleteUser(u);
         JOptionPane.showMessageDialog(null, "User deleted successfully");
-        populateTable();*/
+        populateTable();
     }//GEN-LAST:event_delBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

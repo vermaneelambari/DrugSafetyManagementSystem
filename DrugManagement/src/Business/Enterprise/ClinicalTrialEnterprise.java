@@ -12,9 +12,9 @@ import java.util.ArrayList;
  *
  * @author Sumanth
  */
-public class DrugTestingEnterprise extends Enterprise{
-    public DrugTestingEnterprise(String name) {
-        super(name,Enterprise.EnterpriseType.FDA);
+public class ClinicalTrialEnterprise extends Enterprise{
+    public ClinicalTrialEnterprise(String name) {
+        super(name,Enterprise.EnterpriseType.ClinicalTrial);
     }
 
     @Override

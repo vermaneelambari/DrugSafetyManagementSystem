@@ -23,7 +23,7 @@ public abstract class Enterprise extends Organization{
     }
     
     public enum EnterpriseType{
-        FDA("FDA"),DrugManufacturing("DrugManufacturing"),DrugTesting("DrugTesting");
+        FDA("FDA"),DrugManufacturing("DrugManufacturing"),ClinicalTrial("ClinicalTrial");
         
         private String value;
 

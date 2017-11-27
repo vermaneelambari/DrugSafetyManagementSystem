@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.SystemAdminWorkArea;
+package UserInterface.SystemAdminWorkArea.Disease;
 
 import Business.Disease.Disease;
 import Business.EcoSystem;
@@ -24,10 +24,11 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     EcoSystem system;
-    ManageDiseaseCatalog(JPanel userProcessContainer, EcoSystem system) {
+    public ManageDiseaseCatalog(JPanel userProcessContainer, EcoSystem system) {
        initComponents(); 
        this.userProcessContainer = userProcessContainer;
        this.system = system;
+       populateTable();
     }
     
     void populateTable(){
@@ -67,7 +68,7 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(vaccineJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 73, -1, 96));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 96));
 
         delBtn.setText("Delete Disease");
         delBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +126,7 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void updBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updBtnActionPerformed
-        /*int selectedRow = vaccineJTable.getSelectedRow();
+        int selectedRow = vaccineJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
@@ -134,7 +135,7 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
         UpdateDiseaseJPanel manageVaccineCatalogJPanel = new UpdateDiseaseJPanel(userProcessContainer, disease);
         userProcessContainer.add("UpdateDiseaseJPanel", manageVaccineCatalogJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);*/
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_updBtnActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

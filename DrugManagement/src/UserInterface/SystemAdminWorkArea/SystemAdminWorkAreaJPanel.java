@@ -5,6 +5,10 @@
  */
 package UserInterface.SystemAdminWorkArea;
 
+import UserInterface.SystemAdminWorkArea.Enterprise.ManageEnterpriseAdminJPanel;
+import UserInterface.SystemAdminWorkArea.Enterprise.ManageEnterpriseJPanel;
+import UserInterface.SystemAdminWorkArea.Network.ManageNetworkJPanel;
+import UserInterface.SystemAdminWorkArea.Disease.ManageDiseaseCatalog;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;

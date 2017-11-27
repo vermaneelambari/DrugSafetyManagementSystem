@@ -6,6 +6,7 @@
 package Business.Enterprise;
 
 import Business.Enterprise.Enterprise.EnterpriseType;
+import Business.Role.FDARole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -20,7 +21,8 @@ public class FDAEnterprise extends Enterprise{
 
     @Override
     public ArrayList<Role> getSupportedRole() {
-        
-        return null;
+        ArrayList<Role> roles = new ArrayList<>();
+        roles.add(new FDARole());
+        return roles;
     }
 }

@@ -22,7 +22,6 @@ public abstract class Organization {
     private RequestList request;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
-    private int organizationID;
     private static int counter;
     private DiseaseCatalog diseaseCatalog;
 
@@ -50,19 +49,13 @@ public abstract class Organization {
         request = new RequestList();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
-        organizationID = counter;
         diseaseCatalog = new DiseaseCatalog();
-        ++counter;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
     
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
-    }
-
-    public int getOrganizationID() {
-        return organizationID;
     }
 
     public EmployeeDirectory getEmployeeDirectory() {

@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class DrugManufacturingEnterprise extends Enterprise{
     public DrugManufacturingEnterprise(String name) {
-        super(name,Enterprise.EnterpriseType.FDA);
+        super(name,Enterprise.EnterpriseType.DrugManufacturing);
     }
 
     @Override
