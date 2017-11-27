@@ -26,11 +26,11 @@ public class OrganizationDirectory {
     public Organization createOrganization(Type type){
         Organization organization = null;
         if (type.getValue().equals(Type.Primary.getValue())){
-            organization = new PrimaryTestOrganization();
+            organization = new PreClinicalTrialOrganization();
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Final.getValue())){
-            organization = new FinalTestOrganization();
+            organization = new PostClinicalTrialOrganization();
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.Insurance.getValue())){
             organization = new InsuranceOrganization();

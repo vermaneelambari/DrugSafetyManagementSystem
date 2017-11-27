@@ -5,7 +5,7 @@
  */
 package Business.Organization;
 
-import Business.Role.FinalTestRole;
+import Business.Role.PrimaryTestRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -13,15 +13,15 @@ import java.util.ArrayList;
  *
  * @author Sumanth
  */
-public class FinalTestOrganization extends Organization{
-    public FinalTestOrganization() {
-        super(Organization.Type.Final.getValue());
+public class PreClinicalTrialOrganization extends Organization{
+    public PreClinicalTrialOrganization() {
+        super(Organization.Type.Primary.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new FinalTestRole());
+        roles.add(new PrimaryTestRole());
         return roles;
     }
 }
