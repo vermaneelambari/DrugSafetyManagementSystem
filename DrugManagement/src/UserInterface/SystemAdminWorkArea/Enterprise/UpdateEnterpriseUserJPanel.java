@@ -83,6 +83,7 @@ public class UpdateEnterpriseUserJPanel extends javax.swing.JPanel {
         }
         u.setUsername(name);
         JOptionPane.showMessageDialog(null, "Username Updated Successfully");
+        vacName.setText("");
     }//GEN-LAST:event_addBtnActionPerformed
 
 

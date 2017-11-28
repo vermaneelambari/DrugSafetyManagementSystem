@@ -176,9 +176,17 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Name");
             return;
         }
+        
+        for(Enterprise e:network.getEnterpriseDirectory().getEnterPriseList()){
+            if(e.getName().equals(name)){
+                JOptionPane.showMessageDialog(null, "Enterprise name already present");
+                return;
+            }
+        }
 
         Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterPrise(name, type);
-
+        JOptionPane.showMessageDialog(null, "Enterprise name added successfully");
+        nameJTextField.setText("");
         populateTable();
 
     }//GEN-LAST:event_submitJButtonActionPerformed

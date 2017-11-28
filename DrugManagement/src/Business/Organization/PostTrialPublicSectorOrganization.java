@@ -6,6 +6,7 @@
 package Business.Organization;
 
 import Business.Role.PharmaRole;
+import Business.Role.PostClinicalPubSecRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class PostTrialPublicSectorOrganization extends Organization {
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new PharmaRole());
+        roles.add(new PostClinicalPubSecRole());
         return roles;
     }
 }

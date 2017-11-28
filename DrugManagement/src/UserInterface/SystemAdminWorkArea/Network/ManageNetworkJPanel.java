@@ -41,7 +41,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
             Object[] row = new Object[1];
-            row[0] = network.getName();
+            row[0] = network;
             model.addRow(row);
         }
     }
@@ -149,14 +149,15 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             return;
         }
         if (system.searchNetwork(name) != null) {
-            JOptionPane.showMessageDialog(null, "Name already present");
+            JOptionPane.showMessageDialog(null, "Network already present");
             return;
         }
 
         Network network = system.createAndAddNetwork();
         network.setName(name);
-
+        JOptionPane.showMessageDialog(null, "Network Added Successfully");
         populateNetworkTable();
+        nameJTextField.setText("");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

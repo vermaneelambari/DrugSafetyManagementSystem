@@ -33,7 +33,7 @@ public abstract class Organization {
     }
     
     public enum Type{
-        Admin("Admin Organization"), Pharma("Pharma Organization"), PreClinicalTrial("Pre Clinical Trial Organization"),PostClinicalTrial("Post Clinical Trial Organization"),Insurance("Insurance Organization"),PreTrialPublicSector("Pre Trial PublicSector Organization"),PostTrialPublicSector("Post Trial PublicSector Organization");
+        Admin("Admin Organization"), Pharma("Pharma Organization"), PreClinicalTrial("Pre Clinical Trial Organization"),PostClinicalTrial("Post Clinical Trial Organization"),Insurance("Insurance Organization"),PreTrialPublicSector("Pre Trial PublicSector Organization"),PostTrialPublicSector("Post Trial PublicSector Organization"),Authority("Authority Organization");
         private String value;
         private Type(String value) {
             this.value = value;

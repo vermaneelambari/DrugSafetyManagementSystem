@@ -67,7 +67,7 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Update Network");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 220, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 180, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -88,6 +88,7 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
         }
         network.setName(name);
         JOptionPane.showMessageDialog(null, "Network Updated Successfully");
+        vacName.setText("");
     }//GEN-LAST:event_addBtnActionPerformed
 
 

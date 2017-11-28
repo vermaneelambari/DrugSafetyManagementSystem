@@ -18,8 +18,13 @@ public abstract class Role {
     
     public enum RoleType{
         Admin("Admin"),
-        Doctor("Doctor"),
-        LabAssistant("Lab Assistant");
+        Authority("Authority"),
+        Insurance("Insurance"),
+        Pharma("Pharma Company"),
+        PostClinicalPublicSector("Post Clinical Trial Public Sector"),
+        PreClinicalPublicSector("Pre Clinical Trial Public Sector"),
+        PreClinicalTrial("Pre Clinical Trial"),
+        PostClinicalTrial("Post Clinical Trial");
         
         private String value;
         private RoleType(String value){

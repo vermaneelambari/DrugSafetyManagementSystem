@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Enterprise;
+package Business.Organization;
 
-import Business.Enterprise.Enterprise.EnterpriseType;
 import Business.Role.AuthorityRole;
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -14,14 +13,14 @@ import java.util.ArrayList;
  *
  * @author Sumanth
  */
-public class FDAEnterprise extends Enterprise{
-    public FDAEnterprise(String name) {
-        super(name,EnterpriseType.FDA);
+public class AuthorityOrganization extends Organization{
+    public AuthorityOrganization() {
+        super(Organization.Type.Authority.getValue());
     }
-
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList<>();
+        ArrayList<Role> roles = new ArrayList();
         roles.add(new AuthorityRole());
         return roles;
     }

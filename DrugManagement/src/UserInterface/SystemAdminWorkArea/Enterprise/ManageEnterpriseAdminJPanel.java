@@ -128,7 +128,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel1.setText("Network");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
@@ -143,7 +142,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel3.setText("Enterprise");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
 
-        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 136, -1));
 
         submitJButton.setText("Submit");
@@ -198,9 +196,16 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_networkJComboBoxActionPerformed
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        
+        Network ntw = (Network) networkJComboBox.getSelectedItem();
+        if(ntw==null){
+            JOptionPane.showMessageDialog(null, "Please create Network");
+            return;
+        }
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
-        
+        if(enterprise==null){
+            JOptionPane.showMessageDialog(null, "Please create enterprise name");
+            return;
+        }
         String username = usernameJTextField.getText();
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
@@ -216,14 +221,12 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         UserAccount account;
-        /*if(enterprise.getEnterpriseType().getValue().equals(Enterprise.EnterpriseType.CDC.getValue())){
-            account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new CdcRole());
-        }else{*/
              account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
-       // }
-        //account.setEnterprise(enterprise);
         populateTable();
-        
+        JOptionPane.showMessageDialog(null, "User added successfully");
+        usernameJTextField.setText("");
+        nameJTextField.setText("");
+        passwordJPasswordField.setText("");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

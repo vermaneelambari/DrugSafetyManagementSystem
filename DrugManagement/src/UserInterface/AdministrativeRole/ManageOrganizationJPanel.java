@@ -40,19 +40,19 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         organizationJComboBox.removeAllItems();
         for (Type type : Organization.Type.values()) {
             organizationJComboBox.addItem(type);
-            /*if (enterprise.getEnterpriseType().equals(EnterpriseType.Distributor)) {
-                if (type.getValue().equals(Type.Dealer.getValue()) || type.getValue().equals(Type.InventoryDistributor.getValue())) {
-                    
-                }
-            }else if (enterprise.getEnterPriseType().equals(EnterPriseType.Hospital)) {
-                if (type.getValue().equals(Type.Clinic.getValue())) {
+            if (enterprise.getEnterpriseType().equals(EnterpriseType.ClinicalTrial)) {
+                if (type.getValue().equals(Type.PostClinicalTrial.getValue()) || type.getValue().equals(Type.PostTrialPublicSector.getValue()) || type.getValue().equals(Type.PreClinicalTrial.getValue()) || type.getValue().equals(Type.PreTrialPublicSector.getValue())) {
                     organizationJComboBox.addItem(type);
                 }
-            }else if (enterprise.getEnterPriseType().equals(EnterPriseType.Provider)) {
-                if (type.getValue().equals(Type.Supplier.getValue()) || type.getValue().equals(Type.InventorySupplier.getValue())) {
+            }else if (enterprise.getEnterpriseType().equals(EnterpriseType.DrugManufacturing)) {
+                if (type.getValue().equals(Type.Pharma.getValue())) {
                     organizationJComboBox.addItem(type);
                 }
-            }*/
+            }else if (enterprise.getEnterpriseType().equals(EnterpriseType.FDA)) {
+                if (type.getValue().equals(Type.Insurance.getValue()) || type.getValue().equals(Type.Authority.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
         }
     }
 
@@ -151,7 +151,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         Type type = (Type) organizationJComboBox.getSelectedItem();
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        /*int count = model.getRowCount();
+        int count = model.getRowCount();
         String orgName;
         for(int i=0; i<count ;i++){
             orgName = (String) model.getValueAt(i, 1);
@@ -159,7 +159,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Organization already added");
                 return;
             }
-        }*/
+        }
         directory.createOrganization(type);
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
