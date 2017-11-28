@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class PostClinicalTrialOrganization extends Organization{
     public PostClinicalTrialOrganization() {
-        super(Organization.Type.Final.getValue());
+        super(Organization.Type.PostClinicalTrial.getValue());
     }
     
     @Override
