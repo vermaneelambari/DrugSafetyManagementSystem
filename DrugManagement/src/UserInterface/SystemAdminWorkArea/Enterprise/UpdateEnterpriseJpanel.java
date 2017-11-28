@@ -30,6 +30,7 @@ public class UpdateEnterpriseJpanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
+        vacName.setText(enterprise.getName());
     }
 
     /**

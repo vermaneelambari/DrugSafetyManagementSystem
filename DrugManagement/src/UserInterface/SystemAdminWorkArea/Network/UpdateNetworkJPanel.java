@@ -26,6 +26,7 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.network = network;
         initComponents();
+        vacName.setText(network.getName());
     }
 
     /**

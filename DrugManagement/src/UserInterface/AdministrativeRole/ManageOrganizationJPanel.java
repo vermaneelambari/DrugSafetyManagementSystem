@@ -39,7 +39,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void populateCombo() {
         organizationJComboBox.removeAllItems();
         for (Type type : Organization.Type.values()) {
-            organizationJComboBox.addItem(type);
             if (enterprise.getEnterpriseType().equals(EnterpriseType.ClinicalTrial)) {
                 if (type.getValue().equals(Type.PostClinicalTrial.getValue()) || type.getValue().equals(Type.PostTrialPublicSector.getValue()) || type.getValue().equals(Type.PreClinicalTrial.getValue()) || type.getValue().equals(Type.PreTrialPublicSector.getValue())) {
                     organizationJComboBox.addItem(type);
@@ -148,13 +147,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-
         Type type = (Type) organizationJComboBox.getSelectedItem();
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         int count = model.getRowCount();
         String orgName;
         for(int i=0; i<count ;i++){
-            orgName = (String) model.getValueAt(i, 1);
+            orgName = (String) model.getValueAt(i, 0);
             if(type.getValue().equals(orgName)){
                 JOptionPane.showMessageDialog(null, "Organization already added");
                 return;

@@ -76,7 +76,7 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
                 delBtnActionPerformed(evt);
             }
         });
-        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 204, 110, -1));
+        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 204, 150, -1));
 
         addBtn.setText("Add Disease");
         addBtn.addActionListener(new java.awt.event.ActionListener() {

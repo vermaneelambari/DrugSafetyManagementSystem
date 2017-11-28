@@ -71,9 +71,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
-            Object[] row = new Object[2];
-            row[0] = employee.getId();
-            row[1] = employee;
+            Object[] row = new Object[1];
+            row[0] = employee;
             model.addRow(row);
         }
     }
@@ -108,20 +107,17 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "ID", "Name"
+                "Name"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -135,7 +131,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);
-            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 92));
@@ -154,10 +149,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 34, 216, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 216, -1));
 
         jLabel1.setText("Organization");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 37, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +166,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(vaccineLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 100, 30));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 126, -1));
 
-        organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationEmpJComboBoxActionPerformed(evt);
@@ -210,19 +204,39 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Vaccine Name:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 90, 20));
-        add(vaccinetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 180, 40));
+        add(vaccinetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 200, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
+        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
+        if(organization==null){
+            JOptionPane.showMessageDialog(null, "Please create Organization");
+            return;
+        }
         String name = nameJTextField.getText();
-        
+        if (name.trim().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Please enter name");
+            return;
+        }
+        Disease d =  (Disease)diseaseCatalogBox.getSelectedItem();
+        if(d==null){
+            JOptionPane.showMessageDialog(null, "Please create Disease");
+            return;
+        }
+        String vname =  vaccinetxt.getText();
+        if(vname.trim().length() == 0){
+            JOptionPane.showMessageDialog(null, "Please enter Vaccine name");
+            return;
+        }
         Employee e =organization.getEmployeeDirectory().createEmployee(name);
-        e.setDisease((Disease) diseaseCatalogBox.getSelectedItem());
+        e.setDisease(d);
         Vaccine v  = new Vaccine();
         v.setvName(vaccinetxt.getText());
         e.setVaccine(v);
         populateTable(organization);
+        vaccinetxt.setText("");
+        nameJTextField.setText("");
+        JOptionPane.showMessageDialog(null, "Employee created successfully");
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -258,34 +272,34 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_diseaseCatalogBoxActionPerformed
 
     private void remobeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remobeBtnActionPerformed
-        /*int selectedRow = organizationJTable.getSelectedRow();
+        int selectedRow = organizationJTable.getSelectedRow();
         Organization o = (Organization) organizationJComboBox.getSelectedItem();
         if (selectedRow >= 0) {
             int dialogButton = JOptionPane.YES_NO_OPTION;
             int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the Employee ", "Warning", dialogButton);
             if (dialogResult == JOptionPane.YES_OPTION) {
-                Employee e = (Employee) organizationJTable.getValueAt(selectedRow, 1);
+                Employee e = (Employee) organizationJTable.getValueAt(selectedRow, 0);
                 o.getEmployeeDirectory().removeEmployee(e);
                 populateTable(o);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Select Any Row", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-        }*/
+        }
     }//GEN-LAST:event_remobeBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        /*int selectedRow = organizationJTable.getSelectedRow();
+        int selectedRow = organizationJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
         }
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
-        Employee e = (Employee) organizationJTable.getValueAt(selectedRow, 1);
+        Employee e = (Employee) organizationJTable.getValueAt(selectedRow, 0);
         UpdateEmployeeJpanel manageVaccineCatalogJPanel = new UpdateEmployeeJpanel(userProcessContainer, e,organization);
         userProcessContainer.add("UpdateNetworkJPanel", manageVaccineCatalogJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);*/
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_updateBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

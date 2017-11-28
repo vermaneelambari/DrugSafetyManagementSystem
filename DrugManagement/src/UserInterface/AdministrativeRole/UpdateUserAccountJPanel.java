@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.SystemAdminWorkArea.Disease;
+package UserInterface.AdministrativeRole;
 
-import UserInterface.SystemAdminWorkArea.Disease.ManageDiseaseCatalog;
-import Business.Disease.Disease;
-import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -17,17 +15,22 @@ import javax.swing.JPanel;
  *
  * @author Sumanth
  */
-public class AddDiseaseJPanel extends javax.swing.JPanel {
+public class UpdateUserAccountJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form AddDiseaseJPanel
+     * Creates new form UpdateUserAccountJPanel
      */
-    JPanel userProcessContainer;
-    EcoSystem system;
-    AddDiseaseJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public UpdateUserAccountJPanel() {
+        
+    }
+    
+    JPanel container;
+    UserAccount u;
+
+    UpdateUserAccountJPanel(JPanel container, UserAccount u) {
         initComponents();
-        this.userProcessContainer = userProcessContainer;
-        this.system = system;
+        this.container = container;
+        this.u = u;
     }
 
     /**
@@ -43,13 +46,12 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
         addBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 130, 30));
+        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 130, 30));
 
-        jLabel1.setText("Disease Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 90, 30));
+        jLabel1.setText("User Name:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 73, 90, 30));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,47 +59,35 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 203, -1, -1));
 
-        addBtn.setText("Add");
+        addBtn.setText("Update");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 90, 40));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Add Disease");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 230, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 133, 90, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
+        container.remove(this);
+        Component[] componentArray = container.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        ManageDiseaseCatalog sysAdminwjp = (ManageDiseaseCatalog) component;
-        sysAdminwjp.populateTable();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        ManageUserAccountJPanel sysAdminwjp = (ManageUserAccountJPanel) component;
+        sysAdminwjp.popData();
+        CardLayout layout = (CardLayout) container.getLayout();
+        layout.previous(container);
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         String name = vacName.getText();
-        for(Disease d:system.getDiseaseCatalog().getDiseaseCatalog()){
-            if(d.getdName().equals(name)){
-                JOptionPane.showMessageDialog(null, "Disease Name already present");
-                return;
-            }
-        }
         if(name.trim().length()==0){
-            JOptionPane.showMessageDialog(null, "Please enter Disease Name");
+            JOptionPane.showMessageDialog(null, "Please enter User Name");
             return;
         }
-        Disease disease = system.getDiseaseCatalog().addDisease();
-        disease.setdName(name);
-        JOptionPane.showMessageDialog(null, "Disease Added Successfully");
-        vacName.setText("");
+        u.setUsername(name);
+        JOptionPane.showMessageDialog(null, "Employee Updated Successfully");
     }//GEN-LAST:event_addBtnActionPerformed
 
 
@@ -105,7 +95,6 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
     private javax.swing.JButton addBtn;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,6 +42,7 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         addBtn = new javax.swing.JButton();
         vacName = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -64,6 +65,10 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         });
         add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 133, 90, 40));
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 130, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Update Disease");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 230, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -92,6 +97,7 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
     private javax.swing.JButton addBtn;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

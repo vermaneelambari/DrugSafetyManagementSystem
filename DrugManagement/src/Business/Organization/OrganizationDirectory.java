@@ -28,8 +28,7 @@ public class OrganizationDirectory {
         if (type.getValue().equals(Type.PreClinicalTrial.getValue())){
             organization = new PreClinicalTrialOrganization();
             organizationList.add(organization);
-        }
-        else if (type.getValue().equals(Type.PostClinicalTrial.getValue())){
+        }else if (type.getValue().equals(Type.PostClinicalTrial.getValue())){
             organization = new PostClinicalTrialOrganization();
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.Insurance.getValue())){
@@ -37,6 +36,15 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.Pharma.getValue())){
             organization = new PharmaOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.Authority.getValue())){
+            organization = new AuthorityOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.PostTrialPublicSector.getValue())){
+            organization = new PostTrialPublicSectorOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.PreTrialPublicSector.getValue())){
+            organization = new PreTrialPublicSectorOrganization();
             organizationList.add(organization);
         }
         return organization;

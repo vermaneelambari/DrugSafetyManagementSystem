@@ -14,15 +14,8 @@ import Business.Vaccine.Vaccine;
 public class Employee {
     
     private String name;
-    private int id;
     private Vaccine vaccine;
     private Disease disease;
-    private static int count = 1;
-
-    public Employee() {
-        id = count;
-        count++;
-    }
 
     public Vaccine getVaccine() {
         return vaccine;
@@ -38,10 +31,6 @@ public class Employee {
 
     public void setDisease(Disease disease) {
         this.disease = disease;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public void setName(String name) {
