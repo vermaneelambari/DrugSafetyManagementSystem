@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public abstract class Organization {
 
     private String name;
-    private RequestList request;
+    private RequestList requestList;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private PersonDirectory personDirectory;
@@ -46,7 +46,7 @@ public abstract class Organization {
 
     public Organization(String name) {
         this.name = name;
-        request = new RequestList();
+        requestList = new RequestList();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         diseaseCatalog = new DiseaseCatalog();
@@ -80,14 +80,15 @@ public abstract class Organization {
         this.name = name;
     }
 
-    public RequestList getRequest() {
-        return request;
+    public RequestList getRequestList() {
+        return requestList;
     }
 
-    public void setRequest(RequestList request) {
-        this.request = request;
+    public void setRequestList(RequestList requestList) {
+        this.requestList = requestList;
     }
 
+   
     @Override
     public String toString() {
         return name;
