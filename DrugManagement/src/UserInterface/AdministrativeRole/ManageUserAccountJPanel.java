@@ -4,6 +4,7 @@
  */
 package UserInterface.AdministrativeRole;
 
+import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
@@ -25,11 +26,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
      */
     private JPanel container;
     private Enterprise enterprise;
+    EcoSystem system;
 
-    public ManageUserAccountJPanel(JPanel container, Enterprise enterprise) {
+    public ManageUserAccountJPanel(JPanel container, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.enterprise = enterprise;
         this.container = container;
+        this.system = system;
 
         popOrganizationComboBox();
        // employeeJComboBox.removeAllItems();
@@ -152,7 +155,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel3.setText("Employee");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 278, -1, -1));
 
-        employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 275, 146, -1));
 
         backjButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -167,7 +169,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel5.setText("Organization");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 240, -1, -1));
 
-        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationJComboBoxActionPerformed(evt);
@@ -178,7 +179,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4.setText("Role");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 320, -1, -1));
 
-        roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 317, 146, -1));
 
         updateBtn.setText("Update");
@@ -207,10 +207,22 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             return;
         }
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+        if(organization==null){
+            JOptionPane.showMessageDialog(null, "Please create Organization");
+            return;
+        }
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
+        if(employee==null){
+            JOptionPane.showMessageDialog(null, "Please create Employee");
+            return;
+        }
         Role role = (Role) roleJComboBox.getSelectedItem();
+        if(role==null){
+            JOptionPane.showMessageDialog(null, "Please create Employee");
+            return;
+        }
         boolean check;
-        check = organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
+        check = organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName,system);
         if(!check){
             JOptionPane.showMessageDialog(null, "UserName already exists");
             return;
@@ -236,7 +248,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        /*int selectedRow = userJTable.getSelectedRow();
+        int selectedRow = userJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
@@ -245,24 +257,24 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         UpdateUserAccountJPanel manageVaccineCatalogJPanel = new UpdateUserAccountJPanel(container,u);
         container.add("UpdateUserAccountJPanel", manageVaccineCatalogJPanel);
         CardLayout layout = (CardLayout) container.getLayout();
-        layout.next(container);*/
+        layout.next(container);
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void remobeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remobeBtnActionPerformed
-        /*int selectedRow = userJTable.getSelectedRow();
+        int selectedRow = userJTable.getSelectedRow();
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         if (selectedRow >= 0) {
             int dialogButton = JOptionPane.YES_NO_OPTION;
             int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the Employee ", "Warning", dialogButton);
             if (dialogResult == JOptionPane.YES_OPTION) {
                 UserAccount u = (UserAccount) userJTable.getValueAt(selectedRow, 0);
-                organization.getUserAccountDirectory().deleteUser(u);
+                organization.getUserAccountDirectory().deleteUserForOrganization(u, system);
                 popData();
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please Select Any Row", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
-        }*/
+        }
     }//GEN-LAST:event_remobeBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

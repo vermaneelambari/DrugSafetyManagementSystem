@@ -104,10 +104,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Enterprise Name", "Network", "Username"
@@ -210,7 +207,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
         boolean check;
-        check = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(username);
+        check = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(username,system);
         if(username.trim().length()==0 || password.trim().length()==0 || name.trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter all the fields");
             return;
@@ -260,7 +257,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
         UserAccount u  = (UserAccount) enterpriseJTable.getValueAt(selectedRow, 2);
-        enterprise.getUserAccountDirectory().deleteUser(u);
+        enterprise.getUserAccountDirectory().deleteUserForEnterprise(u,system);
         JOptionPane.showMessageDialog(null, "User deleted successfully");
         populateTable();
     }//GEN-LAST:event_delBtnActionPerformed

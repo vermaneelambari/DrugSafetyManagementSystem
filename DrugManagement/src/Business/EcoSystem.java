@@ -63,7 +63,7 @@ public class EcoSystem extends Organization{
 
     public boolean checkIfUsernameIsUnique(String username) {
 
-        if (!this.getUserAccountDirectory().checkIfUsernameIsUnique(username)) {
+        if (!this.getUserAccountDirectory().checkIfUsernameIsUnique(username,business)) {
             return false;
         }
 

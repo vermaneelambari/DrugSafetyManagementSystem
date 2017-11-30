@@ -46,6 +46,7 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
         addBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 130, 30));
@@ -68,6 +69,10 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
             }
         });
         add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 133, 90, 40));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Update User");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 190, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -95,6 +100,7 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JButton addBtn;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

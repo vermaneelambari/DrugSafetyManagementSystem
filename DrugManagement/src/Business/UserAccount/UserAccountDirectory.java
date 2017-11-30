@@ -4,7 +4,11 @@
  */
 package Business.UserAccount;
 
+import Business.EcoSystem;
 import Business.Employee.Employee;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -13,7 +17,7 @@ import java.util.ArrayList;
  * @author Sumanth
  */
 public class UserAccountDirectory {
-    
+
     private ArrayList<UserAccount> userAccountList;
 
     public UserAccountDirectory() {
@@ -23,16 +27,17 @@ public class UserAccountDirectory {
     public ArrayList<UserAccount> getUserAccountList() {
         return userAccountList;
     }
-    
-    public UserAccount authenticateUser(String username, String password){
-        for (UserAccount ua : userAccountList)
-            if (ua.getUsername().equals(username) && ua.getPassword().equals(password)){
+
+    public UserAccount authenticateUser(String username, String password) {
+        for (UserAccount ua : userAccountList) {
+            if (ua.getUsername().equals(username) && ua.getPassword().equals(password)) {
                 return ua;
             }
+        }
         return null;
     }
-    
-    public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
+
+    public UserAccount createUserAccount(String username, String password, Employee employee, Role role) {
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
         userAccount.setPassword(password);
@@ -41,16 +46,53 @@ public class UserAccountDirectory {
         userAccountList.add(userAccount);
         return userAccount;
     }
-    
-    public boolean checkIfUsernameIsUnique(String username){
-        for (UserAccount ua : userAccountList){
-            if (ua.getUsername().equals(username))
+
+    public boolean checkIfUsernameIsUnique(String username, EcoSystem system) {
+        for(UserAccount u:system.getUserAccountDirectory().getUserAccountList()){
+            if(u.getUsername().equals(username)){
                 return false;
+            }
+        }
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterPriseList()) {
+                for (UserAccount ua : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    if (ua.getUsername().equals(username)) {
+                        return false;
+                    }
+                }
+                for(Organization o: enterprise.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount ua:o.getUserAccountDirectory().getUserAccountList()){
+                        if (ua.getUsername().equals(username)) {
+                            return false;
+                        }
+                    }
+                }
+            }
         }
         return true;
     }
+
+    public void deleteUserForEnterprise(UserAccount u, EcoSystem system) {
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterPriseList()) {
+                enterprise.getUserAccountDirectory().getUserAccountList().remove(u);
+                break;
+            }
+        }
+    }
     
-    public void deleteUser(UserAccount u){
-        userAccountList.remove(u);
+    public void deleteUserForOrganization(UserAccount u, EcoSystem system) {
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterPriseList()) {
+                for(Organization o: enterprise.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount usr:o.getUserAccountDirectory().getUserAccountList()){
+                        if(usr.getUsername().equals(u.getUsername())){
+                            o.getUserAccountDirectory().getUserAccountList().remove(u);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
