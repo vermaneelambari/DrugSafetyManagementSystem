@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import UserInterface.AuthorityRole.AuthorityWorkAreaJPanel;
 import UserInterface.PharmaRole.PharmaWorkAreaJPanel;
 import javax.swing.JPanel;
 
@@ -19,6 +20,6 @@ import javax.swing.JPanel;
 public class AuthorityRole extends Role{
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PharmaWorkAreaJPanel(userProcessContainer, account, organization, enterprise,business);
+        return new AuthorityWorkAreaJPanel(userProcessContainer, account, organization, enterprise,business);
     }
 }

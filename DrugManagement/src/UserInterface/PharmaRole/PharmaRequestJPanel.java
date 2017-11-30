@@ -8,7 +8,10 @@ package UserInterface.PharmaRole;
 import Business.Disease.Disease;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.AuthorityOrganization;
 import Business.Organization.Organization;
+import Business.Organization.PharmaOrganization;
 import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
@@ -27,18 +30,19 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ClinicRequestJPanel
      */
-    
     JPanel userProcessContainer;
     UserAccount account;
     Enterprise enterprise;
     Organization clinicOrganization;
     EcoSystem system;
-   
+
     public PharmaRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.enterprise = enterprise;
+        this.system = system;
+        this.clinicOrganization = clinicOrganization;
     }
 
     /**
@@ -81,7 +85,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
         String message = messageJTextField.getText();
-        if(message.trim().length()==0){
+        if (message.trim().length() == 0) {
             JOptionPane.showMessageDialog(null, "Please enter Message");
             return;
         }
@@ -90,10 +94,21 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         request.setSender(account);
         request.setStatus("Sent to FDA");
         request.setResult("Waiting");
-        //org.getWorkQueue().getWorkRequestList().add(request);
-        //account.setOrganization(org);
-        //request.setOrganization(org);
-        account.getRequestList().getRequestList().add(request);
+        Organization org = null;
+        for (Network n : system.getNetworkList()) {
+            for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
+                for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof AuthorityOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+        }
+        if (org != null) {
+            org.getRequestList().getRequestList().add(request);
+            account.getRequestList().getRequestList().add(request);
+        }
         JOptionPane.showMessageDialog(null, "Request sent successfully");
         messageJTextField.setText("");
     }//GEN-LAST:event_requestTestJButtonActionPerformed
@@ -105,7 +120,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         Component component = componentArray[componentArray.length - 1];
         PharmaWorkAreaJPanel dwjp = (PharmaWorkAreaJPanel) component;
         dwjp.populateRequestTable();
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 

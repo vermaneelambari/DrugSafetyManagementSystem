@@ -39,7 +39,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         this.system = system;
         populateOrganizationComboBox();
         populateOrganizationEmpComboBox();
-        populateVaccineCombo();
     }
 
     public void populateVaccineCombo() {
@@ -51,16 +50,22 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     public void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+        if (enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DrugManufacturing)) {
+            pharmaPanel.setVisible(true);
+            populateVaccineCombo();
+        } else {
+            pharmaPanel.setVisible(false);
+        }
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationJComboBox.addItem(organization);
         }
     }
 
     public void populateOrganizationEmpComboBox() {
         organizationEmpJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationEmpJComboBox.addItem(organization);
         }
     }
@@ -92,16 +97,17 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
-        vaccineLabel = new javax.swing.JLabel();
         nameJTextField = new javax.swing.JTextField();
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
-        diseaseCatalogBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         remobeBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        pharmaPanel = new javax.swing.JPanel();
+        diseaseCatalogBox = new javax.swing.JComboBox();
         vaccinetxt = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        vaccineLabel = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -161,9 +167,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
-
-        vaccineLabel.setText("Disease Catalog");
-        add(vaccineLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 100, 30));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 126, -1));
 
         organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -175,13 +178,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Organization");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
-
-        diseaseCatalogBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                diseaseCatalogBoxActionPerformed(evt);
-            }
-        });
-        add(diseaseCatalogBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 202, 30));
 
         jLabel4.setText("Name");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 50, -1));
@@ -202,40 +198,86 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, -1, -1));
 
+        diseaseCatalogBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diseaseCatalogBoxActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Vaccine Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 90, 20));
-        add(vaccinetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 200, 30));
+
+        vaccineLabel.setText("Disease Catalog");
+
+        javax.swing.GroupLayout pharmaPanelLayout = new javax.swing.GroupLayout(pharmaPanel);
+        pharmaPanel.setLayout(pharmaPanelLayout);
+        pharmaPanelLayout.setHorizontalGroup(
+            pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pharmaPanelLayout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vaccineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(vaccinetxt)
+                    .addComponent(diseaseCatalogBox, 0, 167, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
+        );
+        pharmaPanelLayout.setVerticalGroup(
+            pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pharmaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diseaseCatalogBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vaccineLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vaccinetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(27, 27, 27))
+        );
+
+        add(pharmaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 380, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
-        if(organization==null){
+        boolean check = false;
+        if (organization == null) {
             JOptionPane.showMessageDialog(null, "Please create Organization");
             return;
         }
         String name = nameJTextField.getText();
+        Disease d = null;
         if (name.trim().length() == 0) {
             JOptionPane.showMessageDialog(null, "Please enter name");
             return;
         }
-        Disease d =  (Disease)diseaseCatalogBox.getSelectedItem();
-        if(d==null){
-            JOptionPane.showMessageDialog(null, "Please create Disease");
-            return;
+        if (enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DrugManufacturing)) {
+            check = true;
         }
-        String vname =  vaccinetxt.getText();
-        if(vname.trim().length() == 0){
-            JOptionPane.showMessageDialog(null, "Please enter Vaccine name");
-            return;
+        if (check) {
+            d = (Disease) diseaseCatalogBox.getSelectedItem();
+            if (d == null) {
+                JOptionPane.showMessageDialog(null, "Please create Disease");
+                return;
+            }
+            String vname = vaccinetxt.getText();
+            if (vname.trim().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Please enter Vaccine name");
+                return;
+            }
         }
-        Employee e =organization.getEmployeeDirectory().createEmployee(name);
-        e.setDisease(d);
-        Vaccine v  = new Vaccine();
-        v.setvName(vaccinetxt.getText());
-        e.setVaccine(v);
+        Employee e = organization.getEmployeeDirectory().createEmployee(name);
+        if (check) {
+            e.setDisease(d);
+            Vaccine v = new Vaccine();
+            v.setvName(vaccinetxt.getText());
+            e.setVaccine(v);
+            vaccinetxt.setText("");
+            nameJTextField.setText("");
+        }
         populateTable(organization);
-        vaccinetxt.setText("");
-        nameJTextField.setText("");
         JOptionPane.showMessageDialog(null, "Employee created successfully");
     }//GEN-LAST:event_addJButtonActionPerformed
 
@@ -296,7 +338,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         }
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         Employee e = (Employee) organizationJTable.getValueAt(selectedRow, 0);
-        UpdateEmployeeJpanel manageVaccineCatalogJPanel = new UpdateEmployeeJpanel(userProcessContainer, e,organization);
+        UpdateEmployeeJpanel manageVaccineCatalogJPanel = new UpdateEmployeeJpanel(userProcessContainer, e, organization);
         userProcessContainer.add("UpdateNetworkJPanel", manageVaccineCatalogJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -315,6 +357,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox organizationEmpJComboBox;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTable organizationJTable;
+    private javax.swing.JPanel pharmaPanel;
     private javax.swing.JButton remobeBtn;
     private javax.swing.JButton updateBtn;
     private javax.swing.JLabel vaccineLabel;
