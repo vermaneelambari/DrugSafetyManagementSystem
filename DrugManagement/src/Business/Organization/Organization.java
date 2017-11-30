@@ -22,6 +22,7 @@ public abstract class Organization {
     private RequestList request;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
+    private PersonDirectory personDirectory;
     private DiseaseCatalog diseaseCatalog;
 
     public DiseaseCatalog getDiseaseCatalog() {
@@ -49,9 +50,18 @@ public abstract class Organization {
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         diseaseCatalog = new DiseaseCatalog();
+        personDirectory = new PersonDirectory();
     }
 
     public abstract ArrayList<Role> getSupportedRole();
+
+    public PersonDirectory getPersonDirectory() {
+        return personDirectory;
+    }
+
+    public void setPersonDirectory(PersonDirectory personDirectory) {
+        this.personDirectory = personDirectory;
+    }
     
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
