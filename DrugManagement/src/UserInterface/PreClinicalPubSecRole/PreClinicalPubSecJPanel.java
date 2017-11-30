@@ -5,18 +5,100 @@
  */
 package UserInterface.PreClinicalPubSecRole;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Person.Person;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author neelambariverma
  */
 public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
+    
+    JPanel userProcessContainer;
+    UserAccount userAccount;
+    EcoSystem system;
+    Enterprise.EnterpriseType enterpriseType;
+
 
     /**
      * Creates new form PreClinicalPubSecJPanel
      */
-    public PreClinicalPubSecJPanel() {
+    public PreClinicalPubSecJPanel(){
         initComponents();
+        this.userAccount = userAccount;
+        this.userProcessContainer = userProcessContainer;
+        this.system = system; 
+        this.enterpriseType = type;
+
+        addData();
+        populatePreClinicalPubSecTable();
+        
     }
+    
+    public void addData(){
+        String csvFile = "Project_Disease.csv";
+        BufferedReader bufferedReader = null;
+        String line = "";
+        String cvsSplitBy = ",";
+        try {
+            bufferedReader = new BufferedReader(new FileReader(csvFile));
+            ArrayList<String[]> dataCsvArr = new ArrayList();
+            int count = 0;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] dataFromCsv = line.split(cvsSplitBy);
+                dataCsvArr.add(count, dataFromCsv);
+                count++;
+            }
+            for (int i = 1; i < dataCsvArr.size(); i++) {
+                Person p = new Person();
+                String valuesOfArray[] = dataCsvArr.get(i);
+
+                p.setDiseaseList(Arrays.asList(valuesOfArray[3].split(",\\s")));
+                //Person p = system.addPerson();
+                p.setName(valuesOfArray[0]);
+                p.setAge(Integer.parseInt(valuesOfArray[1]));
+                p.setDisease(valuesOfArray[2]);
+                system.getPersonDirectory().addPerson(p);
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException ex) {
+            Logger.getLogger(PreClinicalPubSecJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void populatePreClinicalPubSecTable(){
+        DefaultTableModel dtm = (DefaultTableModel)tblPreClinial.getModel();
+        dtm.setRowCount(0);
+        
+        for(PreClinicalSector preClinical: enterpriseType.getValue()){
+            
+            
+        }
+    }
+}
+//      
+    
+    
+//        
+//        
+        
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,14 +110,13 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblPreClinial = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPreClinial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -43,18 +124,16 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 "Name", "Age", "Disease "
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblPreClinial);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setText("Pre-Clinical Public Sector Work Area");
 
-        jButton1.setText("Add");
+        btnAdd.setText("Add");
 
-        jButton2.setText("Update");
+        btnUpdate.setText("Update");
 
-        jButton3.setText("Delete");
-
-        jButton4.setText("<<Back");
+        btnDelete.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -64,13 +143,12 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAdd)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnUpdate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(btnDelete)
                         .addGap(90, 90, 90))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,22 +165,20 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnAdd)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnDelete))
                 .addContainerGap(201, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblPreClinial;
     // End of variables declaration//GEN-END:variables
 }
