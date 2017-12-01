@@ -92,7 +92,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         WorkRequest request = new WorkRequest();
         request.setMessage(message);
         request.setSender(account);
-        request.setStatus("Sent to FDA");
+        request.setStatus("Sent to FDA for Initial Approval");
         request.setResult("Waiting");
         Organization org = null;
         for (Network n : system.getNetworkList()) {

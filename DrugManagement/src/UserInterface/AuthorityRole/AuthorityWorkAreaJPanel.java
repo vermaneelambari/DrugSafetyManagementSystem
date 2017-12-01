@@ -38,6 +38,9 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = (AuthorityOrganization)organization;
         this.enterprise = enterprise;
         this.business = business;
+        enterPrText.setText(enterprise.getName());
+        orgText.setText(organization.getName());
+        empNameTxt.setText(account.getEmployee().getName());
         populateTable();
     }
     
@@ -66,9 +69,13 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        enterpriseLabel1 = new javax.swing.JLabel();
-        enterPrText = new javax.swing.JLabel();
         approveBtn = new javax.swing.JButton();
+        enterpriseLabel1 = new javax.swing.JLabel();
+        empNameTxt = new javax.swing.JLabel();
+        enterpriseLabel2 = new javax.swing.JLabel();
+        enterPrText = new javax.swing.JLabel();
+        enterpriseLabel3 = new javax.swing.JLabel();
+        orgText = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -99,13 +106,6 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 730, 130));
 
-        enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel1.setText("EnterPrise :");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
-
-        enterPrText.setText("<value>");
-        add(enterPrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 120, 20));
-
         approveBtn.setText("Approve");
         approveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +113,27 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 140, 40));
+
+        enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel1.setText("Employee Name:");
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        empNameTxt.setText("<Value>");
+        add(empNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 230, 20));
+
+        enterpriseLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel2.setText("EnterPrise :");
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        enterPrText.setText("<value>");
+        add(enterPrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 260, 20));
+
+        enterpriseLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel3.setText("Organization:");
+        add(enterpriseLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 50, 130, -1));
+
+        orgText.setText("<value>");
+        add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
@@ -123,30 +144,27 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
-        r.setMessage("message");
-        /*if (status.equals("Sent to CDC")) {
-            r.setStatus("Sent to Distributor");
+        if (status.equals("Sent to FDA for Initial Approval")) {
+            r.setReceiver(r.getSender());
+            r.setStatus("Approved drug fot Initial Test");
             r.setSender(account);
-            r.setReceiver(null);
-            populateTableAfter("Initial");
-        } else if (status.equals("Sent from Distributor to CDC")) {
-            r.setStatus("Approved and Sent to Clinic");
-            r.setSender(account);
-            r.setReceiver(null);
-            ((MessageWorkRequest) r).setTestResult("Completed");
-            populateTableAfter("Final");
+            populateTable();
         } else {
             JOptionPane.showMessageDialog(null, "Already approved");
             return;
-        }*/
+        }
     }//GEN-LAST:event_approveBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton approveBtn;
+    private javax.swing.JLabel empNameTxt;
     private javax.swing.JLabel enterPrText;
     private javax.swing.JLabel enterpriseLabel1;
+    private javax.swing.JLabel enterpriseLabel2;
+    private javax.swing.JLabel enterpriseLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel orgText;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }
