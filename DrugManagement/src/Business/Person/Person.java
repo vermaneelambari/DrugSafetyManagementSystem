@@ -6,6 +6,7 @@
 package Business.Person;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,7 @@ public class Person {
     private String name;
     private int age; 
     private String disease;
-    private ArrayList<String> diseaseList; 
+    private List<String> diseaseList; 
 
     public String getName() {
         return name;
@@ -42,13 +43,14 @@ public class Person {
         this.disease = disease;
     }
 
-    public ArrayList<String> getDiseaseList() {
+    public List<String> getDiseaseList() {
         return diseaseList;
     }
 
-    public void setDiseaseList(ArrayList<String> diseaseList) {
+    public void setDiseaseList(List<String> diseaseList) {
         this.diseaseList = diseaseList;
     }
+
      
     @Override
     public String toString() {
