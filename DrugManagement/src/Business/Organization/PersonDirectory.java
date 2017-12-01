@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Business.Organization;
 
 
@@ -42,13 +43,13 @@ public class PersonDirectory {
 //        
 //    }
     
-   
     public Person searchPerson(String name){
         for(Person p : personList){
             if(p.getName()== name){
                 return p;
             }
-        }    
-    }    
+        } 
+        return null; 
+    }
 
 }
