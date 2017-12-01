@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -66,8 +67,9 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
             for (int i = 1; i < dataCsvArr.size(); i++) {
                 Person p = new Person();
                 String valuesOfArray[] = dataCsvArr.get(i);
-
-                p.setDiseaseList(Arrays.asList(valuesOfArray[3].split(",\\s")));
+                List<String> list4 = Arrays.asList(new String());
+                list4 = Arrays.asList(valuesOfArray[3].split(",\\s"));
+                p.setDiseaseList(list4);
                 //Person p = system.addPerson();
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
