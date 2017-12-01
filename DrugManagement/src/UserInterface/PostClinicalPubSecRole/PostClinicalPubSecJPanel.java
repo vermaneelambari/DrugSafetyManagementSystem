@@ -6,8 +6,18 @@
 package UserInterface.PostClinicalPubSecRole;
 
 import Business.EcoSystem;
+import Business.Person.Person;
 import Business.UserAccount.UserAccount;
+import UserInterface.PreClinicalPubSecRole.PreClinicalPubSecJPanel;
 import java.awt.CardLayout;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,13 +40,56 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.system = system; 
         
+        createData();
         populatePostClinicalPubSecTable();
           
+    }
+    
+    public void createData(){
+        String csvFile = "Project_Disease.csv";
+        BufferedReader bufferedReader = null;
+        String line = "";
+        String cvsSplitBy = ",";
+        try {
+            bufferedReader = new BufferedReader(new FileReader(csvFile));
+            ArrayList<String[]> dataCsvArr = new ArrayList();
+            int count = 0;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] dataFromCsv = line.split(cvsSplitBy);
+                dataCsvArr.add(count, dataFromCsv);
+                count++;
+            }
+            for (int i = 1; i < dataCsvArr.size(); i++) {
+                Person p = new Person();
+                String valuesOfArray[] = dataCsvArr.get(i);
+
+                p.setDiseaseList(Arrays.asList(valuesOfArray[3].split(",\\s")));
+                //Person p = system.addPerson();
+                p.setName(valuesOfArray[0]);
+                p.setAge(Integer.parseInt(valuesOfArray[1]));
+                p.setDisease(valuesOfArray[2]);
+                system.getPersonDirectory().addPerson(p);
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException ex) {
+            Logger.getLogger(PreClinicalPubSecJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
    
      public void populatePostClinicalPubSecTable(){
         DefaultTableModel dtm = (DefaultTableModel)tblPostClinical.getModel();
         dtm.setRowCount(0);
+        
+        for(Person person: system.getPersonDirectory().getPersonList()){
+            Object row[] = new Object[3];
+            row[0] = person;
+            row[1] = person.getAge();
+            row[2] = person.getDisease();
+            
+        }  
+        
         
         
         
@@ -53,7 +106,6 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPostClinical = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -71,13 +123,6 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
-            }
-        });
-
-        btnBack.setText("<<Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
             }
         });
 
@@ -102,8 +147,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                 .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnAdd)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnUpdate)
@@ -127,8 +171,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnBack))
+                    .addComponent(btnDelete))
                 .addContainerGap(212, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -142,18 +185,9 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
