@@ -5,19 +5,30 @@
  */
 package UserInterface.PreClinicalPubSecRole;
 
+import Business.EcoSystem;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author neelambariverma
  */
 public class AddPersonJPanel extends javax.swing.JPanel {
+    
+    JPanel userProcessContainer;
+    EcoSystem system;
+
 
     /**
      * Creates new form AddPersonJPanel
      */
-    public AddPersonJPanel() {
-        initComponents();
+  
+
+    AddPersonJPanel(JPanel userProcessContainer, EcoSystem system) {
+    initComponents();
+    this.userProcessContainer = userProcessContainer;
+    this.system = system;
+
     }
 
     /**
@@ -83,7 +94,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(360, 360, 360)
                         .addComponent(btnAdd)))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(327, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,7 +115,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                     .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(btnAdd)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
