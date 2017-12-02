@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import UserInterface.PharmaRole.PharmaWorkAreaJPanel;
+import UserInterface.PreClinicalTrialRole.PreClinicalTrialJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -19,6 +20,6 @@ import javax.swing.JPanel;
 public class PreClinicalTrialRole extends Role{
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PharmaWorkAreaJPanel(userProcessContainer, account, organization, enterprise,business);
+        return new PreClinicalTrialJPanel(userProcessContainer, account, organization, enterprise,business);
     }
 }
