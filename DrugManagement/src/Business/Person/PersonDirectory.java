@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Business.Organization;
+package Business.Person;
 
 
 import Business.Person.Person; 
