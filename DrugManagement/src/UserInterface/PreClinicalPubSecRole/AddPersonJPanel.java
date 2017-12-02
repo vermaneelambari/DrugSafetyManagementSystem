@@ -6,6 +6,10 @@
 package UserInterface.PreClinicalPubSecRole;
 
 import Business.EcoSystem;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -17,6 +21,8 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     EcoSystem system;
+    PersonDirectory personDirectory;
+
 
 
     /**
@@ -28,6 +34,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     initComponents();
     this.userProcessContainer = userProcessContainer;
     this.system = system;
+    this.personDirectory = personDirectory;
 
     }
 
@@ -48,6 +55,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         txtAge = new javax.swing.JTextField();
         txtDisease = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Add Person ");
@@ -71,6 +79,13 @@ public class AddPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,20 +96,23 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                         .addGap(137, 137, 137)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnBack)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName)
-                            .addComponent(txtAge)
-                            .addComponent(txtDisease, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(360, 360, 360)
-                        .addComponent(btnAdd)))
-                .addContainerGap(327, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName)
+                                    .addComponent(txtAge)
+                                    .addComponent(txtDisease, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(272, 272, 272)
+                                .addComponent(btnAdd)))))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,7 +132,9 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
-                .addComponent(btnAdd)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdd)
+                    .addComponent(btnBack))
                 .addContainerGap(208, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -127,19 +147,55 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         String name = txtName.getText();
-        String age = txtAge.getText();
         String disease = txtDisease.getText();
+        Integer age =0;
         
+         try
+       {                
+            age = Integer.parseInt(txtAge.getText());
+       }
+       catch(NumberFormatException e)
+       {
+           JOptionPane.showMessageDialog(null, "Please enter a valid Integer");
+       } 
         
-         if(name.equals("") || age.equals("") || disease == null ){
+         if(name.equalsIgnoreCase("") || txtAge.getText().equalsIgnoreCase("") || disease == null ){
             JOptionPane.showMessageDialog(null, "Please enter valid details", "Invalid Details", JOptionPane.ERROR_MESSAGE);
             return;
         }
+         else 
+         {
+             Person person = system.getPersonDirectory().addPerson();
+             person.setName(name);
+             person.setAge(age);
+             person.setDisease(disease);
+            
+            JOptionPane.showMessageDialog(null,"Person Successfully created."); 
+            txtName.setText("");
+            txtAge.setText("");
+            txtDisease.setText("");
+             
+         }
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PreClinicalPubSecJPanel pcpsj = (PreClinicalPubSecJPanel) component;
+      
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
+        
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
