@@ -198,10 +198,11 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
+        AddPersonJPanel aap = new AddPersonJPanel(userProcessContainer, system);
+        userProcessContainer.add("ManageUserAccountPanel", aap);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+      
     }//GEN-LAST:event_btnAddActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
