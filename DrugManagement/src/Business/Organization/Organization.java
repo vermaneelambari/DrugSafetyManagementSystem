@@ -6,6 +6,7 @@ package Business.Organization;
 
 import Business.Disease.DiseaseCatalog;
 import Business.Employee.EmployeeDirectory;
+import Business.Person.PersonDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.Request.Request;
