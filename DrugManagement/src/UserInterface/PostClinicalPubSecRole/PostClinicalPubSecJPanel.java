@@ -61,15 +61,13 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                 count++;
             }
             for (int i = 1; i < dataCsvArr.size(); i++) {
-                Person p = new Person();
                 String valuesOfArray[] = dataCsvArr.get(i);
-
+                Person p = system.getPersonDirectory().addPerson();
                 p.setDiseaseList(Arrays.asList(valuesOfArray[3].split(",\\s")));
                 //Person p = system.addPerson();
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
                 p.setDisease(valuesOfArray[2]);
-                system.getPersonDirectory().addPerson(p);
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {

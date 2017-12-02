@@ -8,6 +8,7 @@ package UserInterface.PreClinicalPubSecRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Enterprise.EnterpriseType;
+import Business.Organization.Organization;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -31,26 +32,28 @@ import javax.swing.table.DefaultTableModel;
 public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    UserAccount userAccount;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
     EcoSystem system;
-    EnterpriseType enterpriseType;
 
 
     /**
      * Creates new form PreClinicalPubSecJPanel
      */
-    public PreClinicalPubSecJPanel(){
+    public PreClinicalPubSecJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system){
         initComponents();
-        this.userAccount = userAccount;
+        this.account = account;
         this.userProcessContainer = userProcessContainer;
         this.system = system; 
-        this.enterpriseType = enterpriseType;
-
-        addData();
+        this.enterprise = enterprise;
+        if(system.getPersonDirectory().getPersonList().size()==0){
+            addData();
+        }
         populatePreClinicalPubSecTable();
         
     }
-    
+
     public void addData(){
         String csvFile = "Project_Disease.csv";
         BufferedReader bufferedReader = null;
@@ -66,16 +69,14 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 count++;
             }
             for (int i = 1; i < dataCsvArr.size(); i++) {
-                Person p = new Person();
                 String valuesOfArray[] = dataCsvArr.get(i);
                 List<String> list4 = Arrays.asList(new String());
-                list4 = Arrays.asList(valuesOfArray[3].split(",\\s"));
+                list4 = Arrays.asList(valuesOfArray[3].split("\\|"));
+                Person p = system.getPersonDirectory().addPerson();
                 p.setDiseaseList(list4);
-                //Person p = system.addPerson();
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
                 p.setDisease(valuesOfArray[2]);
-                system.getPersonDirectory().addPerson(p);
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {
@@ -94,7 +95,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
             row[0] = person;
             row[1] = person.getAge();
             row[2] = person.getDisease();
-            
+            dtm.addRow(row);
         }  
      }
     
@@ -191,7 +192,8 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
         }
-        
+        Person p = (Person) tblPreClinical.getValueAt(selectedRow, 0);
+        system.getPersonDirectory().deletePerson(p);
         JOptionPane.showMessageDialog(null, "Person deleted successfully");
 
     }//GEN-LAST:event_btnDeleteActionPerformed

@@ -45,7 +45,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         empNameTxt.setText(account.getEmployee().getName());
         vaccineTxt.setText(account.getEmployee().getVaccine().getvName());
         diseaseTxt.setText(account.getEmployee().getDisease().getdName());
-     populateRequestTable();
+        populateRequestTable();
     }
     
     public void populateRequestTable(){

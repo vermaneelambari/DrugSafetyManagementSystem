@@ -3,20 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Business.Person;
 
-
-import Business.Person.Person; 
 import java.util.ArrayList;
 
 /**
  *
- * @author neelambariverma
+ * @author Sumanth
  */
 public class PersonDirectory {
-    
-       private ArrayList<Person> personList;
+    private ArrayList<Person> personList;
        
        public PersonDirectory(){
            personList = new ArrayList<>();
@@ -30,9 +26,10 @@ public class PersonDirectory {
         this.personList = personList;
     }
 
-    public void addPerson(Person p){
+    public Person addPerson(){
+        Person p = new Person();
         personList.add(p);
-        //return person;
+        return p;
     }
     
     public void deletePerson(Person p){
@@ -51,5 +48,4 @@ public class PersonDirectory {
         } 
         return null; 
     }
-
 }

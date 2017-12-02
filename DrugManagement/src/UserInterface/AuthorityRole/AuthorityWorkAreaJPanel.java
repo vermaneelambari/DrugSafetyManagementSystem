@@ -7,9 +7,11 @@ package UserInterface.AuthorityRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.AuthorityOrganization;
 import Business.Organization.Organization;
 import Business.Organization.PharmaOrganization;
+import Business.Organization.PreClinicalTrialOrganization;
 import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
@@ -30,14 +32,14 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
     UserAccount account;
     Organization organization;
     Enterprise enterprise;
-    EcoSystem business;
-    public AuthorityWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    EcoSystem system;
+    public AuthorityWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = (AuthorityOrganization)organization;
         this.enterprise = enterprise;
-        this.business = business;
+        this.system = system;
         enterPrText.setText(enterprise.getName());
         orgText.setText(organization.getName());
         empNameTxt.setText(account.getEmployee().getName());
@@ -146,8 +148,22 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         if (status.equals("Sent to FDA for Initial Approval")) {
             r.setReceiver(r.getSender());
-            r.setStatus("Approved drug fot Initial Test");
+            r.setStatus("Approved drug for Initial Test");
             r.setSender(account);
+            Organization org = null;
+        for (Network n : system.getNetworkList()) {
+            for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
+                for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof PreClinicalTrialOrganization) {
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+        }
+        if (org != null) {
+            org.getRequestList().getRequestList().add(r);
+        }
             populateTable();
         } else {
             JOptionPane.showMessageDialog(null, "Already approved");

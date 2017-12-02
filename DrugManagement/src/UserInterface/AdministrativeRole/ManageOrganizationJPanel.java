@@ -147,7 +147,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-        Type type = (Type) organizationJComboBox.getSelectedItem();
+            Type type = (Type) organizationJComboBox.getSelectedItem();
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         int count = model.getRowCount();
         String orgName;
