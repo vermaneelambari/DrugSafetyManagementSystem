@@ -272,8 +272,8 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
         }
         else 
          {
-          
-          Person p = 
+          String name = TxtSearch.getText();
+          Person p = system.getPersonDirectory().searchPerson(name);
           SearchPersonJPanel spjp = new SearchPersonJPanel(userProcessContainer, p);
           userProcessContainer.add("SearchPersonJPanel", spjp);
           CardLayout layout = (CardLayout) userProcessContainer.getLayout();
