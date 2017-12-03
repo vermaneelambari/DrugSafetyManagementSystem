@@ -191,7 +191,7 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         if (status.equals("Pre Clinical Trial Completed")) {
             AuthorityCheckRequestJPanel muajp = new AuthorityCheckRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
-                userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
+                userProcessContainer.add("AuthorityCheckRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
         }

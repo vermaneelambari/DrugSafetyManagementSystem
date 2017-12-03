@@ -134,6 +134,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
 
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -432,6 +433,14 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jLabel8.setText("13.");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 20, -1));
 
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, -1, -1));
+
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
 
@@ -477,7 +486,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         boolean[] noValue = {no1.isSelected(), no2.isSelected(), no3.isSelected(), no4.isSelected(), no5.isSelected(), false, false, no8.isSelected(), no9.isSelected(), no10.isSelected(), no11.isSelected(), no12.isSelected(), false};
         String[] comboValues = {"", "", "", "", "", (String) effectsCombo6.getSelectedItem(), (String) effectsCombo6.getSelectedItem(), "", "", "", "", "", (String) effectsCombo6.getSelectedItem()};
         int[] percValues = {0, 0, 0, 0, 0, effectPercValue6, effect2PercValue7, 0, 0, 0, 0, 0, effect3PercValue13};
-        ClinicalReport clinicalReport = system.getClinicalReportDirectory().addClinicalReport();
+        ClinicalReport clinicalReport = request.getClinicalReportDirectory().addClinicalReport();
         int finalValue = 0;
         ArrayList<String> que = new ArrayList();
         ArrayList<String> val = new ArrayList();
@@ -557,11 +566,22 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         clinicalReport.setQuestion(que);
         clinicalReport.setReportValue(val);
         clinicalReport.setFinalReportValue(finalValue);
+        JOptionPane.showMessageDialog(null, "Request completed");
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_compResultJpanelActionPerformed
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageTxtField;
+    private javax.swing.JButton backJButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup10;
     private javax.swing.ButtonGroup buttonGroup2;

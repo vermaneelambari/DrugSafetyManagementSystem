@@ -30,6 +30,7 @@ public abstract class Request {
     private ClinicalReportDirectory clinicalReportDirectory; 
     private Person person;
     private float interpretationScore;
+    
 
     public float getInterpretationScore() {
         return interpretationScore;
@@ -73,6 +74,7 @@ public abstract class Request {
     
     public Request(){
         requestDate = new Date();
+        clinicalReportDirectory = new ClinicalReportDirectory();
     }
 
     public String getResult() {
