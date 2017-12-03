@@ -6,6 +6,7 @@
 package Business.Request;
 
 import Business.ClinicalReport.ClinicalReport;
+import Business.ClinicalReport.ClinicalReportDirectory;
 import Business.Disease.Disease;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
@@ -26,15 +27,24 @@ public abstract class Request {
     private String result;
     private Disease disease;
     private Vaccine vaccine;
-    private ClinicalReport clinicalReport;
+    private ClinicalReportDirectory clinicalReportDirectory; 
     private Person person;
+    private float interpretationScore;
 
-    public ClinicalReport getClinicalReport() {
-        return clinicalReport;
+    public float getInterpretationScore() {
+        return interpretationScore;
     }
 
-    public void setClinicalReport(ClinicalReport clinicalReport) {
-        this.clinicalReport = clinicalReport;
+    public void setInterpretationScore(float interpretationScore) {
+        this.interpretationScore = interpretationScore;
+    }
+
+    public ClinicalReportDirectory getClinicalReportDirectory() {
+        return clinicalReportDirectory;
+    }
+
+    public void setClinicalReportDirectory(ClinicalReportDirectory clinicalReportDirectory) {
+        this.clinicalReportDirectory = clinicalReportDirectory;
     }
 
     public Person getPerson() {

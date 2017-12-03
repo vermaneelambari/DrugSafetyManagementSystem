@@ -10,7 +10,9 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Person.Person;
+import Business.Request.Request;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -30,8 +32,9 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Person person;
+    Request request;
 
-    PreClinicalTrialProcessJpanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Person person) {
+    PreClinicalTrialProcessJpanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Person person, Request request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -39,6 +42,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.person = person;
+        this.request = request;
         nameTxtField.setText(person.getName());
         ageTxtField.setText(String.valueOf(person.getAge()));
         diseaseTxtField.setText(person.getDisease());
@@ -463,12 +467,16 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter integer value for " + txt13.getText());
             return;
         }
+        if(effect3PercValue13 > 100 || effect2PercValue7 > 100 || effectPercValue6 > 100){
+            JOptionPane.showMessageDialog(null, "Please enter Percentage values less than 100");
+            return;
+        }
         String[] txtValue = {txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt7.getText(), txt8.getText(), txt9.getText(), txt10.getText(), txt11.getText(), txt12.getText(), txt13.getText()};
         boolean[] yesValue = {yes1.isSelected(), yes2.isSelected(), yes3.isSelected(), yes4.isSelected(), yes5.isSelected(), false, false, yes8.isSelected(), yes9.isSelected(), yes10.isSelected(), yes11.isSelected(), yes12.isSelected(), false};
         boolean[] noValue = {no1.isSelected(), no2.isSelected(), no3.isSelected(), no4.isSelected(), no5.isSelected(), false, false, no8.isSelected(), no9.isSelected(), no10.isSelected(), no11.isSelected(), no12.isSelected(), false};
         String[] comboValues = {"", "", "", "", "", (String) effectsCombo6.getSelectedItem(), (String) effectsCombo6.getSelectedItem(), "", "", "", "", "", (String) effectsCombo6.getSelectedItem()};
         int[] percValues = {0, 0, 0, 0, 0, effectPercValue6, effect2PercValue7, 0, 0, 0, 0, 0, effect3PercValue13};
-        ClinicalReport clinicalReport = new ClinicalReport();
+        ClinicalReport clinicalReport = system.getClinicalReportDirectory().addClinicalReport();
         int finalValue = 0;
         ArrayList<String> que = new ArrayList();
         ArrayList<String> val = new ArrayList();
@@ -548,6 +556,18 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         clinicalReport.setQuestion(que);
         clinicalReport.setReportValue(val);
         clinicalReport.setFinalReportValue(finalValue);
+        float score = 0;
+        if(request.getClinicalReportDirectory()!=null){
+            for(ClinicalReport c:request.getClinicalReportDirectory().getClinicalReportDirectory()){
+                score = score+ c.getFinalReportValue();
+            }
+        }
+        request.setInterpretationScore(score/request.getClinicalReportDirectory().getClinicalReportDirectory().size());
+        request.setStatus("Pre Clinical Trial Completed");
+        PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system,request);
+                userProcessContainer.add("PharmaRequestJPanel", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
     }//GEN-LAST:event_compResultJpanelActionPerformed
 
 

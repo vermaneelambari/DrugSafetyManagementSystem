@@ -4,6 +4,7 @@
  */
 package Business.Organization;
 
+import Business.ClinicalReport.ClinicalReportDirectory;
 import Business.Disease.DiseaseCatalog;
 import Business.Employee.EmployeeDirectory;
 import Business.Person.PersonDirectory;
@@ -25,6 +26,7 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     private PersonDirectory personDirectory;
     private DiseaseCatalog diseaseCatalog;
+    private ClinicalReportDirectory clinicalReportDirectory;
 
     public DiseaseCatalog getDiseaseCatalog() {
         return diseaseCatalog;
@@ -52,6 +54,7 @@ public abstract class Organization {
         userAccountDirectory = new UserAccountDirectory();
         diseaseCatalog = new DiseaseCatalog();
         personDirectory = new PersonDirectory();
+        clinicalReportDirectory = new ClinicalReportDirectory();
     }
 
     public abstract ArrayList<Role> getSupportedRole();
@@ -87,6 +90,14 @@ public abstract class Organization {
 
     public void setRequestList(RequestList requestList) {
         this.requestList = requestList;
+    }
+
+    public ClinicalReportDirectory getClinicalReportDirectory() {
+        return clinicalReportDirectory;
+    }
+
+    public void setClinicalReportDirectory(ClinicalReportDirectory clinicalReportDirectory) {
+        this.clinicalReportDirectory = clinicalReportDirectory;
     }
 
    

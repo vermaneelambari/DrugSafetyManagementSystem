@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Person.Person;
+import Business.Request.Request;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.DefaultCellEditor;
@@ -31,13 +32,15 @@ public class PreClinicalTrialSelectPersonJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    PreClinicalTrialSelectPersonJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
+    Request request;
+    PreClinicalTrialSelectPersonJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Request request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = organization;
         this.enterprise = enterprise;
         this.system = system;
+        this.request = request;
         populatePersonTable();
     }
     
@@ -50,7 +53,6 @@ public class PreClinicalTrialSelectPersonJPanel extends javax.swing.JPanel {
             row[0] = person;
             row[1] = person.getAge();
             row[2] = person.getDisease();
-            disTypComb.removeAllItems();
             dtm.addRow(row);
         }  
     }
@@ -116,8 +118,12 @@ public class PreClinicalTrialSelectPersonJPanel extends javax.swing.JPanel {
             return;
         }
         Person person = (Person) tblPreClinical.getValueAt(selectedRow, 0);
-        PreClinicalTrialProcessJpanel muajp = new PreClinicalTrialProcessJpanel(userProcessContainer, account, organization, enterprise, system, person);
-                userProcessContainer.add("PharmaRequestJPanel", muajp);
+        if(!person.getDisease().equals(request.getDisease())){
+            JOptionPane.showMessageDialog(null, "Selected person has different disease with respect to request sent by pharma");
+            return;
+        }
+        PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, person,request);
+                userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_selectPersonActionPerformed

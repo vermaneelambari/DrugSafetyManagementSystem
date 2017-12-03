@@ -69,7 +69,6 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         approveBtn = new javax.swing.JButton();
@@ -79,8 +78,6 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         enterPrText = new javax.swing.JLabel();
         enterpriseLabel3 = new javax.swing.JLabel();
         orgText = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -139,13 +136,6 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
 
         orgText.setText("<value>");
         add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
-
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("jRadioButton1");
-        add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
-
-        jRadioButton2.setText("jRadioButton2");
-        add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
@@ -155,44 +145,27 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
             return;
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
-        WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
-        //if (status.equals("Approved drug for Initial Test")) {
-            PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system);
-                userProcessContainer.add("PharmaRequestJPanel", muajp);
+        WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        if (status.equals("Approved drug for Initial Test")) {
+            PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system,request);
+                userProcessContainer.add("PreClinicalTrialSelectPersonJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
-            /*Organization org = null;
-            for (Network n : system.getNetworkList()) {
-                for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
-                    for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
-                        if (organization instanceof PreClinicalTrialOrganization) {
-                            org = organization;
-                            break;
-                        }
-                    }
-                }
-            }
-            if (org != null) {
-                org.getRequestList().getRequestList().add(r);
-            }*/
             populateTable();
-        //} else {
-         //   JOptionPane.showMessageDialog(null, "Already approved");
-        //    return;
-        //}
+        } else {
+            JOptionPane.showMessageDialog(null, "Already approved");
+            return;
+        }
     }//GEN-LAST:event_approveBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton approveBtn;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel empNameTxt;
     private javax.swing.JLabel enterPrText;
     private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JLabel enterpriseLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel orgText;
     private javax.swing.JTable workRequestJTable;
