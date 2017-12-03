@@ -20,7 +20,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form UpdateJPanel
      */
-     JPanel userProcessContainer;
+    JPanel userProcessContainer;
     Person person;
     
 
