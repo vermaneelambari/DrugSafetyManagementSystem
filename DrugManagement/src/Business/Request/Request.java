@@ -5,7 +5,9 @@
  */
 package Business.Request;
 
+import Business.Disease.Disease;
 import Business.UserAccount.UserAccount;
+import Business.Vaccine.Vaccine;
 import java.util.Date;
 
 /**
@@ -20,6 +22,24 @@ public abstract class Request {
     private Date requestDate;
     private Date resolveDate;
     private String result;
+    private Disease disease;
+    private Vaccine vaccine;
+
+    public Disease getDisease() {
+        return disease;
+    }
+
+    public void setDisease(Disease disease) {
+        this.disease = disease;
+    }
+
+    public Vaccine getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
     
     public Request(){
         requestDate = new Date();

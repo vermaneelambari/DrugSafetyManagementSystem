@@ -161,7 +161,9 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBtnActionPerformed
-                PharmaRequestJPanel muajp = new PharmaRequestJPanel(userProcessContainer, account, clinicOrganization, enterprise, system);
+        Disease disease = account.getEmployee().getDisease();
+        Vaccine vaccine = account.getEmployee().getVaccine();
+        PharmaRequestJPanel muajp = new PharmaRequestJPanel(userProcessContainer, account, clinicOrganization, enterprise, system,disease,vaccine);
                 userProcessContainer.add("PharmaRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
