@@ -273,7 +273,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
         else 
          {
           
-        //  Person p = 
+          Person p = 
           SearchPersonJPanel spjp = new SearchPersonJPanel(userProcessContainer, p);
           userProcessContainer.add("SearchPersonJPanel", spjp);
           CardLayout layout = (CardLayout) userProcessContainer.getLayout();
