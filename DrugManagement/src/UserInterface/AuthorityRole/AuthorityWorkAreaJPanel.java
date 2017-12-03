@@ -106,7 +106,7 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 730, 130));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 840, 130));
 
         approveBtn.setText("Approve");
         approveBtn.addActionListener(new java.awt.event.ActionListener() {

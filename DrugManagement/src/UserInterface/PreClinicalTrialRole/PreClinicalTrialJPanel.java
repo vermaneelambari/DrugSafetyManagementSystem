@@ -39,6 +39,9 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         this.organization = (PreClinicalTrialOrganization)organization;
         this.enterprise = enterprise;
         this.system = system;
+        enterPrText.setText(enterprise.getName());
+        orgText.setText(organization.getName());
+        empNameTxt.setText(account.getEmployee().getName());
         populateTable();
     }
     
@@ -142,14 +145,11 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
-        if (status.equals("Approved drug for Initial Test")) {
+        //if (status.equals("Approved drug for Initial Test")) {
             PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system);
                 userProcessContainer.add("PharmaRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
-            r.setReceiver(r.getSender());
-            r.setStatus("Approved drug for Final Test");
-            r.setSender(account);
             /*Organization org = null;
             for (Network n : system.getNetworkList()) {
                 for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
@@ -165,10 +165,10 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
                 org.getRequestList().getRequestList().add(r);
             }*/
             populateTable();
-        } else {
-            JOptionPane.showMessageDialog(null, "Already approved");
-            return;
-        }
+        //} else {
+         //   JOptionPane.showMessageDialog(null, "Already approved");
+        //    return;
+        //}
     }//GEN-LAST:event_approveBtnActionPerformed
 
 

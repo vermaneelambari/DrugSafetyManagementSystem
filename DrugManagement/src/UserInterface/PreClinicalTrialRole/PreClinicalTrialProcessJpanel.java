@@ -5,6 +5,13 @@
  */
 package UserInterface.PreClinicalTrialRole;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Person.Person;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Sumanth
@@ -14,8 +21,30 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     /**
      * Creates new form PreClinicalTrialProcessJpanel
      */
-    public PreClinicalTrialProcessJpanel() {
-        initComponents();
+    JPanel userProcessContainer;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
+    EcoSystem system;
+    Person person;
+    PreClinicalTrialProcessJpanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Person person) {
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.system = system;
+        this.person = person;
+        nameTxtField.setText(person.getName());
+        ageTxtField.setText(String.valueOf(person.getAge()));
+        diseaseTxtField.setText(person.getDisease());
+        populateEffectsOfDisease();
+    }
+    
+    void populateEffectsOfDisease(){
+        effectsCombo.removeAllItems();
+        for(String s:person.getDiseaseList()){
+            effectsCombo.addItem(s);
+        }
     }
 
     /**
@@ -27,19 +56,60 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        nameTxtField = new javax.swing.JTextField();
+        ageTxtField = new javax.swing.JTextField();
+        diseaseTxtField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        effectsCombo = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Name");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 68, 26));
+
+        jLabel2.setText("Age");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 68, 26));
+
+        jLabel3.setText("Disease");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 68, 26));
+        add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 140, -1));
+
+        ageTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageTxtFieldActionPerformed(evt);
+            }
+        });
+        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 140, -1));
+        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 140, -1));
+
+        jLabel4.setText("Effects of Disease");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, 26));
+
+        add(effectsCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 140, -1));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setText("Pre-Clinical Trial Process");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 350, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ageTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageTxtFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ageTxtField;
+    private javax.swing.JTextField diseaseTxtField;
+    private javax.swing.JComboBox<String> effectsCombo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField nameTxtField;
     // End of variables declaration//GEN-END:variables
 }
