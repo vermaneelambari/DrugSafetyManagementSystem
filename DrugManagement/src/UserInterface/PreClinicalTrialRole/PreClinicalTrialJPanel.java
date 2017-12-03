@@ -13,6 +13,7 @@ import Business.Organization.PreClinicalTrialOrganization;
 import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -103,13 +104,13 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 730, 130));
 
-        approveBtn.setText("Approve");
+        approveBtn.setText("Process Request");
         approveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveBtnActionPerformed(evt);
             }
         });
-        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 140, 40));
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 150, 40));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Employee Name:");
@@ -142,6 +143,10 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         if (status.equals("Approved drug for Initial Test")) {
+            PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system);
+                userProcessContainer.add("PharmaRequestJPanel", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
             r.setReceiver(r.getSender());
             r.setStatus("Approved drug for Final Test");
             r.setSender(account);

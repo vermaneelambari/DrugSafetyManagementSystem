@@ -153,9 +153,9 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
             Organization org = null;
         for (Network n : system.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
-                for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
-                    if (organization instanceof PreClinicalTrialOrganization) {
-                        org = organization;
+                for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
+                    if (o instanceof PreClinicalTrialOrganization) {
+                        org = o;
                         break;
                     }
                 }

@@ -35,14 +35,18 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     Organization clinicOrganization;
     EcoSystem system;
+    Disease disease;
+    Vaccine vaccine;
 
-    public PharmaRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system) {
+    public PharmaRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system, Disease disease, Vaccine vaccine) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.enterprise = enterprise;
         this.system = system;
         this.clinicOrganization = clinicOrganization;
+        this.disease = disease;
+        this.vaccine = vaccine;
     }
 
     /**
@@ -94,6 +98,8 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         request.setSender(account);
         request.setStatus("Sent to FDA for Initial Approval");
         request.setResult("Waiting");
+        request.setDisease(disease);
+        request.setVaccine(vaccine);
         Organization org = null;
         for (Network n : system.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
