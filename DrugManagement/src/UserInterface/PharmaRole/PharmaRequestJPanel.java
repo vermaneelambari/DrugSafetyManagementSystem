@@ -62,12 +62,13 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         messageJTextField = new javax.swing.JTextField();
         requestTestJButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Message");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 40, -1, -1));
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 37, 89, -1));
+        jLabel1.setText("Message:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 320, -1));
 
         requestTestJButton.setText("Request for Approval of Drug");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +76,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 200, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 300, -1));
 
         backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +84,11 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 138, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setText("Pharma Request Work Area");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 490, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -134,6 +139,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     // End of variables declaration//GEN-END:variables
