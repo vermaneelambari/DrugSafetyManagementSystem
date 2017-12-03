@@ -49,10 +49,10 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 130, 30));
+        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 30));
 
         jLabel1.setText("User Name:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 73, 90, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 90, 30));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 203, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 209, 100, 40));
 
         addBtn.setText("Update");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -68,11 +68,11 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 133, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 90, 40));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Update User");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 190, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 190, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
