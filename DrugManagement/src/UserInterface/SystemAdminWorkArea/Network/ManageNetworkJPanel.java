@@ -7,6 +7,7 @@ package UserInterface.SystemAdminWorkArea.Network;
 import Business.EcoSystem;
 import Business.Network.Network;
 import UserInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
+import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -110,6 +111,17 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 253, -1, -1));
+
+        nameJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameJTextFieldActionPerformed(evt);
+            }
+        });
+        nameJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nameJTextFieldKeyPressed(evt);
+            }
+        });
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 254, 93, -1));
 
         backJButton.setText("<< Back");
@@ -194,6 +206,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Network deleted successfully");
         populateNetworkTable();
     }//GEN-LAST:event_delBtnActionPerformed
+
+    private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
+        // TODO add your handling code here:
+    
+    }//GEN-LAST:event_nameJTextFieldActionPerformed
+
+    private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
+        // TODO add your handling code here:
+         if(!(Character.isLetter(evt.getKeyChar()))){
+                evt.consume();
+                JOptionPane.showMessageDialog(null, "Enter letters only");
+            }
+    }//GEN-LAST:event_nameJTextFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

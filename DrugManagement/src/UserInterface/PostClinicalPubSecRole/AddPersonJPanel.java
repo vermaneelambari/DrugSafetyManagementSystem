@@ -64,6 +64,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         cancelJbutton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -77,15 +78,15 @@ public class AddPersonJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Disease");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 68, 26));
-        add(NameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 50, -1));
+        add(NameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 140, -1));
 
         ageTxtField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageTxtFieldActionPerformed(evt);
             }
         });
-        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 50, -1));
-        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 50, -1));
+        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 140, -1));
+        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 140, -1));
 
         addJButton.setText("Add");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -98,16 +99,20 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         jLabel4.setText("Effects of Disease");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, 26));
 
-        cancelJbutton.setText("Cancel");
+        cancelJbutton.setText("Back");
         cancelJbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelJbuttonActionPerformed(evt);
             }
         });
-        add(cancelJbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        add(cancelJbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 140, -1));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setText("Add Person ");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -146,6 +151,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
