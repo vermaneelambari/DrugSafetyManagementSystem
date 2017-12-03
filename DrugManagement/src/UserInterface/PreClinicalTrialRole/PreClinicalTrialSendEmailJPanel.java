@@ -5,10 +5,10 @@
  */
 package UserInterface.PreClinicalTrialRole;
 
+import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
-import Business.Person.Person;
 import Business.Request.Request;
 import Business.UserAccount.UserAccount;
 import java.util.Properties;
@@ -37,7 +37,7 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     EcoSystem system;
     Request request;
 
-    PreClinicalTrialSendEmailJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Person person, Request request) {
+    PreClinicalTrialSendEmailJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Request request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -99,6 +99,14 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        float score = 0;
+        if(request.getClinicalReportDirectory()!=null){
+            for(ClinicalReport c:request.getClinicalReportDirectory().getClinicalReportDirectory()){
+                score = score+ c.getFinalReportValue();
+            }
+        }
+        request.setInterpretationScore(score/request.getClinicalReportDirectory().getClinicalReportDirectory().size());
+        request.setStatus("Pre Clinical Trial Completed");
         final String username = "aedexplorers@gmail.com";
 		final String password = "aedexplorers123";
 

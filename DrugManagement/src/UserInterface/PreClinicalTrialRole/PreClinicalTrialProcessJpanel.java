@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
+ * 
  *
  * @author Sumanth
  */
@@ -556,18 +557,6 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         clinicalReport.setQuestion(que);
         clinicalReport.setReportValue(val);
         clinicalReport.setFinalReportValue(finalValue);
-        float score = 0;
-        if(request.getClinicalReportDirectory()!=null){
-            for(ClinicalReport c:request.getClinicalReportDirectory().getClinicalReportDirectory()){
-                score = score+ c.getFinalReportValue();
-            }
-        }
-        request.setInterpretationScore(score/request.getClinicalReportDirectory().getClinicalReportDirectory().size());
-        request.setStatus("Pre Clinical Trial Completed");
-        PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system,request);
-                userProcessContainer.add("PharmaRequestJPanel", muajp);
-                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
     }//GEN-LAST:event_compResultJpanelActionPerformed
 
 

@@ -118,12 +118,12 @@ public class PreClinicalTrialSelectPersonJPanel extends javax.swing.JPanel {
             return;
         }
         Person person = (Person) tblPreClinical.getValueAt(selectedRow, 0);
-        if(!person.getDisease().equals(request.getDisease())){
+        if(!(person.getDisease().toString().equals(request.getDisease().getdName()))){
             JOptionPane.showMessageDialog(null, "Selected person has different disease with respect to request sent by pharma");
             return;
         }
-        PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, person,request);
-                userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
+        PreClinicalTrialProcessJpanel muajp = new PreClinicalTrialProcessJpanel(userProcessContainer, account, organization, enterprise, system, person,request);
+                userProcessContainer.add("PreClinicalTrialProcessJpanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_selectPersonActionPerformed

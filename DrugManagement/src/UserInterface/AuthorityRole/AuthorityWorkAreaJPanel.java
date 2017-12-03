@@ -15,6 +15,7 @@ import Business.Organization.PreClinicalTrialOrganization;
 import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -78,6 +79,7 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         enterPrText = new javax.swing.JLabel();
         enterpriseLabel3 = new javax.swing.JLabel();
         orgText = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -114,7 +116,7 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
                 approveBtnActionPerformed(evt);
             }
         });
-        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 140, 40));
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 140, 40));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Employee Name:");
@@ -136,6 +138,14 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
 
         orgText.setText("<value>");
         add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
+
+        jButton1.setText("Check Request");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 293, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
@@ -171,6 +181,22 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_approveBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int selectedRow = workRequestJTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please Select Any Row");
+            return;
+        }
+        String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
+        WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        if (status.equals("Pre Clinical Trial Completed")) {
+            AuthorityCheckRequestJPanel muajp = new AuthorityCheckRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
+                userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton approveBtn;
@@ -179,6 +205,7 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JLabel enterpriseLabel3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel orgText;
     private javax.swing.JTable workRequestJTable;
