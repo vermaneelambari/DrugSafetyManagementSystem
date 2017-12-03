@@ -5,8 +5,12 @@
  */
 package UserInterface.PreClinicalPubSecRole;
 
+import Business.EcoSystem;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -20,12 +24,28 @@ public class UpdateJPanel extends javax.swing.JPanel {
      */
     
     JPanel userProcessContainer;
+    Person person;
 
-    public UpdateJPanel() {
-        initComponents();
+    UpdateJPanel(JPanel userProcessContainer, Person person) {
+          initComponents();
         this.userProcessContainer = userProcessContainer;
-
+        this.person = person;
+        
+        populatePersonDetails();
+        btnSave.setEnabled(false);
+        btnUpdate.setEnabled(true);
     }
+    
+    private void populatePersonDetails(){
+        
+        txtName.setText(person.getName());
+        txtAge.setText(String.valueOf(person.getAge()));
+        txtDisease.setText(person.getDisease());
+ 
+        
+    }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,8 +56,8 @@ public class UpdateJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backJButton2 = new javax.swing.JButton();
-        addBtn = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -45,18 +65,19 @@ public class UpdateJPanel extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         txtAge = new javax.swing.JTextField();
         txtDisease = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
 
-        backJButton2.setText("<< Back");
-        backJButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButton2ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        addBtn.setText("Update");
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
 
@@ -71,6 +92,13 @@ public class UpdateJPanel extends javax.swing.JPanel {
 
         txtName.setEnabled(false);
 
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,9 +112,11 @@ public class UpdateJPanel extends javax.swing.JPanel {
                         .addGap(69, 69, 69)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(backJButton2)
-                                .addGap(159, 159, 159)
-                                .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(114, 114, 114)
+                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel4)
@@ -97,7 +127,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
                                     .addComponent(txtName)
                                     .addComponent(txtAge)
                                     .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,13 +148,14 @@ public class UpdateJPanel extends javax.swing.JPanel {
                     .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backJButton2))
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(314, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backJButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton2ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
@@ -133,18 +164,40 @@ public class UpdateJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
         
-    }//GEN-LAST:event_backJButton2ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
        
-    }//GEN-LAST:event_addBtnActionPerformed
+        btnUpdate.setEnabled(true);
+        btnSave.setEnabled(true);
+
+        txtDisease.setEnabled(true);
+        txtAge.setEnabled(true);
+        txtDisease.setEnabled(true);
+
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        
+        person.setName(txtName.getText());
+        person.setDisease(txtDisease.getText());
+        person.setAge(Integer.parseInt(txtAge.getText()));
+        
+       
+        btnSave.setEnabled(false);
+        btnUpdate.setEnabled(true);
+        JOptionPane.showMessageDialog(null, "Person Updated Successfully.");
+        
+        
+      
+    }//GEN-LAST:event_btnSaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBtn;
-    private javax.swing.JButton backJButton;
-    private javax.swing.JButton backJButton1;
-    private javax.swing.JButton backJButton2;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
