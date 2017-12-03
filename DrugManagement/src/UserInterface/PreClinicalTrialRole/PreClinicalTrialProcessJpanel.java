@@ -5,11 +5,14 @@
  */
 package UserInterface.PreClinicalTrialRole;
 
+import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -27,7 +30,9 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Person person;
+
     PreClinicalTrialProcessJpanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Person person) {
+        initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = organization;
@@ -37,14 +42,9 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         nameTxtField.setText(person.getName());
         ageTxtField.setText(String.valueOf(person.getAge()));
         diseaseTxtField.setText(person.getDisease());
-        populateEffectsOfDisease();
-    }
-    
-    void populateEffectsOfDisease(){
-        effectsCombo.removeAllItems();
-        for(String s:person.getDiseaseList()){
-            effectsCombo.addItem(s);
-        }
+        txt6.setText(person.getDiseaseList().get(0));
+        txt7.setText(person.getDiseaseList().get(1));
+        txt13.setText(person.getDiseaseList().get(2));
     }
 
     /**
@@ -56,60 +56,574 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
+        buttonGroup8 = new javax.swing.ButtonGroup();
+        buttonGroup9 = new javax.swing.ButtonGroup();
+        buttonGroup10 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         nameTxtField = new javax.swing.JTextField();
         ageTxtField = new javax.swing.JTextField();
         diseaseTxtField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        effectsCombo = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt5 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txt3 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txt2 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txt12 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txt4 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txt1 = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        txt8 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txt9 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        txt10 = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        txt11 = new javax.swing.JTextArea();
+        yes1 = new javax.swing.JRadioButton();
+        no1 = new javax.swing.JRadioButton();
+        yes2 = new javax.swing.JRadioButton();
+        no2 = new javax.swing.JRadioButton();
+        yes3 = new javax.swing.JRadioButton();
+        no3 = new javax.swing.JRadioButton();
+        yes4 = new javax.swing.JRadioButton();
+        no4 = new javax.swing.JRadioButton();
+        yes5 = new javax.swing.JRadioButton();
+        no5 = new javax.swing.JRadioButton();
+        yes8 = new javax.swing.JRadioButton();
+        no8 = new javax.swing.JRadioButton();
+        yes9 = new javax.swing.JRadioButton();
+        no9 = new javax.swing.JRadioButton();
+        yes10 = new javax.swing.JRadioButton();
+        no10 = new javax.swing.JRadioButton();
+        yes11 = new javax.swing.JRadioButton();
+        no11 = new javax.swing.JRadioButton();
+        yes12 = new javax.swing.JRadioButton();
+        no12 = new javax.swing.JRadioButton();
+        txt7 = new javax.swing.JLabel();
+        txt13 = new javax.swing.JLabel();
+        effectsCombo7 = new javax.swing.JComboBox<>();
+        effectsCombo13 = new javax.swing.JComboBox<>();
+        effectsCombo6 = new javax.swing.JComboBox<>();
+        effectPercTxt13 = new javax.swing.JTextField();
+        txt6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        effectPercTxt7 = new javax.swing.JTextField();
+        effectPercTxt6 = new javax.swing.JTextField();
+        compResultJpanel = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
+        setAutoscrolls(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 68, 26));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 68, 26));
 
         jLabel2.setText("Age");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 68, 26));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 68, 26));
 
         jLabel3.setText("Disease");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 68, 26));
-        add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 140, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 68, 26));
+        add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 140, -1));
 
         ageTxtField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageTxtFieldActionPerformed(evt);
             }
         });
-        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 140, -1));
-        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 140, -1));
-
-        jLabel4.setText("Effects of Disease");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, 26));
-
-        add(effectsCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 140, -1));
+        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 140, -1));
+        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel5.setText("Pre-Clinical Trial Process");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 350, -1));
+        jLabel5.setText("Pre Clinical Trial Process Panel");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 380, -1));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt5.setBackground(new java.awt.Color(204, 204, 255));
+        txt5.setColumns(20);
+        txt5.setRows(5);
+        txt5.setText("5. Are there alternative causes (other than the drug) \nthat could on their own have caused the reaction?\n");
+        txt5.setAutoscrolls(false);
+        txt5.setEnabled(false);
+        txt5.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane1.setViewportView(txt5);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 400, 70));
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt3.setBackground(new java.awt.Color(204, 204, 255));
+        txt3.setColumns(20);
+        txt3.setRows(5);
+        txt3.setText("3. Did the adverse reaction improve when the \ndrug was discontinued or a specific \nantagonist was administered? ");
+        txt3.setAutoscrolls(false);
+        txt3.setEnabled(false);
+        txt3.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane2.setViewportView(txt3);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 400, 70));
+
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt2.setBackground(new java.awt.Color(204, 204, 255));
+        txt2.setColumns(20);
+        txt2.setRows(5);
+        txt2.setText("2. Did the adverse event appear after the suspected drug \nwas administered?\n");
+        txt2.setAutoscrolls(false);
+        txt2.setEnabled(false);
+        txt2.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane3.setViewportView(txt2);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 400, 70));
+
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt12.setBackground(new java.awt.Color(204, 204, 255));
+        txt12.setColumns(20);
+        txt12.setRows(5);
+        txt12.setText("12. Was the adverse event \nconfirmed by any objective evidence?\n");
+        txt12.setAutoscrolls(false);
+        txt12.setEnabled(false);
+        txt12.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane4.setViewportView(txt12);
+
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 360, 70));
+
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt4.setBackground(new java.awt.Color(204, 204, 255));
+        txt4.setColumns(20);
+        txt4.setRows(5);
+        txt4.setText("4. Did the adverse reaction reappear when the drug \nwas readministered?\n");
+        txt4.setAutoscrolls(false);
+        txt4.setEnabled(false);
+        txt4.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane5.setViewportView(txt4);
+
+        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 400, 70));
+
+        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt1.setBackground(new java.awt.Color(204, 204, 255));
+        txt1.setColumns(20);
+        txt1.setRows(5);
+        txt1.setText("1. Are there previous conclusive reports on this reaction?\n");
+        txt1.setAutoscrolls(false);
+        txt1.setEnabled(false);
+        txt1.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane6.setViewportView(txt1);
+
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 400, 70));
+
+        jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt8.setBackground(new java.awt.Color(204, 204, 255));
+        txt8.setColumns(20);
+        txt8.setRows(5);
+        txt8.setText("8. Did the reaction reappear \nwhen a placebo was given?\n");
+        txt8.setAutoscrolls(false);
+        txt8.setEnabled(false);
+        txt8.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane7.setViewportView(txt8);
+
+        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 360, 70));
+
+        jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt9.setBackground(new java.awt.Color(204, 204, 255));
+        txt9.setColumns(20);
+        txt9.setRows(5);
+        txt9.setText("9. Was the drug detected \nin the blood (or other fluids) \nin concentrations known to be toxic?\n");
+        txt9.setAutoscrolls(false);
+        txt9.setEnabled(false);
+        txt9.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane8.setViewportView(txt9);
+
+        add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 360, 70));
+
+        jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt10.setBackground(new java.awt.Color(204, 204, 255));
+        txt10.setColumns(20);
+        txt10.setRows(5);
+        txt10.setText("10. Was the reaction more severe \nwhen the dose was increased, \nor less severe when the dose was decreased?\n");
+        txt10.setAutoscrolls(false);
+        txt10.setEnabled(false);
+        txt10.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane9.setViewportView(txt10);
+
+        add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 360, 70));
+
+        jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt11.setBackground(new java.awt.Color(204, 204, 255));
+        txt11.setColumns(20);
+        txt11.setRows(5);
+        txt11.setText("11. Did the patient have a similar \nreaction to the same or similar drugs \nin any previous exposure?\n");
+        txt11.setAutoscrolls(false);
+        txt11.setEnabled(false);
+        txt11.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane10.setViewportView(txt11);
+
+        add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 360, 70));
+
+        buttonGroup1.add(yes1);
+        yes1.setText("Yes");
+        add(yes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 80, -1));
+
+        buttonGroup1.add(no1);
+        no1.setSelected(true);
+        no1.setText("No");
+        add(no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 80, -1));
+
+        buttonGroup2.add(yes2);
+        yes2.setText("Yes");
+        add(yes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 80, -1));
+
+        buttonGroup2.add(no2);
+        no2.setSelected(true);
+        no2.setText("No");
+        add(no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 80, -1));
+
+        buttonGroup3.add(yes3);
+        yes3.setText("Yes");
+        add(yes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 80, -1));
+
+        buttonGroup3.add(no3);
+        no3.setSelected(true);
+        no3.setText("No");
+        add(no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
+
+        buttonGroup4.add(yes4);
+        yes4.setText("Yes");
+        add(yes4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 80, 30));
+
+        buttonGroup4.add(no4);
+        no4.setSelected(true);
+        no4.setText("No");
+        add(no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 80, 30));
+
+        buttonGroup5.add(yes5);
+        yes5.setText("Yes");
+        add(yes5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 80, -1));
+
+        buttonGroup5.add(no5);
+        no5.setSelected(true);
+        no5.setText("No");
+        add(no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 80, -1));
+
+        buttonGroup6.add(yes8);
+        yes8.setText("Yes");
+        add(yes8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 100, 80, -1));
+
+        buttonGroup6.add(no8);
+        no8.setSelected(true);
+        no8.setText("No");
+        add(no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 130, 80, -1));
+
+        buttonGroup7.add(yes9);
+        yes9.setText("Yes");
+        add(yes9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 160, 80, -1));
+
+        buttonGroup7.add(no9);
+        no9.setSelected(true);
+        no9.setText("No");
+        add(no9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 190, 80, -1));
+
+        buttonGroup8.add(yes10);
+        yes10.setText("Yes");
+        add(yes10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 240, 80, -1));
+
+        buttonGroup8.add(no10);
+        no10.setSelected(true);
+        no10.setText("No");
+        add(no10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 270, 80, -1));
+
+        buttonGroup9.add(yes11);
+        yes11.setText("Yes");
+        add(yes11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 310, 80, -1));
+
+        buttonGroup9.add(no11);
+        no11.setSelected(true);
+        no11.setText("No");
+        add(no11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 340, 80, -1));
+
+        buttonGroup10.add(yes12);
+        yes12.setText("Yes");
+        add(yes12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 370, 80, -1));
+
+        buttonGroup10.add(no12);
+        no12.setSelected(true);
+        no12.setText("No");
+        add(no12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 400, 80, -1));
+        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 90, 40));
+        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, 70, 40));
+
+        effectsCombo7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
+        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 100, -1));
+
+        effectsCombo13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
+        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 100, -1));
+
+        effectsCombo6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
+        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 100, -1));
+        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 470, 90, -1));
+        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 90, 40));
+
+        jLabel10.setText("Percentage of Increase/Decrease");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 190, 40));
+
+        jLabel13.setText("Percentage of Increase/Decrease");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 190, 40));
+
+        jLabel14.setText("Percentage of Increase/Decrease");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 190, 40));
+        add(effectPercTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, 90, -1));
+        add(effectPercTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, 90, -1));
+
+        compResultJpanel.setText("Compute Result");
+        compResultJpanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compResultJpanelActionPerformed(evt);
+            }
+        });
+        add(compResultJpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 130, 30));
+
+        jLabel4.setText("7.");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 10, -1));
+
+        jLabel7.setText("6.");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 10, -1));
+
+        jLabel8.setText("13.");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 20, -1));
+
+        getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
 
     private void ageTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ageTxtFieldActionPerformed
 
+    private void compResultJpanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compResultJpanelActionPerformed
+        String effect1Perc = effectPercTxt6.getText();
+        String effect2Perc = effectPercTxt6.getText();
+        String effect3Perc = effectPercTxt6.getText();
+        if (effect1Perc.trim().length() == 0 || effect2Perc.trim().length() == 0 || effect3Perc.trim().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Please enter percentage values for Effects on Person");
+            return;
+        }
+        int effectPercValue6;
+        int effect2PercValue7;
+        int effect3PercValue13;
+        try {
+            effectPercValue6 = Integer.parseInt(effect1Perc);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please enter integer value for " + txt6.getText());
+            return;
+        }
+        try {
+            effect2PercValue7 = Integer.parseInt(effect2Perc);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please enter integer value for " + txt7.getText());
+            return;
+        }
+        try {
+            effect3PercValue13 = Integer.parseInt(effect3Perc);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please enter integer value for " + txt13.getText());
+            return;
+        }
+        String[] txtValue = {txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt7.getText(), txt8.getText(), txt9.getText(), txt10.getText(), txt11.getText(), txt12.getText(), txt13.getText()};
+        boolean[] yesValue = {yes1.isSelected(), yes2.isSelected(), yes3.isSelected(), yes4.isSelected(), yes5.isSelected(), false, false, yes8.isSelected(), yes9.isSelected(), yes10.isSelected(), yes11.isSelected(), yes12.isSelected(), false};
+        boolean[] noValue = {no1.isSelected(), no2.isSelected(), no3.isSelected(), no4.isSelected(), no5.isSelected(), false, false, no8.isSelected(), no9.isSelected(), no10.isSelected(), no11.isSelected(), no12.isSelected(), false};
+        String[] comboValues = {"", "", "", "", "", (String) effectsCombo6.getSelectedItem(), (String) effectsCombo6.getSelectedItem(), "", "", "", "", "", (String) effectsCombo6.getSelectedItem()};
+        int[] percValues = {0, 0, 0, 0, 0, effectPercValue6, effect2PercValue7, 0, 0, 0, 0, 0, effect3PercValue13};
+        ClinicalReport clinicalReport = new ClinicalReport();
+        int finalValue = 0;
+        ArrayList<String> que = new ArrayList();
+        ArrayList<String> val = new ArrayList();
+        for (int i = 0; i < 13; i++) {
+            if (i == 0 || i == 2 || i == 8 || i == 9 || i == 10 || i == 11) {
+                que.add(txtValue[i]);
+                if (yesValue[i]) {
+                    val.add("1");
+                    finalValue = finalValue + 1;
+                } else if (noValue[i]) {
+                    val.add("0");
+                    finalValue = finalValue + 0;
+                }
+            } else if (i == 1 || i == 3) {
+                que.add(txtValue[i]);
+                if (yesValue[i]) {
+                    val.add("2");
+                    finalValue = finalValue + 2;
+                } else if (noValue[i]) {
+                    val.add("-1");
+                    finalValue = finalValue + (-1);
+                }
+            } else if (i == 4) {
+                que.add(txtValue[i]);
+                if (yesValue[i]) {
+                    val.add("-1");
+                    finalValue = finalValue + (-1);
+                } else if (noValue[i]) {
+                    val.add("2");
+                    finalValue = finalValue + 2;
+                }
+            } else if (i == 7) {
+                que.add(txtValue[i]);
+                if (yesValue[i]) {
+                    val.add("-1");
+                    finalValue = finalValue + (-1);
+                } else if (noValue[i]) {
+                    val.add("1");
+                    finalValue = finalValue + (1);
+                }
+            } else if (i == 5 || i == 6 || i == 12) {
+                que.add(txtValue[i]);
+                if (comboValues[i].equals("Increased")) {
+                    if (percValues[i] <= 25) {
+                        val.add("1");
+                        finalValue = finalValue + 1;
+                    } else if (percValues[i] > 25 && percValues[i] <= 50) {
+                        val.add("2");
+                        finalValue = finalValue + 2;
+                    } else if (percValues[i] > 50 && percValues[i] <= 75) {
+                        val.add("3");
+                        finalValue = finalValue + 3;
+                    } else if (percValues[i] > 75) {
+                        val.add("4");
+                        finalValue = finalValue + 4;
+                    }
+                } else if (i == 5 || i == 6 || i == 12) {
+                    que.add(txtValue[i]);
+                    if (comboValues[i].equals("Decreased")) {
+                        if (percValues[i] <= 25) {
+                            val.add("-1");
+                            finalValue = finalValue + (-1);
+                        } else if (percValues[i] > 25 && percValues[i] <= 50) {
+                            val.add("-2");
+                            finalValue = finalValue + (-2);
+                        } else if (percValues[i] > 50 && percValues[i] <= 75) {
+                            val.add("-3");
+                            finalValue = finalValue + (-3);
+                        } else if (percValues[i] > 75) {
+                            val.add("-4");
+                            finalValue = finalValue + (-4);
+                        }
+                    }
+                }
+            }
+        }
+        clinicalReport.setQuestion(que);
+        clinicalReport.setReportValue(val);
+        clinicalReport.setFinalReportValue(finalValue);
+    }//GEN-LAST:event_compResultJpanelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageTxtField;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup10;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
+    private javax.swing.JButton compResultJpanel;
     private javax.swing.JTextField diseaseTxtField;
-    private javax.swing.JComboBox<String> effectsCombo;
+    private javax.swing.JTextField effectPercTxt13;
+    private javax.swing.JTextField effectPercTxt6;
+    private javax.swing.JTextField effectPercTxt7;
+    private javax.swing.JComboBox<String> effectsCombo13;
+    private javax.swing.JComboBox<String> effectsCombo6;
+    private javax.swing.JComboBox<String> effectsCombo7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField nameTxtField;
+    private javax.swing.JRadioButton no1;
+    private javax.swing.JRadioButton no10;
+    private javax.swing.JRadioButton no11;
+    private javax.swing.JRadioButton no12;
+    private javax.swing.JRadioButton no2;
+    private javax.swing.JRadioButton no3;
+    private javax.swing.JRadioButton no4;
+    private javax.swing.JRadioButton no5;
+    private javax.swing.JRadioButton no8;
+    private javax.swing.JRadioButton no9;
+    private javax.swing.JTextArea txt1;
+    private javax.swing.JTextArea txt10;
+    private javax.swing.JTextArea txt11;
+    private javax.swing.JTextArea txt12;
+    private javax.swing.JLabel txt13;
+    private javax.swing.JTextArea txt2;
+    private javax.swing.JTextArea txt3;
+    private javax.swing.JTextArea txt4;
+    private javax.swing.JTextArea txt5;
+    private javax.swing.JLabel txt6;
+    private javax.swing.JLabel txt7;
+    private javax.swing.JTextArea txt8;
+    private javax.swing.JTextArea txt9;
+    private javax.swing.JRadioButton yes1;
+    private javax.swing.JRadioButton yes10;
+    private javax.swing.JRadioButton yes11;
+    private javax.swing.JRadioButton yes12;
+    private javax.swing.JRadioButton yes2;
+    private javax.swing.JRadioButton yes3;
+    private javax.swing.JRadioButton yes4;
+    private javax.swing.JRadioButton yes5;
+    private javax.swing.JRadioButton yes8;
+    private javax.swing.JRadioButton yes9;
     // End of variables declaration//GEN-END:variables
 }

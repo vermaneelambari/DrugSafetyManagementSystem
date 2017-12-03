@@ -5,6 +5,7 @@
  */
 package UserInterface.PreClinicalTrialRole;
 
+import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -68,6 +69,7 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         approveBtn = new javax.swing.JButton();
@@ -77,6 +79,8 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         enterPrText = new javax.swing.JLabel();
         enterpriseLabel3 = new javax.swing.JLabel();
         orgText = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -135,6 +139,13 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
 
         orgText.setText("<value>");
         add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("jRadioButton1");
+        add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
+
+        jRadioButton2.setText("jRadioButton2");
+        add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
@@ -174,11 +185,14 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton approveBtn;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel empNameTxt;
     private javax.swing.JLabel enterPrText;
     private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JLabel enterpriseLabel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel orgText;
     private javax.swing.JTable workRequestJTable;

@@ -5,7 +5,9 @@
  */
 package Business.Request;
 
+import Business.ClinicalReport.ClinicalReport;
 import Business.Disease.Disease;
+import Business.Person.Person;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import java.util.Date;
@@ -24,6 +26,24 @@ public abstract class Request {
     private String result;
     private Disease disease;
     private Vaccine vaccine;
+    private ClinicalReport clinicalReport;
+    private Person person;
+
+    public ClinicalReport getClinicalReport() {
+        return clinicalReport;
+    }
+
+    public void setClinicalReport(ClinicalReport clinicalReport) {
+        this.clinicalReport = clinicalReport;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
     public Disease getDisease() {
         return disease;
