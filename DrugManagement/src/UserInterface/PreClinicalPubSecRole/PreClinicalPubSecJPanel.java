@@ -117,6 +117,8 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        btnSearchByName = new javax.swing.JButton();
+        TxtSearch = new javax.swing.JTextField();
 
         tblPreClinical.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -139,11 +141,29 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
         });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
+            }
+        });
+
+        btnSearchByName.setText("Search by Name :");
+        btnSearchByName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchByNameActionPerformed(evt);
+            }
+        });
+
+        TxtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtSearchActionPerformed(evt);
             }
         });
 
@@ -165,7 +185,11 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSearchByName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TxtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(94, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -180,21 +204,26 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete))
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSearchByName)
+                    .addComponent(TxtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         
+        
         int selectedRow = tblPreClinical.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select Any Row");
+            JOptionPane.showMessageDialog(null, "Please select a person");
             return;
         }
         Person p = (Person) tblPreClinical.getValueAt(selectedRow, 0);
         system.getPersonDirectory().deletePerson(p);
-        JOptionPane.showMessageDialog(null, "Person deleted successfully");
+        JOptionPane.showMessageDialog(null, "Person" + p.getName()+ " has been removed");
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -207,9 +236,64 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
       
     }//GEN-LAST:event_btnAddActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = tblPreClinical.getSelectedRow();
+
+        if(selectedRow<0)
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+
+        }
+        else
+        {
+            Person p = (Person) tblPreClinical.getValueAt(selectedRow, 0);
+            UpdateJPanel ujp = new UpdateJPanel(userProcessContainer, p);
+            
+            userProcessContainer.add("UpdateJPanel", ujp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+             
+            
+             
+
+        }
+       
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnSearchByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByNameActionPerformed
+        // TODO add your handling code here:
+        
+         if(TxtSearch.getText().equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter Person's Name");
+        }
+        else 
+         {
+          
+        //  Person p = 
+          SearchPersonJPanel spjp = new SearchPersonJPanel(userProcessContainer, p);
+          userProcessContainer.add("SearchPersonJPanel", spjp);
+          CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+          layout.next(userProcessContainer);
+    
+         }
+    }//GEN-LAST:event_btnSearchByNameActionPerformed
+
+    private void TxtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSearchActionPerformed
+        // TODO add your handling code here:
+        
+          
+       
+    }//GEN-LAST:event_TxtSearchActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtSearch;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSearchByName;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
