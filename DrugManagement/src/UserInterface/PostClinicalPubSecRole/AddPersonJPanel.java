@@ -14,6 +14,7 @@ import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -27,22 +28,22 @@ public class AddPersonJPanel extends javax.swing.JPanel {
      */
     
     JPanel userProcessContainer;
-    UserAccount userAccount;
     EcoSystem system;
-    Person person;
     PersonDirectory personList;
     
 
-   public AddPersonJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem system, Person person) {
+   public AddPersonJPanel(JPanel userProcessContainer, EcoSystem system) {
     initComponents();
     
     this.userProcessContainer=userProcessContainer;
-    this.userAccount=userAccount;
+    
     this.system=system;
-    this.person=person;
+    
     this.personList=personList;
     
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,9 +62,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         ageTxtField = new javax.swing.JTextField();
         diseaseTxtField = new javax.swing.JTextField();
         addJButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         cancelJbutton = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
@@ -96,9 +95,6 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         });
         add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
 
-        jLabel4.setText("Effects of Disease");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, 26));
-
         cancelJbutton.setText("Back");
         cancelJbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,9 +102,6 @@ public class AddPersonJPanel extends javax.swing.JPanel {
             }
         });
         add(cancelJbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel5.setText("Add Person ");
@@ -119,7 +112,36 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
 
+        String name = NameTxtField.getText();
+        String disease = diseaseTxtField.getText();
+        Integer age =0;
         
+         try
+       {                
+            age = Integer.parseInt(ageTxtField.getText());
+       }
+       catch(NumberFormatException e)
+       {
+           JOptionPane.showMessageDialog(null, "Please enter a valid Integer");
+       } 
+        
+         if(name.equalsIgnoreCase("") || ageTxtField.getText().equalsIgnoreCase("") || disease == null ){
+            JOptionPane.showMessageDialog(null, "Please enter valid details", "Invalid Details", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+         else 
+         {
+             Person person = system.getPersonDirectory().addPerson();
+             person.setName(name);
+             person.setAge(age);
+             person.setDisease(disease);
+            
+            JOptionPane.showMessageDialog(null,"Person Successfully created."); 
+            NameTxtField.setText("");
+            ageTxtField.setText("");
+            diseaseTxtField.setText("");
+             
+         }
         
         
     }//GEN-LAST:event_addJButtonActionPerformed
@@ -146,11 +168,9 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField ageTxtField;
     private javax.swing.JButton cancelJbutton;
     private javax.swing.JTextField diseaseTxtField;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

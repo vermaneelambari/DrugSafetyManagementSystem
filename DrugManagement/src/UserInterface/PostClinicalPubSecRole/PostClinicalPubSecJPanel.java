@@ -8,7 +8,6 @@ package UserInterface.PostClinicalPubSecRole;
 import Business.EcoSystem;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
-import UserInterface.PreClinicalPubSecRole.PreClinicalPubSecJPanel;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -73,7 +72,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException ex) {
-            Logger.getLogger(PreClinicalPubSecJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PostClinicalPubSecJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
    
@@ -117,6 +116,11 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +194,36 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        AddPersonJPanel aap = new AddPersonJPanel(userProcessContainer, system);
+        userProcessContainer.add("ManageUserAccountPanel", aap);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblPostClinical.getSelectedRow();
+
+        if(selectedRow<0)
+        {
+            JOptionPane.showMessageDialog(null,"Please select a row from the table first","Warning",JOptionPane.WARNING_MESSAGE);
+
+        }
+        else
+        {
+            Person p = (Person) tblPostClinical.getValueAt(selectedRow, 0);
+            UpdateJPanel ujp = new UpdateJPanel(userProcessContainer, p);
+            
+            userProcessContainer.add("UpdateJPanel", ujp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+             
+            
+             
+
+        }
+       
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
