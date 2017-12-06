@@ -107,6 +107,7 @@ public class PreClinicalTrialSelectPersonJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         PreClinicalTrialJPanel sysAdminwjp = (PreClinicalTrialJPanel) component;

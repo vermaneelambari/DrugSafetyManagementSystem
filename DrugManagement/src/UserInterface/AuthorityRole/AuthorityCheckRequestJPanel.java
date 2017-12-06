@@ -57,6 +57,9 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         valueSlider.setMajorTickSpacing(1);
         valueSlider.setMaximum(15);
         valueSlider.setMinimum(-15);
+        valueSlider.setPaintLabels(true);
+        valueSlider.setPaintTicks(true);
+        valueSlider.setSnapToTicks(true);
         valueSlider.setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -79,12 +82,12 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
                         .addGap(198, 198, 198)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addComponent(backJButton)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                        .addComponent(backJButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
