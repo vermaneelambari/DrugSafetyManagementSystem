@@ -566,6 +566,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         clinicalReport.setQuestion(que);
         clinicalReport.setReportValue(val);
         clinicalReport.setFinalReportValue(finalValue);
+        request.setStatus("Result Calculation Completed");
         JOptionPane.showMessageDialog(null, "Request completed");
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
