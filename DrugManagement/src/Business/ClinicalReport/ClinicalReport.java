@@ -5,6 +5,7 @@
  */
 package Business.ClinicalReport;
 
+import Business.Person.Person;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +15,16 @@ import java.util.ArrayList;
 public class ClinicalReport {
     ArrayList<String> question;
     ArrayList<String> reportValue;
+    Person person;
     float finalReportValue;
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
     public float getFinalReportValue() {
         return finalReportValue;
