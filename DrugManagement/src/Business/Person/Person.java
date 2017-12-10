@@ -17,7 +17,7 @@ public class Person {
     private String name;
     private int age; 
     private String disease;
-    private List<String> diseaseList; 
+    private ArrayList<String> diseaseList; 
 
     public String getName() {
         return name;
@@ -43,11 +43,11 @@ public class Person {
         this.disease = disease;
     }
 
-    public List<String> getDiseaseList() {
+    public ArrayList<String> getDiseaseList() {
         return diseaseList;
     }
 
-    public void setDiseaseList(List<String> diseaseList) {
+    public void setDiseaseList(ArrayList<String> diseaseList) {
         this.diseaseList = diseaseList;
     }
 

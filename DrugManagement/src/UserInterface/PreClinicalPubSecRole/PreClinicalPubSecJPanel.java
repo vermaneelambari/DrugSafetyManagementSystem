@@ -72,8 +72,9 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 String valuesOfArray[] = dataCsvArr.get(i);
                 List<String> list4 = Arrays.asList(new String());
                 list4 = Arrays.asList(valuesOfArray[3].split("\\|"));
+                ArrayList<String> arrlist = new ArrayList<String>(list4);
                 Person p = system.getPersonDirectory().addPerson();
-                p.setDiseaseList(list4);
+                p.setDiseaseList(arrlist);
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
                 p.setDisease(valuesOfArray[2]);

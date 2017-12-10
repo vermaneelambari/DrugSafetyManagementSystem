@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -61,9 +62,11 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
             }
             for (int i = 1; i < dataCsvArr.size(); i++) {
                 String valuesOfArray[] = dataCsvArr.get(i);
+                List<String> list4 = Arrays.asList(new String());
+                list4 = Arrays.asList(valuesOfArray[3].split("\\|"));
+                ArrayList<String> arrlist = new ArrayList<String>(list4);
                 Person p = system.getPersonDirectory().addPerson();
-                p.setDiseaseList(Arrays.asList(valuesOfArray[3].split(",\\s")));
-                //Person p = system.addPerson();
+                p.setDiseaseList(arrlist);
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
                 p.setDisease(valuesOfArray[2]);
