@@ -156,8 +156,8 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         if (status.equals("Approved drug for Initial Test")) {
-            PreClinicalTrialSelectPersonJPanel muajp = new PreClinicalTrialSelectPersonJPanel(userProcessContainer, account, organization, enterprise, system,request);
-                userProcessContainer.add("PreClinicalTrialSelectPersonJPanel", muajp);
+            PreClinicalTrialProcessJpanel muajp = new PreClinicalTrialProcessJpanel(userProcessContainer, account, organization, enterprise, system,request);
+                userProcessContainer.add("PreClinicalTrialProcessJpanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
             populateTable();

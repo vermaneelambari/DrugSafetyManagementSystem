@@ -13,12 +13,13 @@ import Business.Person.Person;
 import Business.Request.Request;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- * 
+ *
  *
  * @author Sumanth
  */
@@ -32,24 +33,34 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    Person person;
     Request request;
+    Person person;
 
-    PreClinicalTrialProcessJpanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Person person, Request request) {
+    PreClinicalTrialProcessJpanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Request request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = organization;
         this.enterprise = enterprise;
         this.system = system;
-        this.person = person;
         this.request = request;
+        populateCombo();
+        person = (Person) personCombo.getSelectedItem();
         nameTxtField.setText(person.getName());
         ageTxtField.setText(String.valueOf(person.getAge()));
         diseaseTxtField.setText(person.getDisease());
         txt6.setText(person.getDiseaseList().get(0));
         txt7.setText(person.getDiseaseList().get(1));
         txt13.setText(person.getDiseaseList().get(2));
+    }
+
+    void populateCombo() {
+        personCombo.removeAllItems();
+        for (Person p : system.getPersonDirectory().getPersonList()) {
+            if (p.getDisease().equals(request.getDisease().getdName())) {
+                personCombo.addItem(p);
+            }
+        }
     }
 
     /**
@@ -135,28 +146,30 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        personCombo = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
 
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 68, 26));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 68, 26));
 
         jLabel2.setText("Age");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 68, 26));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 68, 26));
 
         jLabel3.setText("Disease");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 68, 26));
-        add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 140, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 68, 26));
+        add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 140, -1));
 
         ageTxtField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageTxtFieldActionPerformed(evt);
             }
         });
-        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 140, -1));
-        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 140, -1));
+        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 140, -1));
+        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel5.setText("Pre Clinical Trial Process Panel");
@@ -174,7 +187,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt5.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane1.setViewportView(txt5);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 400, 70));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 400, 70));
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -188,7 +201,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt3.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane2.setViewportView(txt3);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 400, 70));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 400, 70));
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -202,7 +215,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt2.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane3.setViewportView(txt2);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 400, 70));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 400, 70));
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -216,7 +229,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt12.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane4.setViewportView(txt12);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 360, 70));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 360, 70));
 
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -230,7 +243,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt4.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane5.setViewportView(txt4);
 
-        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 400, 70));
+        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 400, 70));
 
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -244,7 +257,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt1.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane6.setViewportView(txt1);
 
-        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 400, 70));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 400, 70));
 
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -258,7 +271,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt8.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane7.setViewportView(txt8);
 
-        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 360, 70));
+        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 360, 70));
 
         jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -272,7 +285,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt9.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane8.setViewportView(txt9);
 
-        add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 360, 70));
+        add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 360, 70));
 
         jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -286,7 +299,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt10.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane9.setViewportView(txt10);
 
-        add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 360, 70));
+        add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 360, 70));
 
         jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -300,121 +313,121 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         txt11.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane10.setViewportView(txt11);
 
-        add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 360, 70));
+        add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, 360, 70));
 
         buttonGroup1.add(yes1);
         yes1.setText("Yes");
-        add(yes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 80, -1));
+        add(yes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 80, -1));
 
         buttonGroup1.add(no1);
         no1.setSelected(true);
         no1.setText("No");
-        add(no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 80, -1));
+        add(no1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 80, -1));
 
         buttonGroup2.add(yes2);
         yes2.setText("Yes");
-        add(yes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 80, -1));
+        add(yes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 80, -1));
 
         buttonGroup2.add(no2);
         no2.setSelected(true);
         no2.setText("No");
-        add(no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 80, -1));
+        add(no2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 80, -1));
 
         buttonGroup3.add(yes3);
         yes3.setText("Yes");
-        add(yes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 80, -1));
+        add(yes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 80, -1));
 
         buttonGroup3.add(no3);
         no3.setSelected(true);
         no3.setText("No");
-        add(no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
+        add(no3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 80, -1));
 
         buttonGroup4.add(yes4);
         yes4.setText("Yes");
-        add(yes4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 80, 30));
+        add(yes4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 80, 30));
 
         buttonGroup4.add(no4);
         no4.setSelected(true);
         no4.setText("No");
-        add(no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 80, 30));
+        add(no4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 80, 30));
 
         buttonGroup5.add(yes5);
         yes5.setText("Yes");
-        add(yes5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 80, -1));
+        add(yes5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 80, -1));
 
         buttonGroup5.add(no5);
         no5.setSelected(true);
         no5.setText("No");
-        add(no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 80, -1));
+        add(no5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 80, -1));
 
         buttonGroup6.add(yes8);
         yes8.setText("Yes");
-        add(yes8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 100, 80, -1));
+        add(yes8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 200, 80, -1));
 
         buttonGroup6.add(no8);
         no8.setSelected(true);
         no8.setText("No");
-        add(no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 130, 80, -1));
+        add(no8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, 80, -1));
 
         buttonGroup7.add(yes9);
         yes9.setText("Yes");
-        add(yes9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 160, 80, -1));
+        add(yes9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, 80, -1));
 
         buttonGroup7.add(no9);
         no9.setSelected(true);
         no9.setText("No");
-        add(no9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 190, 80, -1));
+        add(no9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 290, 80, -1));
 
         buttonGroup8.add(yes10);
         yes10.setText("Yes");
-        add(yes10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 240, 80, -1));
+        add(yes10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 340, 80, -1));
 
         buttonGroup8.add(no10);
         no10.setSelected(true);
         no10.setText("No");
-        add(no10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 270, 80, -1));
+        add(no10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 370, 80, -1));
 
         buttonGroup9.add(yes11);
         yes11.setText("Yes");
-        add(yes11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 310, 80, -1));
+        add(yes11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 410, 80, -1));
 
         buttonGroup9.add(no11);
         no11.setSelected(true);
         no11.setText("No");
-        add(no11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 340, 80, -1));
+        add(no11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 440, 80, -1));
 
         buttonGroup10.add(yes12);
         yes12.setText("Yes");
-        add(yes12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 370, 80, -1));
+        add(yes12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 470, 80, -1));
 
         buttonGroup10.add(no12);
         no12.setSelected(true);
         no12.setText("No");
-        add(no12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 400, 80, -1));
-        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 90, 40));
-        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, 70, 40));
+        add(no12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 500, 80, -1));
+        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 90, 40));
+        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 70, 40));
 
         effectsCombo7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 100, -1));
+        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 620, 100, -1));
 
         effectsCombo13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 100, -1));
+        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 100, -1));
 
         effectsCombo6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 100, -1));
-        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 470, 90, -1));
-        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 90, 40));
+        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 100, -1));
+        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 570, 90, -1));
+        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 90, 40));
 
         jLabel10.setText("Percentage of Increase/Decrease");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, 190, 40));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 560, 190, 40));
 
         jLabel13.setText("Percentage of Increase/Decrease");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 190, 40));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 190, 40));
 
         jLabel14.setText("Percentage of Increase/Decrease");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 190, 40));
-        add(effectPercTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, 90, -1));
-        add(effectPercTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, 90, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 600, 190, 40));
+        add(effectPercTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 90, -1));
+        add(effectPercTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 560, 90, -1));
 
         compResultJpanel.setText("Compute Result");
         compResultJpanel.addActionListener(new java.awt.event.ActionListener() {
@@ -422,16 +435,16 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
                 compResultJpanelActionPerformed(evt);
             }
         });
-        add(compResultJpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 130, 30));
+        add(compResultJpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 670, 130, 30));
 
         jLabel4.setText("7.");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 10, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 10, -1));
 
         jLabel7.setText("6.");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 10, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 10, -1));
 
         jLabel8.setText("13.");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 20, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 570, 20, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -439,7 +452,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
+
+        personCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(personCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 180, 30));
+
+        jLabel6.setText("Select Person");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 150, 30));
 
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
@@ -449,6 +468,14 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     }//GEN-LAST:event_ageTxtFieldActionPerformed
 
     private void compResultJpanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compResultJpanelActionPerformed
+        for (ClinicalReport c : request.getClinicalReportDirectory().clinicalReportDirectory) {
+            if (c.getPerson() != null) {
+                if (c.getPerson().getName().equals(person.getName())) {
+                    JOptionPane.showMessageDialog(null, "Result has already been computed for selected person");
+                    return;
+                }
+            }
+        }
         String effect1Perc = effectPercTxt6.getText();
         String effect2Perc = effectPercTxt6.getText();
         String effect3Perc = effectPercTxt6.getText();
@@ -477,7 +504,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter integer value for " + txt13.getText());
             return;
         }
-        if(effect3PercValue13 > 100 || effect2PercValue7 > 100 || effectPercValue6 > 100){
+        if (effect3PercValue13 > 100 || effect2PercValue7 > 100 || effectPercValue6 > 100) {
             JOptionPane.showMessageDialog(null, "Please enter Percentage values less than 100");
             return;
         }
@@ -566,15 +593,16 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         clinicalReport.setQuestion(que);
         clinicalReport.setReportValue(val);
         clinicalReport.setFinalReportValue(finalValue);
-        request.setStatus("Result Calculation Completed");
+        clinicalReport.setPerson(person);
         JOptionPane.showMessageDialog(null, "Request completed");
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
     }//GEN-LAST:event_compResultJpanelActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PreClinicalTrialJPanel sysAdminwjp = (PreClinicalTrialJPanel) component;
+        sysAdminwjp.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
@@ -609,6 +637,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
@@ -632,6 +661,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton no5;
     private javax.swing.JRadioButton no8;
     private javax.swing.JRadioButton no9;
+    private javax.swing.JComboBox personCombo;
     private javax.swing.JTextArea txt1;
     private javax.swing.JTextArea txt10;
     private javax.swing.JTextArea txt11;
