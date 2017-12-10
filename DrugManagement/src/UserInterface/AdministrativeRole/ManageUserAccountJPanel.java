@@ -113,7 +113,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 createUserJButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, -1, -1));
+        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 146, -1));
 
         jLabel1.setText("User Name");
@@ -165,10 +165,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 backjButton1ActionPerformed(evt);
             }
         });
-        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 431, 112, -1));
+        add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 112, -1));
 
         jLabel5.setText("Organization");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
 
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,7 +188,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, -1));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, -1, -1));
 
         remobeBtn.setText("Delete");
         remobeBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +196,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 remobeBtnActionPerformed(evt);
             }
         });
-        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 120, -1));
+        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 120, -1));
         add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 150, -1));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N

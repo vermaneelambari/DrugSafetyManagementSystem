@@ -12,8 +12,12 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
+import static java.awt.Color.green;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -58,10 +62,18 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(0, 51, 102));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         loginJButton.setFont(new java.awt.Font("Avenir Next", 0, 12)); // NOI18N
         loginJButton.setText("Login");
+        loginJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginJButtonMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginJButtonMouseEntered(evt);
+            }
+        });
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginJButtonActionPerformed(evt);
@@ -77,6 +89,14 @@ public class MainJFrame extends javax.swing.JFrame {
         logoutJButton.setFont(new java.awt.Font("Avenir Next", 0, 12)); // NOI18N
         logoutJButton.setText("Logout");
         logoutJButton.setEnabled(false);
+        logoutJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logoutJButtonMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logoutJButtonMouseEntered(evt);
+            }
+        });
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutJButtonActionPerformed(evt);
@@ -221,6 +241,34 @@ public class MainJFrame extends javax.swing.JFrame {
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_logoutJButtonActionPerformed
+
+    private void loginJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginJButtonMouseEntered
+        // TODO add your handling code here:
+        
+        this.loginJButton.setBackground(Color.green); 
+
+    }//GEN-LAST:event_loginJButtonMouseEntered
+
+    private void loginJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginJButtonMouseExited
+        // TODO add your handling code here:
+       this.loginJButton.setBackground(Color.lightGray);
+
+    }//GEN-LAST:event_loginJButtonMouseExited
+
+    private void logoutJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutJButtonMouseEntered
+        // TODO add your handling code here:
+        
+        this.logoutJButton.setBackground(Color.red); 
+        
+
+    }//GEN-LAST:event_logoutJButtonMouseEntered
+
+    private void logoutJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutJButtonMouseExited
+        // TODO add your handling code here:
+        
+        this.logoutJButton.setBackground(Color.lightGray); 
+
+    }//GEN-LAST:event_logoutJButtonMouseExited
 
     /**
      * @param args the command line arguments
