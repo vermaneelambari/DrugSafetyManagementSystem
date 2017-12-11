@@ -8,6 +8,7 @@ import Business.ClinicalReport.ClinicalReportDirectory;
 import Business.Disease.DiseaseCatalog;
 import Business.Employee.EmployeeDirectory;
 import Business.Person.PersonDirectory;
+import Business.PostClinicalPerson.PostClinicalPersonDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.Request.Request;
@@ -26,6 +27,7 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     private PersonDirectory personDirectory;
     private DiseaseCatalog diseaseCatalog;
+    private PostClinicalPersonDirectory postClinicalPersonDirectory;
     private ClinicalReportDirectory clinicalReportDirectory;
 
     public DiseaseCatalog getDiseaseCatalog() {
@@ -54,7 +56,16 @@ public abstract class Organization {
         userAccountDirectory = new UserAccountDirectory();
         diseaseCatalog = new DiseaseCatalog();
         personDirectory = new PersonDirectory();
+        postClinicalPersonDirectory = new PostClinicalPersonDirectory();
         clinicalReportDirectory = new ClinicalReportDirectory();
+    }
+
+    public PostClinicalPersonDirectory getPostClinicalPersonDirectory() {
+        return postClinicalPersonDirectory;
+    }
+
+    public void setPostClinicalPersonDirectory(PostClinicalPersonDirectory postClinicalPersonDirectory) {
+        this.postClinicalPersonDirectory = postClinicalPersonDirectory;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
