@@ -108,7 +108,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSeparator2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/guest-male.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/guest-male.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -48,7 +48,7 @@ public class UpdateEnterpriseJpanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,11 +67,11 @@ public class UpdateEnterpriseJpanel extends javax.swing.JPanel {
 
         btnUpdate.setText("Update");
         btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnUpdateMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnUpdateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUpdateMouseExited(evt);
             }
         });
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -86,8 +86,8 @@ public class UpdateEnterpriseJpanel extends javax.swing.JPanel {
         jLabel2.setText("Update Enterprise");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 370, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Downloads/rsz_approve-and-update-filled.png")); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 130, 80));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/SystemAdminWorkArea/Disease/rsz_approve-and-update-filled.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 130, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -136,7 +136,7 @@ public class UpdateEnterpriseJpanel extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

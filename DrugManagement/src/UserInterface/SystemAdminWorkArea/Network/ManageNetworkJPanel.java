@@ -110,11 +110,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         submitJButton.setText("Submit");
         submitJButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                submitJButtonMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 submitJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                submitJButtonMouseExited(evt);
             }
         });
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -165,10 +165,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel2.setText("Create Network");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 350, 50));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/socialnetworkbuddypress.png")); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 550, 300));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/internet-filled.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/SystemAdminWorkArea/Network/socialnetworkbuddypress.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 550, 330));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 110, 110));
     }// </editor-fold>//GEN-END:initComponents
 

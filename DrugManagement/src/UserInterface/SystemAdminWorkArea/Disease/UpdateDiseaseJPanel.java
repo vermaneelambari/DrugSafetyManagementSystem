@@ -62,11 +62,11 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
 
         btnupdate.setText("Update");
         btnupdate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnupdateMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnupdateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnupdateMouseExited(evt);
             }
         });
         btnupdate.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +83,8 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         jLabel2.setText("Update Disease");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 230, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Downloads/rsz_approve-and-update-filled.png")); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 130, 80));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/SystemAdminWorkArea/Disease/rsz_approve-and-update-filled.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 130, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

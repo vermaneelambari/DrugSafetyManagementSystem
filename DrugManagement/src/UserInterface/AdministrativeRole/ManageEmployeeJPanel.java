@@ -149,11 +149,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         addJButton.setText("Create Employee");
         addJButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                addJButtonMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addJButtonMouseExited(evt);
             }
         });
         addJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -266,8 +266,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 153, 153));
         jLabel5.setText("Manage Employee ");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Downloads/icons8-add-user-group-woman-man-50.png")); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 130, -1));
     }// </editor-fold>//GEN-END:initComponents
 

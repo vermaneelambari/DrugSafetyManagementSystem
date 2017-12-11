@@ -109,9 +109,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane1.setDividerLocation(150);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageNetworkJButton.setBackground(new java.awt.Color(0, 153, 153));
+        manageNetworkJButton.setBackground(new java.awt.Color(204, 153, 0));
         manageNetworkJButton.setText("Manage Network");
         manageNetworkJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +121,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(manageNetworkJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 190, 60));
 
-        manageAdminJButton.setBackground(new java.awt.Color(0, 153, 153));
+        manageAdminJButton.setBackground(new java.awt.Color(204, 153, 0));
         manageAdminJButton.setText("Manage Enterprise Admin");
         manageAdminJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +130,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(manageAdminJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 190, 60));
 
-        manageEnterpriseJButton.setBackground(new java.awt.Color(0, 153, 153));
+        manageEnterpriseJButton.setBackground(new java.awt.Color(204, 153, 0));
         manageEnterpriseJButton.setText("Manage Enterprise");
         manageEnterpriseJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +145,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         selectedNodeJLabel.setText("<view_selected_node>");
         jPanel1.add(selectedNodeJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 36, -1, -1));
 
-        mngDiseaseButton.setBackground(new java.awt.Color(0, 153, 153));
+        mngDiseaseButton.setBackground(new java.awt.Color(204, 153, 0));
         mngDiseaseButton.setText("Manage Disease Catalog");
         mngDiseaseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,7 +154,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(mngDiseaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 190, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/57030349bdce9.image.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/SystemAdminWorkArea/57030349bdce9.image.jpg"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 560, 390));
 
         jSplitPane1.setRightComponent(jPanel1);

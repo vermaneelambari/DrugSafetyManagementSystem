@@ -135,8 +135,8 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
         jLabel1.setText("Manage Disease Catalog ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/being-sick-filled.png")); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 200, 200));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/SystemAdminWorkArea/Disease/being-sick-filled.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 130, 200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void delBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBtnActionPerformed

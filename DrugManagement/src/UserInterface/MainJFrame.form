@@ -192,7 +192,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/neelambariverma/Desktop/guest-male.png"/>
+                  <Image iconType="3" name="/UserInterface/guest-male.png"/>
                 </Property>
               </Properties>
             </Component>
