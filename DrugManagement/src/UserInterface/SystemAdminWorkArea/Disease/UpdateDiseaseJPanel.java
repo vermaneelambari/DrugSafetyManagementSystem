@@ -41,7 +41,7 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
-        addBtn = new javax.swing.JButton();
+        btnupdate = new javax.swing.JButton();
         vacName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -60,21 +60,21 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
-        addBtn.setText("Update");
-        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnupdate.setText("Update");
+        btnupdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                addBtnMouseExited(evt);
+                btnupdateMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                addBtnMouseEntered(evt);
+                btnupdateMouseEntered(evt);
             }
         });
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
+                btnupdateActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 90, 40));
+        add(btnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 90, 40));
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 130, 30));
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 153));
@@ -97,38 +97,34 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+    private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         String name = vacName.getText();
         if(name.trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter Disease Name");
             return;
         }
-        if ( !(name.matches("^[a-zA-Z0-9]+$"))) {
-                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
-                  return;
-            }
         disease.setdName(name);
         JOptionPane.showMessageDialog(null, "Disease Updated Successfully");
         vacName.setText("");
-    }//GEN-LAST:event_addBtnActionPerformed
+    }//GEN-LAST:event_btnupdateActionPerformed
 
-    private void addBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseEntered
+    private void btnupdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnupdateMouseEntered
         // TODO add your handling code here:
         
-                                    this.addBtn.setBackground(Color.YELLOW); 
+                                    this.btnupdate.setBackground(Color.YELLOW); 
 
-    }//GEN-LAST:event_addBtnMouseEntered
+    }//GEN-LAST:event_btnupdateMouseEntered
 
-    private void addBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseExited
+    private void btnupdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnupdateMouseExited
         // TODO add your handling code here:
-                        this.addBtn.setBackground(Color.lightGray); 
+                        this.btnupdate.setBackground(Color.lightGray); 
 
-    }//GEN-LAST:event_addBtnMouseExited
+    }//GEN-LAST:event_btnupdateMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBtn;
     private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnupdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

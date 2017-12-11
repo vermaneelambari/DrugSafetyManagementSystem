@@ -42,7 +42,7 @@ public class UpdateEnterpriseUserJPanel extends javax.swing.JPanel {
         vacName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
-        addBtn = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -61,21 +61,21 @@ public class UpdateEnterpriseUserJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
-        addBtn.setText("Update");
-        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnUpdate.setText("Update");
+        btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                addBtnMouseExited(evt);
+                btnUpdateMouseExited(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                addBtnMouseEntered(evt);
+                btnUpdateMouseEntered(evt);
             }
         });
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 90, 40));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 90, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 153));
@@ -96,39 +96,35 @@ public class UpdateEnterpriseUserJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         String name = vacName.getText();
         if(name.trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter User Name");
             return;
         }
-        if ( !(name.matches("[a-zA-Z0-9]+"))) {
-                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
-                  return;
-            }
         u.setUsername(name);
         JOptionPane.showMessageDialog(null, "Username Updated Successfully");
         vacName.setText("");
-    }//GEN-LAST:event_addBtnActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void addBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseEntered
+    private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
         // TODO add your handling code here:
         
-               this.addBtn.setBackground(Color.YELLOW); 
+               this.btnUpdate.setBackground(Color.YELLOW); 
 
-    }//GEN-LAST:event_addBtnMouseEntered
+    }//GEN-LAST:event_btnUpdateMouseEntered
 
-    private void addBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseExited
+    private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
         // TODO add your handling code here:
         
-               this.addBtn.setBackground(Color.lightGray); 
+               this.btnUpdate.setBackground(Color.lightGray); 
 
-    }//GEN-LAST:event_addBtnMouseExited
+    }//GEN-LAST:event_btnUpdateMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBtn;
     private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -179,10 +179,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter name");
             return;
         }
-        if ( !(name.matches("[a-zA-Z]+"))) {
-                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
-                  return;
-            }
         if (system.searchNetwork(name) != null) {
             JOptionPane.showMessageDialog(null, "Network already present");
             return;

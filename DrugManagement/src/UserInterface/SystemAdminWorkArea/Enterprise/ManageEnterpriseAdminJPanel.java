@@ -254,10 +254,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "UserName already exists");
             return;
         }
-        if ( !(name.matches("[a-zA-Z]+"))) {
-                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
-                  return;
-            }
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         UserAccount account;
              account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());

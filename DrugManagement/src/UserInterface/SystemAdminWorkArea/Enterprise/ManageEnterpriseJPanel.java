@@ -208,10 +208,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Name");
             return;
         }
-        if ( !(name.matches("[a-zA-Z]+"))) {
-                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
-                  return;
-            }
         
         for(Enterprise e:network.getEnterpriseDirectory().getEnterPriseList()){
             if(e.getName().equals(name)){

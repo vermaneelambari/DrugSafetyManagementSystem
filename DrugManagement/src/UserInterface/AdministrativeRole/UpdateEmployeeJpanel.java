@@ -90,10 +90,6 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Employee Name");
             return;
         }
-        if ( !(name.matches("[a-zA-Z]+"))) {
-                  JOptionPane.showMessageDialog(null,"Please insert only characters");
-                  return;
-            }
         e.setName(name);
         JOptionPane.showMessageDialog(null, "Employee name Updated Successfully");
         vacName.setText("");
