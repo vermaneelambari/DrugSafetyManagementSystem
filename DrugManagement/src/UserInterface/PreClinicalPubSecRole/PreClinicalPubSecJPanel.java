@@ -215,8 +215,6 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        
-        
         int selectedRow = tblPreClinical.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a person");
@@ -224,6 +222,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
         }
         Person p = (Person) tblPreClinical.getValueAt(selectedRow, 0);
         system.getPersonDirectory().deletePerson(p);
+        populatePreClinicalPubSecTable();
         JOptionPane.showMessageDialog(null, "Person" + p.getName()+ " has been removed");
 
     }//GEN-LAST:event_btnDeleteActionPerformed

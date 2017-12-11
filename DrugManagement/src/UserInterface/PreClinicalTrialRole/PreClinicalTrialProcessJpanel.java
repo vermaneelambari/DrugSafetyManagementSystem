@@ -455,6 +455,11 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
 
         personCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        personCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personComboActionPerformed(evt);
+            }
+        });
         add(personCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 180, 30));
 
         jLabel6.setText("Select Person");
@@ -511,7 +516,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         String[] txtValue = {txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt7.getText(), txt8.getText(), txt9.getText(), txt10.getText(), txt11.getText(), txt12.getText(), txt13.getText()};
         boolean[] yesValue = {yes1.isSelected(), yes2.isSelected(), yes3.isSelected(), yes4.isSelected(), yes5.isSelected(), false, false, yes8.isSelected(), yes9.isSelected(), yes10.isSelected(), yes11.isSelected(), yes12.isSelected(), false};
         boolean[] noValue = {no1.isSelected(), no2.isSelected(), no3.isSelected(), no4.isSelected(), no5.isSelected(), false, false, no8.isSelected(), no9.isSelected(), no10.isSelected(), no11.isSelected(), no12.isSelected(), false};
-        String[] comboValues = {"", "", "", "", "", (String) effectsCombo6.getSelectedItem(), (String) effectsCombo6.getSelectedItem(), "", "", "", "", "", (String) effectsCombo6.getSelectedItem()};
+        String[] comboValues = {"", "", "", "", "", (String) effectsCombo6.getSelectedItem(), (String) effectsCombo7.getSelectedItem(), "", "", "", "", "", (String) effectsCombo13.getSelectedItem()};
         int[] percValues = {0, 0, 0, 0, 0, effectPercValue6, effect2PercValue7, 0, 0, 0, 0, 0, effect3PercValue13};
         ClinicalReport clinicalReport = request.getClinicalReportDirectory().addClinicalReport();
         int finalValue = 0;
@@ -555,8 +560,8 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
                     finalValue = finalValue + (1);
                 }
             } else if (i == 5 || i == 6 || i == 12) {
-                que.add(txtValue[i]);
                 if (comboValues[i].equals("Increased")) {
+                    que.add((i + 1) + ". Side Effect " + txtValue[i] + ": Increased");
                     if (percValues[i] <= 25) {
                         val.add("1");
                         finalValue = finalValue + 1;
@@ -570,22 +575,20 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
                         val.add("4");
                         finalValue = finalValue + 4;
                     }
-                } else if (i == 5 || i == 6 || i == 12) {
-                    que.add(txtValue[i]);
-                    if (comboValues[i].equals("Decreased")) {
-                        if (percValues[i] <= 25) {
-                            val.add("-1");
-                            finalValue = finalValue + (-1);
-                        } else if (percValues[i] > 25 && percValues[i] <= 50) {
-                            val.add("-2");
-                            finalValue = finalValue + (-2);
-                        } else if (percValues[i] > 50 && percValues[i] <= 75) {
-                            val.add("-3");
-                            finalValue = finalValue + (-3);
-                        } else if (percValues[i] > 75) {
-                            val.add("-4");
-                            finalValue = finalValue + (-4);
-                        }
+                } else if (comboValues[i].equals("Decreased")) {
+                    que.add((i + 1) + ". Side Effect " + txtValue[i] + ": Decreased");
+                    if (percValues[i] <= 25) {
+                        val.add("-1");
+                        finalValue = finalValue + (-1);
+                    } else if (percValues[i] > 25 && percValues[i] <= 50) {
+                        val.add("-2");
+                        finalValue = finalValue + (-2);
+                    } else if (percValues[i] > 50 && percValues[i] <= 75) {
+                        val.add("-3");
+                        finalValue = finalValue + (-3);
+                    } else if (percValues[i] > 75) {
+                        val.add("-4");
+                        finalValue = finalValue + (-4);
                     }
                 }
             }
@@ -606,6 +609,18 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void personComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personComboActionPerformed
+        person = (Person) personCombo.getSelectedItem();
+        if (person != null) {
+            nameTxtField.setText(person.getName());
+            ageTxtField.setText(String.valueOf(person.getAge()));
+            diseaseTxtField.setText(person.getDisease());
+            txt6.setText(person.getDiseaseList().get(0));
+            txt7.setText(person.getDiseaseList().get(1));
+            txt13.setText(person.getDiseaseList().get(2));
+        }
+    }//GEN-LAST:event_personComboActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

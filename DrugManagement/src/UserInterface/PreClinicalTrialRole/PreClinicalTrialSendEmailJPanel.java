@@ -34,6 +34,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.Multipart;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -159,31 +165,52 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             XSSFSheet sheet = workbook.createSheet(c.getPerson().getName());
             int rownum = 0;
             int cellnum = 0;
-            for(int j = 0; j<2 ;j++){
-                for (int i = 0; i < c.getQuestion().size(); i++) {
-                Row row = sheet.createRow(rownum++);
-                if (i == 0) {
-                    for (String que : c.getQuestion()) {
-                        Cell cell = row.createCell(cellnum++);
-                        cell.setCellValue(que);
-                    }
-                } else {
-                    for (String que : c.getReportValue()) {
-                        Cell cell = row.createCell(cellnum++);
-                        cell.setCellValue(que);
+            Row row = sheet.createRow(rownum++);
+            Cell cell = row.createCell(cellnum++);
+            cell.setCellValue("Question");
+            cell = row.createCell(cellnum++);
+            cell.setCellValue("Interpretation of Score");
+            for (int j = 0; j < 14; j++) {
+                cellnum = 0;
+                row = sheet.createRow(rownum++);
+                boolean check = false;
+                for (int i = 0; i < 2; i++) {
+                    if (j == 13) {
+                        if (!check) {
+                            check = true;
+                            cell = row.createCell(cellnum++);
+                            cell.setCellValue("Total Score");
+                        } else {
+                            cell = row.createCell(cellnum++);
+                            cell.setCellValue(c.getFinalReportValue());
+                        }
+                    } else {
+                        if (!check) {
+                            check = true;
+                            cell = row.createCell(cellnum++);
+                            cell.setCellValue(c.getQuestion().get(j));
+                        } else {
+                            cell = row.createCell(cellnum++);
+                            cell.setCellValue(c.getReportValue().get(j));
+                        }
                     }
                 }
             }
-            }
+            cellnum = 0;
+            row = sheet.createRow(rownum++);
+            cell = row.createCell(cellnum++);
+            cell.setCellValue("Average Score");
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(request.getInterpretationScore());
         }
 
         //Iterate over data and write to sheet
         try {
             //Write the workbook in file system
-            FileOutputStream out = new FileOutputStream(new File("CountriesDetails.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("PreClinicalReport.xlsx"));
             workbook.write(out);
             out.close();
-            System.out.println("CountriesDetails.xlsx has been created successfully");
+            System.out.println("PreClinicalReport.xlsx has been created successfully");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -200,9 +227,8 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         progressBarJPanel1.setVisible(true);
         Thread t1 = new Thread() {
-            Void p = createExcelFile();
-
             public void run() {
+                Void p = createExcelFile();
                 float score = 0;
                 if (request.getClinicalReportDirectory() != null) {
                     for (ClinicalReport c : request.getClinicalReportDirectory().getClinicalReportDirectory()) {
@@ -234,9 +260,19 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                     message.setRecipients(Message.RecipientType.TO,
                             InternetAddress.parse(toAddr));
                     message.setSubject("Testing Subject");
-                    message.setText("Dear Admin,"
+                    String file = "H:/NEU/Java_Netbeans/Git_Final_Project/explorers/DrugManagement/PreClinicalReport.xlsx";
+                    Multipart multipart = new MimeMultipart();
+                    MimeBodyPart messageBodyPart = new MimeBodyPart();
+                    messageBodyPart.setText("Dear Admin,"
                             + "\n\n Score for the request sent is " + request.getInterpretationScore());
-
+                    multipart.addBodyPart(messageBodyPart);
+                    messageBodyPart = new MimeBodyPart();
+                    String fileName = "PreClinicalReport.xlsx";
+                    DataSource source = new FileDataSource(file);
+                    messageBodyPart.setDataHandler(new DataHandler(source));
+                    messageBodyPart.setFileName(fileName);
+                    multipart.addBodyPart(messageBodyPart);
+                    message.setContent(multipart);
                     Transport.send(message);
                 } catch (MessagingException e) {
                     throw new RuntimeException(e);

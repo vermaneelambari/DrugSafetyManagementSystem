@@ -53,6 +53,34 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         valueSlider = new javax.swing.JSlider();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        txt1 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txt2 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txt3 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txt4 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt5 = new javax.swing.JTextArea();
+        txt6 = new javax.swing.JLabel();
+        txt7 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        txt8 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txt9 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        txt10 = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        txt11 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txt12 = new javax.swing.JTextArea();
+        txt13 = new javax.swing.JLabel();
+        scoreTxt1 = new javax.swing.JTextField();
+        scoreTxt2 = new javax.swing.JTextField();
+        scoreTxt3 = new javax.swing.JTextField();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         valueSlider.setMajorTickSpacing(1);
         valueSlider.setMaximum(15);
@@ -61,9 +89,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         valueSlider.setPaintTicks(true);
         valueSlider.setSnapToTicks(true);
         valueSlider.setEnabled(false);
+        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 43));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Final Score for request");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 260, 47));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,35 +101,159 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(backJButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
-                .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(backJButton)
-                .addContainerGap(229, Short.MAX_VALUE))
-        );
+        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt1.setBackground(new java.awt.Color(204, 204, 255));
+        txt1.setColumns(20);
+        txt1.setRows(5);
+        txt1.setText("1. Are there previous conclusive reports on this reaction?\n");
+        txt1.setAutoscrolls(false);
+        txt1.setEnabled(false);
+        txt1.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane6.setViewportView(txt1);
+
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 400, 70));
+
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt2.setBackground(new java.awt.Color(204, 204, 255));
+        txt2.setColumns(20);
+        txt2.setRows(5);
+        txt2.setText("2. Did the adverse event appear after the suspected drug \nwas administered?\n");
+        txt2.setAutoscrolls(false);
+        txt2.setEnabled(false);
+        txt2.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane3.setViewportView(txt2);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 400, 70));
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt3.setBackground(new java.awt.Color(204, 204, 255));
+        txt3.setColumns(20);
+        txt3.setRows(5);
+        txt3.setText("3. Did the adverse reaction improve when the \ndrug was discontinued or a specific \nantagonist was administered? ");
+        txt3.setAutoscrolls(false);
+        txt3.setEnabled(false);
+        txt3.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane2.setViewportView(txt3);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 400, 70));
+
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt4.setBackground(new java.awt.Color(204, 204, 255));
+        txt4.setColumns(20);
+        txt4.setRows(5);
+        txt4.setText("4. Did the adverse reaction reappear when the drug \nwas readministered?\n");
+        txt4.setAutoscrolls(false);
+        txt4.setEnabled(false);
+        txt4.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane5.setViewportView(txt4);
+
+        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 400, 70));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt5.setBackground(new java.awt.Color(204, 204, 255));
+        txt5.setColumns(20);
+        txt5.setRows(5);
+        txt5.setText("5. Are there alternative causes (other than the drug) \nthat could on their own have caused the reaction?\n");
+        txt5.setAutoscrolls(false);
+        txt5.setEnabled(false);
+        txt5.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane1.setViewportView(txt5);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 400, 70));
+        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 90, 40));
+        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 90, 40));
+
+        jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt8.setBackground(new java.awt.Color(204, 204, 255));
+        txt8.setColumns(20);
+        txt8.setRows(5);
+        txt8.setText("8. Did the reaction reappear \nwhen a placebo was given?\n");
+        txt8.setAutoscrolls(false);
+        txt8.setEnabled(false);
+        txt8.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane7.setViewportView(txt8);
+
+        add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 360, 70));
+
+        jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt9.setBackground(new java.awt.Color(204, 204, 255));
+        txt9.setColumns(20);
+        txt9.setRows(5);
+        txt9.setText("9. Was the drug detected \nin the blood (or other fluids) \nin concentrations known to be toxic?\n");
+        txt9.setAutoscrolls(false);
+        txt9.setEnabled(false);
+        txt9.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane8.setViewportView(txt9);
+
+        add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 360, 70));
+
+        jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt10.setBackground(new java.awt.Color(204, 204, 255));
+        txt10.setColumns(20);
+        txt10.setRows(5);
+        txt10.setText("10. Was the reaction more severe \nwhen the dose was increased, \nor less severe when the dose was decreased?\n");
+        txt10.setAutoscrolls(false);
+        txt10.setEnabled(false);
+        txt10.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane9.setViewportView(txt10);
+
+        add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 360, 70));
+
+        jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt11.setBackground(new java.awt.Color(204, 204, 255));
+        txt11.setColumns(20);
+        txt11.setRows(5);
+        txt11.setText("11. Did the patient have a similar \nreaction to the same or similar drugs \nin any previous exposure?\n");
+        txt11.setAutoscrolls(false);
+        txt11.setEnabled(false);
+        txt11.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane10.setViewportView(txt11);
+
+        add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, 360, 70));
+
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txt12.setBackground(new java.awt.Color(204, 204, 255));
+        txt12.setColumns(20);
+        txt12.setRows(5);
+        txt12.setText("12. Was the adverse event \nconfirmed by any objective evidence?\n");
+        txt12.setAutoscrolls(false);
+        txt12.setEnabled(false);
+        txt12.setSelectedTextColor(new java.awt.Color(204, 204, 255));
+        jScrollPane4.setViewportView(txt12);
+
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 360, 70));
+        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 70, 40));
+
+        scoreTxt1.setEnabled(false);
+        add(scoreTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 100, 40));
+
+        scoreTxt2.setEnabled(false);
+        add(scoreTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 100, 40));
+
+        scoreTxt3.setEnabled(false);
+        add(scoreTxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -112,6 +266,32 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextField scoreTxt1;
+    private javax.swing.JTextField scoreTxt2;
+    private javax.swing.JTextField scoreTxt3;
+    private javax.swing.JTextArea txt1;
+    private javax.swing.JTextArea txt10;
+    private javax.swing.JTextArea txt11;
+    private javax.swing.JTextArea txt12;
+    private javax.swing.JLabel txt13;
+    private javax.swing.JTextArea txt2;
+    private javax.swing.JTextArea txt3;
+    private javax.swing.JTextArea txt4;
+    private javax.swing.JTextArea txt5;
+    private javax.swing.JLabel txt6;
+    private javax.swing.JLabel txt7;
+    private javax.swing.JTextArea txt8;
+    private javax.swing.JTextArea txt9;
     private javax.swing.JSlider valueSlider;
     // End of variables declaration//GEN-END:variables
 }

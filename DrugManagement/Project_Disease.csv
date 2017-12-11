@@ -1,6 +1,10 @@
 Name ,Age,Disease,Effects of Disease
-Jenna,64,Arthritis,Joint pain|Stiffness|Anemic
-Wyoming,29,Cancer,Anemia|unusual mole|cough
-Yasir,64,HIV/AIDS,Fatigue|Nausea|Ulcers
-Kay,50,Meningitis,Fever|Lethargy|Malaise
-Stuart,98,Asthma,Difficulty in breathing|Wheezing|Chest tightness
+Jenna,64,Arthritis,Stiffness|Anemic
+Wyoming,29,Arthritis,Joint pain|Stiffness|Anemic
+Jessica,40,Arthritis,Joint pain|Stiffness|Anemic
+John,59,Cancer,Anemia|unusual mole|cough
+Stuart,63,Cancer,unusual mole|cough
+Jennifer,65,Cancer,Anemia|unusual mole|cough
+Sasha,19,Asthma,Difficulty in breathing|Wheezing|Chest tightness
+Yasmeen,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness
+yashira,60,Asthma,Difficulty in breathing|Wheezing|Chest tightness

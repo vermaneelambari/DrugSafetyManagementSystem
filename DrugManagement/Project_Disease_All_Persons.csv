@@ -1,74 +1,31 @@
-Name ,Age,Disease,Effects of Disease
-Jenna,64,Arthritis,"Joint pain,Stiffness,Anemic"
-Wyoming,29,Cancer,"Anemia, unusual mole, cough"
-Yasir,64,HIV/AIDS,"Fatigue,Nausea,Ulcers"
-Kay,50,Meningitis,"Fever, Lethargy, Malaise"
-Stuart,98,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Jemima,43,Diabetes,"Urination, fatigue, blurred vision"
-Fatima,54,Arthritis,"Joint pain,Stiffness,Anemic"
-Perry,96,Tuberculosis,"Fatigue, Fever, Malaise"
-Elliott,52,Flu,"Dehydration, Fever, Flushing"
-Julie,96,Cancer,"Anemia, unusual mole, cough"
-William,79,Tuberculosis,"Fatigue, Fever, Malaise"
-Dieter,25,Cancer,"Anemia, unusual mole, cough"
-Bradley,100,Diabetes,"Urination, fatigue, blurred vision"
-Len,93,Diabetes,"Urination, fatigue, hunger, blurred vision"
-Benjamin,32,Cancer,"Anemia, unusual mole, cough"
-Lara,70,Tuberculosis,"Fatigue, Fever, Malaise"
-Aimee,47,HIV/AIDS,"Fatigue, Nausea,Ulcers"
-Cyrus,41,Arthritis,"Joint pain,Stiffness,Anemic"
-Griffin,60,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Kaseem,62,Meningitis,"Fever, Lethargy, Malaise"
-Kelsie,76,Meningitis,"Fever, Lethargy, Malaise"
-Margaret,37,Arthritis,"Joint pain,Stiffness,Anemic"
-Craig,99,Arthritis,"Joint pain,Stiffness,Anemic"
-Hedley,87,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Sacha,56,Flu,"Dehydration, Fever, Flushing"
-Clark,97,Meningitis,"Fever, Lethargy, Malaise"
-Igor,94,Flu,"Dehydration, Fever, Flushing"
-Jerry,41,Cancer,"Anemia, unusual mole, cough"
-Kieran,49,cancer,"Anemia, unusual mole, cough"
-Dean,50,cancer,"Anemia, unusual mole, cough"
-Burton,25,HIV/AIDS,"Fatigue, Nausea,Ulcers"
-Avye,67,HIV/AIDS,"Fatigue, Nausea,Ulcers"
-Donna,87,Cancer,"Anemia, unusual mole, cough"
-Angelica,42,Cancer,"Anemia, unusual mole, cough"
-Shea,83,Diabetes,"Urination, fatigue, blurred vision"
-Jordan,55,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Xerxes,53,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Mercedes,37,Tuberculosis,"Fatigue, Fever, Malaise"
-Ishmael,91,Tuberculosis,"Fatigue, Fever, Malaise"
-Ifeoma,73,Diabetes,"Urination, fatigue, blurred vision"
-Colton,47,Cancer,"Anemia, unusual mole, cough"
-Calista,78,Tuberculosis,"Fatigue, Fever, Malaise"
-Darius,59,Flu,"Dehydration, Fever, Flushing"
-Lani,30,Flu,"Dehydration, Fever, Flushing"
-Eagan,76,Cancer,"Anemia, unusual mole, cough"
-Iona,31,Diabetes,"Urination, fatigue, blurred vision"
-Casey,70,Flu,"Dehydration, Fever, Flushing"
-Cruz,40,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Ray,60,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Demetrius,61,Flu,"Dehydration, Fever, Flushing"
-Jin,58,Diabetes,"Urination, fatigue, blurred vision"
-Jin,90,Diabetes,"Urination, fatigue, blurred vision"
-Clayton,68,Arthritis,"Joint pain,Stiffness,Anemic"
-Baker,85,Diabetes,"Urination, fatigue, blurred vision"
-Hamilton,79,Flu,"Dehydration, Fever, Flushing"
-Eaton,47,Cancer,"Anemia, unusual mole, cough"
-Travis,89,Meningitis,"Fever, Lethargy, Malaise"
-Warren,80,Meningitis,"Fever, Lethargy, Malaise"
-Madonna,33,Flu,"Dehydration, Fever, Flushing"
-Faith,64,HIV/AIDS,"Fatigue, Nausea,Ulcers"
-Hamish,47,Flu,"Dehydration, Fever, Flushing"
-Whilemina,67,Arthritis,"Joint pain,Stiffness,Anemic"
-Coby,52,Diabetes,"Urination, fatigue, blurred vision"
-Wayne,32,Arthritis,"Joint pain,Stiffness,Anemic"
-Urielle,64,Diabetes,"Urination, fatigue, blurred vision"
-Elvis,43,Flu,"Dehydration, Fever, Flushing"
-Amos,61,Asthma,"Difficulty in breathing, Wheezing, Chest tightness"
-Christopher,67,Arthritis,"Joint pain,Stiffness,Anemic"
-Bruno,93,Diabetes,"Urination, fatigue, blurred vision"
-Rylee,65,Cancer,"Anemia, unusual mole, cough"
-Galvin,39,Meningitis,"Fever, Lethargy, Malaise"
-Olivia,39,Meningitis,"Fever, Lethargy, Malaise"
-Odessa,74,Flu,"Dehydration, Fever, Flushing"
+Name ,Age,Disease,Effects of Disease,,
+Jenna,64,Arthritis,Joint pain|Stiffness|Anemic,,
+Wyoming,29,Arthritis,Joint pain|Stiffness|Anemic,,
+Jessica,40,Arthritis,Joint pain|Stiffness|Anemic,,
+John,59,Cancer,Anemia|unusual mole|cough,,
+Stuart,63,Cancer,Tiredness|unusual mole|cough,,
+Jennifer,65,Cancer,Anemia|unusual mole|cough,,
+Sasha,19,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+Yasmeen,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+yashira,60,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+jasmine,35,Arthritis,Joint pain|Stiffness|Anemic,,
+clara,20,Arthritis,Joint pain|Stiffness|Anemic,,
+clinton,72,Arthritis,Joint pain|Stiffness|Anemic,,
+bernard,67,Arthritis,Joint pain|Stiffness|Anemic,,redness
+beethoven,35,Arthritis,Joint pain|Stiffness|Anemic,,redness
+zen,78,Arthritis,Joint pain|Stiffness|Anemic,,
+zafir,67,Arthritis,Joint pain|Stiffness|Anemic,,
+mugar,62,Cancer,Tiredness|unusual mole|cough,,
+ell,35,Cancer,Tiredness|unusual mole|cough,,
+bruno,50,Cancer,Tiredness|unusual mole|cough,,
+tom,48,Cancer,Tiredness|unusual mole|cough,,
+jerry,35,Cancer,Tiredness|unusual mole|cough,,
+sophia,67,Cancer,Anemia|unusual mole|cough,,
+simer,35,Cancer,Anemia|unusual mole|cough,,
+santa,85,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+victoria,20,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+sam,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+srujan,20,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+shazzy,67,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+kenny,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+benny,20,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
