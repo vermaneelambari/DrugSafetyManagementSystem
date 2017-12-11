@@ -5,7 +5,6 @@
  */
 package UserInterface.PostClinicalPubSecRole;
 
-import Business.EcoSystem;
 import Business.Person.Person;
 import Business.PostClinicalPerson.PostClinicalPerson;
 import java.awt.CardLayout;
@@ -22,37 +21,24 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
      * Creates new form SearchPersonJPanel
      */
     JPanel userProcessContainer;
-    Person person;  
+    Person person;
     PostClinicalPerson p;
-    
+
     SearchPersonJPanel(JPanel userProcessContainer, PostClinicalPerson p) {
-    initComponents();
-    this.userProcessContainer = userProcessContainer;
-    this.p=p;
-    this.person=person;
-    populateSearchDetails();
-    populateCombo();
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.p = p;
+        this.person = person;
+        populateSearchDetails();
     }
 
-    
+    private void populateSearchDetails() {
 
-    
-    public void populateCombo() {
-        SearchCombo.removeAllItems();
-        for (String v : p.getDiseaseList()) {
-            SearchCombo.addItem(v);
-        }
-    }
-    private void populateSearchDetails(){
-        
-        
-        
+        jTextField1.setText(p.getSideEffects());
         txtSearchName.setText(p.getName());
         txtSearchAge.setText(String.valueOf(p.getAge()));
         txtSearchDisease.setText(p.getDisease());
-        
-        
-        
+
     }
 
     /**
@@ -72,9 +58,10 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtSearchDisease = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        SearchCombo = new javax.swing.JComboBox<>();
         btnBack = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
+        setEnabled(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -84,6 +71,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 134, -1, -1));
 
+        txtSearchName.setEnabled(false);
         txtSearchName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchNameActionPerformed(evt);
@@ -93,22 +81,18 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Age:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 172, -1, -1));
+
+        txtSearchAge.setEnabled(false);
         add(txtSearchAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 169, 177, -1));
 
         jLabel4.setText("Disease:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 207, -1, -1));
+
+        txtSearchDisease.setEnabled(false);
         add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 207, 177, 30));
 
         jLabel5.setText("Effect's of Disease:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 249, -1, -1));
-
-        SearchCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        SearchCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchComboActionPerformed(evt);
-            }
-        });
-        add(SearchCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 246, 194, -1));
 
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -117,16 +101,14 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 311, -1, -1));
+
+        jTextField1.setEnabled(false);
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 180, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchNameActionPerformed
-
-    private void SearchComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchComboActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_SearchComboActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -142,13 +124,13 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> SearchCombo;
     private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtSearchAge;
     private javax.swing.JTextField txtSearchDisease;
     private javax.swing.JTextField txtSearchName;

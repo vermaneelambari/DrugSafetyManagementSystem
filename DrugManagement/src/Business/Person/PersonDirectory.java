@@ -42,7 +42,7 @@ public class PersonDirectory {
     
     public Person searchPerson(String name){
         for(Person p : personList){
-            if(p.getName()== name){
+            if(p.getName().equals(name)){
                 return p;
             }
         } 

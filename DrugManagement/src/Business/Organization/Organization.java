@@ -57,7 +57,6 @@ public abstract class Organization {
         diseaseCatalog = new DiseaseCatalog();
         personDirectory = new PersonDirectory();
         postClinicalPersonDirectory = new PostClinicalPersonDirectory();
-        clinicalReportDirectory = new ClinicalReportDirectory();
     }
 
     public PostClinicalPersonDirectory getPostClinicalPersonDirectory() {

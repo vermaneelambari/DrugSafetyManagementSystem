@@ -15,7 +15,15 @@ public class PostClinicalPerson {
     private String name;
     private int age; 
     private String disease;
-    private ArrayList<String> diseaseList; 
+    private String sideEffects;
+
+    public String getSideEffects() {
+        return sideEffects;
+    }
+
+    public void setSideEffects(String sideEffects) {
+        this.sideEffects = sideEffects;
+    }
 
     public String getName() {
         return name;
@@ -41,11 +49,8 @@ public class PostClinicalPerson {
         this.disease = disease;
     }
 
-    public ArrayList<String> getDiseaseList() {
-        return diseaseList;
-    }
-
-    public void setDiseaseList(ArrayList<String> diseaseList) {
-        this.diseaseList = diseaseList;
+    @Override
+    public String toString() {
+        return name;
     }
 }

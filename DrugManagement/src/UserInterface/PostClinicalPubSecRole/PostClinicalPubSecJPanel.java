@@ -71,11 +71,8 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
             }
             for (int i = 1; i < dataCsvArr.size(); i++) {
                 String valuesOfArray[] = dataCsvArr.get(i);
-                List<String> list4 = Arrays.asList(new String());
-                list4 = Arrays.asList(valuesOfArray[3].split("\\|"));
-                ArrayList<String> arrlist = new ArrayList<String>(list4);
                 PostClinicalPerson p = system.getPostClinicalPersonDirectory().addPerson();
-                p.setDiseaseList(arrlist);
+                p.setDisease(valuesOfArray[2]);
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
                 p.setDisease(valuesOfArray[2]);

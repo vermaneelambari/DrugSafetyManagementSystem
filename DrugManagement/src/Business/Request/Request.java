@@ -9,6 +9,8 @@ import Business.ClinicalReport.ClinicalReport;
 import Business.ClinicalReport.ClinicalReportDirectory;
 import Business.Disease.Disease;
 import Business.Person.Person;
+import Business.PostClinicalReport.PostClinicalReportDirectory;
+import Business.PostClinicalReport.PostClinicalTrialDataEntry;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import java.util.Date;
@@ -30,6 +32,40 @@ public abstract class Request {
     private ClinicalReportDirectory clinicalReportDirectory; 
     private Person person;
     private float interpretationScore;
+    private PostClinicalReportDirectory postClinicalReportDirectory;
+    private float postCtInterpretationScore;
+    private PostClinicalTrialDataEntry postClinicalTrialDataEntry;
+    
+    public Request(){
+        requestDate = new Date();
+        clinicalReportDirectory = new ClinicalReportDirectory();
+        postClinicalReportDirectory = new PostClinicalReportDirectory();
+        postClinicalTrialDataEntry = new PostClinicalTrialDataEntry();
+    }
+
+    public PostClinicalTrialDataEntry getPostClinicalTrialDataEntry() {
+        return postClinicalTrialDataEntry;
+    }
+
+    public void setPostClinicalTrialDataEntry(PostClinicalTrialDataEntry postClinicalTrialDataEntry) {
+        this.postClinicalTrialDataEntry = postClinicalTrialDataEntry;
+    }
+
+    public PostClinicalReportDirectory getPostClinicalReportDirectory() {
+        return postClinicalReportDirectory;
+    }
+
+    public void setPostClinicalReportDirectory(PostClinicalReportDirectory postClinicalReportDirectory) {
+        this.postClinicalReportDirectory = postClinicalReportDirectory;
+    }
+
+    public float getPostCtInterpretationScore() {
+        return postCtInterpretationScore;
+    }
+
+    public void setPostCtInterpretationScore(float postCtInterpretationScore) {
+        this.postCtInterpretationScore = postCtInterpretationScore;
+    }
     
 
     public float getInterpretationScore() {
@@ -72,11 +108,6 @@ public abstract class Request {
         this.vaccine = vaccine;
     }
     
-    public Request(){
-        requestDate = new Date();
-        clinicalReportDirectory = new ClinicalReportDirectory();
-    }
-
     public String getResult() {
         return result;
     }

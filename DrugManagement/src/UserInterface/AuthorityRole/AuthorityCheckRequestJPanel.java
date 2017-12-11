@@ -390,7 +390,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the Disease ", "Warning", dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             request.setStatus("Approved for Post Clinical Trail");
             request.setReceiver(request.getSender());
@@ -410,12 +410,12 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
                 org.getRequestList().getRequestList().add(request);
             }
             userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        AuthorityWorkAreaJPanel sysAdminwjp = (AuthorityWorkAreaJPanel) component;
-        sysAdminwjp.populateTable();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+            Component[] componentArray = userProcessContainer.getComponents();
+            Component component = componentArray[componentArray.length - 1];
+            AuthorityWorkAreaJPanel sysAdminwjp = (AuthorityWorkAreaJPanel) component;
+            sysAdminwjp.populateTable();
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
         }
     }//GEN-LAST:event_approveBtnActionPerformed
 
