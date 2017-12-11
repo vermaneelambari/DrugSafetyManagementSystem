@@ -110,13 +110,13 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 840, 130));
 
-        approveBtn.setText("Approve");
+        approveBtn.setText("Approve for Pre Clinical Trial");
         approveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveBtnActionPerformed(evt);
             }
         });
-        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 140, 40));
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 200, 40));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Employee Name:");

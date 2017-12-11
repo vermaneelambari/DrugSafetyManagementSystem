@@ -405,21 +405,21 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         no12.setText("No");
         add(no12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 500, 80, -1));
         add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 90, 40));
-        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 70, 40));
+        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 560, 70, 40));
 
         effectsCombo7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
         add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 620, 100, -1));
 
         effectsCombo13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 100, -1));
+        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 570, 100, -1));
 
         effectsCombo6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
         add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 100, -1));
-        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 570, 90, -1));
+        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 90, -1));
         add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 90, 40));
 
         jLabel10.setText("Percentage of Increase/Decrease");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 560, 190, 40));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 560, 190, 40));
 
         jLabel13.setText("Percentage of Increase/Decrease");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 190, 40));
@@ -444,7 +444,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 10, -1));
 
         jLabel8.setText("13.");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 570, 20, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 570, 20, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {

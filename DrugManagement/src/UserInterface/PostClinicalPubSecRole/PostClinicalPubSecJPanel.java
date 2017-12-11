@@ -6,6 +6,9 @@
 package UserInterface.PostClinicalPubSecRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Organization.PostClinicalTrialOrganization;
 import Business.Person.Person;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -29,18 +32,20 @@ import javax.swing.table.DefaultTableModel;
 public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    UserAccount userAccount;
+    UserAccount account;
+    Organization organization;
+    Enterprise enterprise;
     EcoSystem system;
-
     /**
      * Creates new form PostClinicalPubSecJPanel
      */
-    public PostClinicalPubSecJPanel(){
+    public PostClinicalPubSecJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system){
         initComponents();
-        this.userAccount = userAccount;
         this.userProcessContainer = userProcessContainer;
-        this.system = system; 
-        
+        this.account = account;
+        this.organization = (PostClinicalTrialOrganization)organization;
+        this.enterprise = enterprise;
+        this.system = system;
         createData();
         populatePostClinicalPubSecTable();
           
