@@ -9,6 +9,7 @@ import Business.Network.Network;
 import UserInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -65,7 +66,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         updateBtn = new javax.swing.JButton();
         delBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -99,18 +103,26 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 404, 91));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 570, 100));
 
         jLabel1.setText("Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 257, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         submitJButton.setText("Submit");
+        submitJButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                submitJButtonMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                submitJButtonMouseEntered(evt);
+            }
+        });
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 253, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
 
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +134,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 nameJTextFieldKeyPressed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 254, 93, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 93, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +142,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 350, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, -1, -1));
 
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +150,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, -1, -1));
 
         delBtn.setText("Delete");
         delBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -146,11 +158,18 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 delBtnActionPerformed(evt);
             }
         });
-        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Create Network");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 230, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 350, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/socialnetworkbuddypress.png")); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 550, 300));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/internet-filled.png")); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 110, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -160,6 +179,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter name");
             return;
         }
+        if ( !(name.matches("[a-zA-Z]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         if (system.searchNetwork(name) != null) {
             JOptionPane.showMessageDialog(null, "Network already present");
             return;
@@ -220,11 +243,27 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
     }//GEN-LAST:event_nameJTextFieldKeyPressed
 
+    private void submitJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitJButtonMouseEntered
+        // TODO add your handling code here:
+        
+          this.submitJButton.setBackground(Color.cyan); 
+
+    }//GEN-LAST:event_submitJButtonMouseEntered
+
+    private void submitJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitJButtonMouseExited
+        // TODO add your handling code here:
+        
+           this.submitJButton.setBackground(Color.lightGray); 
+
+    }//GEN-LAST:event_submitJButtonMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton delBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTable networkJTable;

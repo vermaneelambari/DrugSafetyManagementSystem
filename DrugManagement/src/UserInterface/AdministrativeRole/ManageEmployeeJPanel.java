@@ -262,8 +262,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         add(pharmaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 340, 110));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 153));
         jLabel5.setText("Manage Employee ");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
@@ -284,6 +284,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter name");
             return;
         }
+        if ( !(name.matches("[a-zA-Z]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         if (enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DrugManufacturing)) {
             check = true;
         }
@@ -298,6 +302,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please enter Vaccine name");
                 return;
             }
+            if ( !(vname.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
+                  return;
+        }
         }
         Employee e = organization.getEmployeeDirectory().createEmployee(name);
         if (check) {

@@ -7,6 +7,7 @@ package UserInterface.SystemAdminWorkArea.Disease;
 
 import Business.Disease.Disease;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -43,11 +44,13 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         addBtn = new javax.swing.JButton();
         vacName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Disease Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 73, 90, 30));
+        jLabel1.setText("Disease Name:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 110, 30));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -55,20 +58,33 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 203, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         addBtn.setText("Update");
+        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addBtnMouseEntered(evt);
+            }
+        });
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 133, 90, 40));
-        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 130, 30));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 90, 40));
+        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 130, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Update Disease");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 230, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 230, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Downloads/rsz_approve-and-update-filled.png")); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 130, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -87,10 +103,27 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Disease Name");
             return;
         }
+        if ( !(name.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
+                  return;
+            }
         disease.setdName(name);
         JOptionPane.showMessageDialog(null, "Disease Updated Successfully");
         vacName.setText("");
     }//GEN-LAST:event_addBtnActionPerformed
+
+    private void addBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseEntered
+        // TODO add your handling code here:
+        
+                                    this.addBtn.setBackground(Color.YELLOW); 
+
+    }//GEN-LAST:event_addBtnMouseEntered
+
+    private void addBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseExited
+        // TODO add your handling code here:
+                        this.addBtn.setBackground(Color.lightGray); 
+
+    }//GEN-LAST:event_addBtnMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -98,6 +131,7 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

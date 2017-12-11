@@ -100,6 +100,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         selectedNodeJLabel = new javax.swing.JLabel();
         mngDiseaseButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTree = new javax.swing.JTree();
@@ -110,29 +111,32 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        manageNetworkJButton.setBackground(new java.awt.Color(0, 153, 153));
         manageNetworkJButton.setText("Manage Network");
         manageNetworkJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageNetworkJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageNetworkJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 100, 170, -1));
+        jPanel1.add(manageNetworkJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 190, 60));
 
+        manageAdminJButton.setBackground(new java.awt.Color(0, 153, 153));
         manageAdminJButton.setText("Manage Enterprise Admin");
         manageAdminJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageAdminJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageAdminJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 200, 170, -1));
+        jPanel1.add(manageAdminJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 190, 60));
 
+        manageEnterpriseJButton.setBackground(new java.awt.Color(0, 153, 153));
         manageEnterpriseJButton.setText("Manage Enterprise");
         manageEnterpriseJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEnterpriseJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(manageEnterpriseJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 149, 170, -1));
+        jPanel1.add(manageEnterpriseJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 190, 60));
 
         jLabel1.setText("Selected Node:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 36, -1, -1));
@@ -140,13 +144,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         selectedNodeJLabel.setText("<view_selected_node>");
         jPanel1.add(selectedNodeJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 36, -1, -1));
 
+        mngDiseaseButton.setBackground(new java.awt.Color(0, 153, 153));
         mngDiseaseButton.setText("Manage Disease Catalog");
         mngDiseaseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mngDiseaseButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(mngDiseaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 170, -1));
+        jPanel1.add(mngDiseaseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 190, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Desktop/57030349bdce9.image.jpg")); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 560, 390));
 
         jSplitPane1.setRightComponent(jPanel1);
 
@@ -210,6 +218,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTree JTree;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -194,6 +194,9 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
                 userProcessContainer.add("AuthorityCheckRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
+        }else{
+            JOptionPane.showMessageDialog(null, "Request is still under process");
+            return;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

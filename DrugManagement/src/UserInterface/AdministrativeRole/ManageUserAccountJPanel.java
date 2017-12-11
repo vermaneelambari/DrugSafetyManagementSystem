@@ -11,6 +11,7 @@ import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -101,10 +102,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
         updateBtn = new javax.swing.JButton();
-        remobeBtn = new javax.swing.JButton();
+        removeBtn = new javax.swing.JButton();
         passwordJTextField = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createUserJButton.setText("Create");
@@ -148,7 +150,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             userJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 660, 160));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 660, 160));
 
         jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
@@ -183,6 +185,14 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 146, -1));
 
         updateBtn.setText("Update");
+        updateBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateBtnMouseEntered(evt);
+            }
+        });
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBtnActionPerformed(evt);
@@ -190,16 +200,25 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, -1, -1));
 
-        remobeBtn.setText("Delete");
-        remobeBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                remobeBtnActionPerformed(evt);
+        removeBtn.setText("Delete");
+        removeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                removeBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                removeBtnMouseEntered(evt);
             }
         });
-        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 120, -1));
+        removeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeBtnActionPerformed(evt);
+            }
+        });
+        add(removeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 120, -1));
         add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 150, -1));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 153, 153));
         jLabel6.setText("Manage User Account");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -268,7 +287,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_updateBtnActionPerformed
 
-    private void remobeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remobeBtnActionPerformed
+    private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
         int selectedRow = userJTable.getSelectedRow();
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         if (selectedRow >= 0) {
@@ -283,7 +302,34 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select Any Row", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_remobeBtnActionPerformed
+    }//GEN-LAST:event_removeBtnActionPerformed
+
+    private void updateBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseEntered
+        // TODO add your handling code here:
+        
+         this.updateBtn.setBackground(Color.yellow); 
+
+    }//GEN-LAST:event_updateBtnMouseEntered
+
+    private void updateBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseExited
+        // TODO add your handling code here:
+        this.updateBtn.setBackground(Color.LIGHT_GRAY); 
+
+        
+    }//GEN-LAST:event_updateBtnMouseExited
+
+    private void removeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeBtnMouseEntered
+        // TODO add your handling code here:
+        this.removeBtn.setBackground(Color.red); 
+
+    }//GEN-LAST:event_removeBtnMouseEntered
+
+    private void removeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeBtnMouseExited
+        // TODO add your handling code here:
+         this.removeBtn.setBackground(Color.LIGHT_GRAY); 
+
+        
+    }//GEN-LAST:event_removeBtnMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backjButton1;
@@ -299,7 +345,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JPasswordField passwordJTextField;
-    private javax.swing.JButton remobeBtn;
+    private javax.swing.JButton removeBtn;
     private javax.swing.JComboBox roleJComboBox;
     private javax.swing.JButton updateBtn;
     private javax.swing.JTable userJTable;
