@@ -47,7 +47,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.enterprise = enterprise;
         this.system = system;
-        if(system.getPersonDirectory().getPersonList().size()==0){
+        if(system.getPostClinicalPersonDirectory().getPostClinicalPersonList().size()==0){
             createData();
         }
         
@@ -232,8 +232,8 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a person");
             return;
         }
-        Person p = (Person) tblPostClinical.getValueAt(selectedRow, 0);
-        system.getPersonDirectory().deletePerson(p);
+        PostClinicalPerson p = (PostClinicalPerson) tblPostClinical.getValueAt(selectedRow, 0);
+        system.getPostClinicalPersonDirectory().deletePerson(p);
         populatePostClinicalPubSecTable();
         JOptionPane.showMessageDialog(null, "Person" + p.getName()+ " has been removed");
 
@@ -259,8 +259,8 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         }
         else
         {
-            Person p = (Person) tblPostClinical.getValueAt(selectedRow, 0);
-            UpdateJPanel ujp = new UpdateJPanel(userProcessContainer, p);
+            PostClinicalPerson person = (PostClinicalPerson) tblPostClinical.getValueAt(selectedRow, 0);
+            UpdateJPanel ujp = new UpdateJPanel(userProcessContainer, person);
             
             userProcessContainer.add("UpdateJPanel", ujp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -276,20 +276,21 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
     private void btnSearchByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByNameActionPerformed
         // TODO add your handling code here:
 
-        if(TxtSearch.getText().equalsIgnoreCase(""))
+         if(TxtSearch.getText().equalsIgnoreCase(""))
         {
             JOptionPane.showMessageDialog(null, "Please Enter Person's Name");
         }
-        else
-        {
-            String name = TxtSearch.getText();
-            Person p = system.getPersonDirectory().searchPerson(name);
-            SearchPersonJPanel spjp = new SearchPersonJPanel(userProcessContainer, p);
-            userProcessContainer.add("SearchPersonJPanel", spjp);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-
-        }
+        else 
+         {
+          String name = TxtSearch.getText();
+          PostClinicalPerson p = system.getPostClinicalPersonDirectory().searchPerson(name);
+          SearchPersonJPanel post = new SearchPersonJPanel(userProcessContainer, p);
+          userProcessContainer.add("SearchPersonJPanel", post);
+          CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+          layout.next(userProcessContainer);
+    
+         }
+    
     }//GEN-LAST:event_btnSearchByNameActionPerformed
 
     private void TxtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSearchActionPerformed

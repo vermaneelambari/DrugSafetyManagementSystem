@@ -7,6 +7,7 @@ package UserInterface.PostClinicalPubSecRole;
 
 import Business.EcoSystem;
 import Business.Person.Person;
+import Business.PostClinicalPerson.PostClinicalPerson;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -21,20 +22,24 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
      * Creates new form SearchPersonJPanel
      */
     JPanel userProcessContainer;
-    EcoSystem system;
     Person person;  
+    PostClinicalPerson p;
     
-    SearchPersonJPanel(JPanel userProcessContainer, Person p) {
+    SearchPersonJPanel(JPanel userProcessContainer, PostClinicalPerson p) {
     initComponents();
     this.userProcessContainer = userProcessContainer;
-    this.system = system;
-    this.person = person;
+    this.p=p;
+    this.person=person;
     populateSearchDetails();
     populateCombo();
     }
+
+    
+
+    
     public void populateCombo() {
         SearchCombo.removeAllItems();
-        for (String v : person.getDiseaseList()) {
+        for (String v : p.getDiseaseList()) {
             SearchCombo.addItem(v);
         }
     }
@@ -42,9 +47,9 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         
         
         
-        txtSearchName.setText(person.getName());
-        txtSearchAge.setText(String.valueOf(person.getAge()));
-        txtSearchDisease.setText(person.getDisease());
+        txtSearchName.setText(p.getName());
+        txtSearchAge.setText(String.valueOf(p.getAge()));
+        txtSearchDisease.setText(p.getDisease());
         
         
         
@@ -70,22 +75,32 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         SearchCombo = new javax.swing.JComboBox<>();
         btnBack = new javax.swing.JButton();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setText(" Person's Effects of Disease");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 27, 509, 44));
 
         jLabel2.setText("Name: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 134, -1, -1));
 
         txtSearchName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchNameActionPerformed(evt);
             }
         });
+        add(txtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 131, 177, -1));
 
         jLabel3.setText("Age:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 172, -1, -1));
+        add(txtSearchAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 169, 177, -1));
 
         jLabel4.setText("Disease:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 207, -1, -1));
+        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 207, 177, 30));
 
         jLabel5.setText("Effect's of Disease:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 249, -1, -1));
 
         SearchCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         SearchCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +108,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
                 SearchComboActionPerformed(evt);
             }
         });
+        add(SearchCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 246, 194, -1));
 
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -100,65 +116,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(94, 94, 94)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSearchAge, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtSearchName, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(SearchCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(85, 85, 85)
-                                .addComponent(txtSearchDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(btnBack))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSearchName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtSearchAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtSearchDisease, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(SearchCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(btnBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 311, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNameActionPerformed

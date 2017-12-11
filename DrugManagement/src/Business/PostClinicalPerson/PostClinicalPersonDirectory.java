@@ -39,7 +39,7 @@ public class PostClinicalPersonDirectory {
     
     public PostClinicalPerson searchPerson(String name){
         for(PostClinicalPerson p : postClinicalPersonList){
-            if(p.getName()== name){
+            if(p.getName().equals(name)){
                 return p;
             }
         } 

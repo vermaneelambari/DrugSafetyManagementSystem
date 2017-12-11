@@ -6,6 +6,7 @@
 package UserInterface.PostClinicalPubSecRole;
 
 import Business.Person.Person;
+import Business.PostClinicalPerson.PostClinicalPerson;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -21,10 +22,10 @@ public class UpdateJPanel extends javax.swing.JPanel {
      * Creates new form UpdateJPanel
      */
     JPanel userProcessContainer;
-    Person person;
+    PostClinicalPerson person;
     
 
-    UpdateJPanel(JPanel userProcessContainer, Person person) {
+    UpdateJPanel(JPanel userProcessContainer, PostClinicalPerson person) {
     initComponents();
         this.userProcessContainer = userProcessContainer;
         this.person = person;
@@ -33,6 +34,8 @@ public class UpdateJPanel extends javax.swing.JPanel {
         btnSave.setEnabled(false);
         updateBtn.setEnabled(true);
     }
+
+    
     private void populatePersonDetails(){
         
         txtName.setText(person.getName());
