@@ -145,6 +145,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, -1, -1));
 
         updateBtn.setText("Update");
+        updateBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateBtnMouseEntered(evt);
+            }
+        });
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBtnActionPerformed(evt);
@@ -153,6 +161,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, -1, -1));
 
         delBtn.setText("Delete");
+        delBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                delBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delBtnMouseEntered(evt);
+            }
+        });
         delBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delBtnActionPerformed(evt);
@@ -252,6 +268,31 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
            this.submitJButton.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_submitJButtonMouseExited
+
+    private void updateBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseEntered
+        // TODO add your handling code here:
+        this.updateBtn.setBackground(Color.yellow); 
+  
+    }//GEN-LAST:event_updateBtnMouseEntered
+
+    private void updateBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseExited
+        // TODO add your handling code here:
+        
+       this.updateBtn.setBackground(Color.lightGray); 
+ 
+    }//GEN-LAST:event_updateBtnMouseExited
+
+    private void delBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delBtnMouseEntered
+        // TODO add your handling code here:
+        
+      this.delBtn.setBackground(Color.red); 
+
+    }//GEN-LAST:event_delBtnMouseEntered
+
+    private void delBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delBtnMouseExited
+        // TODO add your handling code here:
+      this.delBtn.setBackground(Color.lightGray);  
+    }//GEN-LAST:event_delBtnMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

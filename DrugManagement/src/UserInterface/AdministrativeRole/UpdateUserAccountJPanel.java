@@ -7,6 +7,7 @@ package UserInterface.AdministrativeRole;
 
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -47,7 +48,9 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         addBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 30));
 
@@ -63,16 +66,28 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 209, 100, 40));
 
         addBtn.setText("Update");
+        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addBtnMouseEntered(evt);
+            }
+        });
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 90, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Update User");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 190, 40));
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel2.setText("Update User Account");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 260, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/AdministrativeRole/rsz_approve-and-update-filled.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -99,12 +114,27 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Employee Updated Successfully");
     }//GEN-LAST:event_addBtnActionPerformed
 
+    private void addBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseEntered
+        // TODO add your handling code here:
+        
+     this.addBtn.setBackground(Color.YELLOW); 
+
+    }//GEN-LAST:event_addBtnMouseEntered
+
+    private void addBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseExited
+        // TODO add your handling code here:
+     this.addBtn.setBackground(Color.lightGray); 
+   
+        
+    }//GEN-LAST:event_addBtnMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

@@ -269,31 +269,31 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void submitJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitJButtonMouseEntered
         // TODO add your handling code here:
         
-                          this.submitJButton.setBackground(Color.cyan); 
+    this.submitJButton.setBackground(Color.cyan); 
 
     }//GEN-LAST:event_submitJButtonMouseEntered
 
     private void submitJButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitJButtonMouseExited
         // TODO add your handling code here:
-                           this.submitJButton.setBackground(Color.lightGray); 
+    this.submitJButton.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_submitJButtonMouseExited
 
     private void updateBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseEntered
         // TODO add your handling code here:
-                            this.updateBtn.setBackground(Color.YELLOW); 
+     this.updateBtn.setBackground(Color.YELLOW); 
 
     }//GEN-LAST:event_updateBtnMouseEntered
 
     private void updateBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseExited
         // TODO add your handling code here:
-                   this.updateBtn.setBackground(Color.lightGray); 
+     this.updateBtn.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_updateBtnMouseExited
 
     private void delBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delBtnMouseEntered
         // TODO add your handling code here:
-                           this.delBtn.setBackground(Color.red); 
+   this.delBtn.setBackground(Color.red); 
 
         
     }//GEN-LAST:event_delBtnMouseEntered
@@ -301,7 +301,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void delBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delBtnMouseExited
         // TODO add your handling code here:
         
-                                   this.delBtn.setBackground(Color.lightGray); 
+     this.delBtn.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_delBtnMouseExited
 
