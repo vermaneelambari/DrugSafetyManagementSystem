@@ -168,20 +168,36 @@ public class UpdateJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButton2ActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        updateBtn.setEnabled(true);
+        btnSave.setEnabled(true);
+
+        txtDisease.setEnabled(true);
+        txtAge.setEnabled(true);
+        txtDisease.setEnabled(true);
 
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
 
+         if(txtName.getText().trim().length()==0 || txtAge.getText().trim().length()==0 ||txtDisease.getText().trim().length()==0){
+            JOptionPane.showMessageDialog(null, "Please enter valid details", "Invalid Details", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try{
+            int age = Integer.parseInt(txtAge.getText());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter integer values for age", "Invalid Details", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         person.setName(txtName.getText());
         person.setDisease(txtDisease.getText());
         person.setAge(Integer.parseInt(txtAge.getText()));
-
         btnSave.setEnabled(false);
         updateBtn.setEnabled(true);
         JOptionPane.showMessageDialog(null, "Person Updated Successfully.");
-
+        
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
 

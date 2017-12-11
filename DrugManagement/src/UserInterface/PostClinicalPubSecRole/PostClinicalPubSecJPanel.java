@@ -110,6 +110,8 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPostClinical = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        btnSearchByName = new javax.swing.JButton();
+        TxtSearch = new javax.swing.JTextField();
 
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +147,19 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setText("Post-Clinical Public Sector Work Area");
 
+        btnSearchByName.setText("Search by Name :");
+        btnSearchByName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchByNameActionPerformed(evt);
+            }
+        });
+
+        TxtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,6 +180,12 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(98, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(btnSearchByName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,21 +199,36 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete))
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSearchByName)
+                    .addComponent(TxtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
      
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblPostClinical.getSelectedRow();
+        /*int selectedRow = tblPostClinical.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
-        }
+        }*/
         
         JOptionPane.showMessageDialog(null, "Person deleted successfully");
+        
+        int selectedRow = tblPostClinical.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a person");
+            return;
+        }
+        Person p = (Person) tblPostClinical.getValueAt(selectedRow, 0);
+        system.getPersonDirectory().deletePerson(p);
+        populatePostClinicalPubSecTable();
+        JOptionPane.showMessageDialog(null, "Person" + p.getName()+ " has been removed");
 
+        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -228,10 +264,36 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
        
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void btnSearchByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchByNameActionPerformed
+        // TODO add your handling code here:
+
+        if(TxtSearch.getText().equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter Person's Name");
+        }
+        else
+        {
+            String name = TxtSearch.getText();
+            Person p = system.getPersonDirectory().searchPerson(name);
+            SearchPersonJPanel spjp = new SearchPersonJPanel(userProcessContainer, p);
+            userProcessContainer.add("SearchPersonJPanel", spjp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+
+        }
+    }//GEN-LAST:event_btnSearchByNameActionPerformed
+
+    private void TxtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSearchActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_TxtSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtSearch;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSearchByName;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

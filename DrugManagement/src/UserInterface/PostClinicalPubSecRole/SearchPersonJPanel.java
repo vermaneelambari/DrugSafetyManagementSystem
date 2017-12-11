@@ -30,9 +30,14 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
     this.system = system;
     this.person = person;
     populateSearchDetails();
-
+    populateCombo();
     }
-    
+    public void populateCombo() {
+        SearchCombo.removeAllItems();
+        for (String v : person.getDiseaseList()) {
+            SearchCombo.addItem(v);
+        }
+    }
     private void populateSearchDetails(){
         
         

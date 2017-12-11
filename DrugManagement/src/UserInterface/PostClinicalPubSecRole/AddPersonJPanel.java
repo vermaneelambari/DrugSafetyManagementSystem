@@ -14,6 +14,7 @@ import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -29,7 +30,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     EcoSystem system;
-    PersonDirectory personList;
+    PersonDirectory personDirectory;
     
 
    public AddPersonJPanel(JPanel userProcessContainer, EcoSystem system) {
@@ -39,7 +40,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     
     this.system=system;
     
-    this.personList=personList;
+    this.personDirectory=personDirectory;
     
     }
 
@@ -55,123 +56,151 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        NameTxtField = new javax.swing.JTextField();
-        ageTxtField = new javax.swing.JTextField();
-        diseaseTxtField = new javax.swing.JTextField();
-        addJButton = new javax.swing.JButton();
-        cancelJbutton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtDisease = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        effect1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        effect2 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        effect3 = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 68, 26));
-
-        jLabel2.setText("Age");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 68, 26));
-
-        jLabel3.setText("Disease");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 68, 26));
-        add(NameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 140, -1));
-
-        ageTxtField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ageTxtFieldActionPerformed(evt);
-            }
-        });
-        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 140, -1));
-        add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 140, -1));
-
-        addJButton.setText("Add");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
-            }
-        });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
-
-        cancelJbutton.setText("Back");
-        cancelJbutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelJbuttonActionPerformed(evt);
-            }
-        });
-        add(cancelJbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
-
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel5.setText("Add Person ");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+
+        jLabel2.setText("Name: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 133, -1, -1));
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 130, 235, -1));
+
+        jLabel3.setText("Age:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 177, -1, -1));
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 174, 235, -1));
+
+        jLabel4.setText("Disease:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 220, -1, -1));
+        add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 217, 235, -1));
+
+        jLabel6.setText("Side Effect 1:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 258, -1, -1));
+        add(effect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 255, 235, -1));
+
+        jLabel8.setText("Side Effect 2:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 293, -1, -1));
+        add(effect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 293, 235, -1));
+
+        jLabel9.setText("Side Effect 3:");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 334, -1, -1));
+        add(effect3, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 331, 235, -1));
+
+        btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 381, -1, -1));
+
+        btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 381, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-        
+    }//GEN-LAST:event_txtNameActionPerformed
 
-        String name = NameTxtField.getText();
-        String disease = diseaseTxtField.getText();
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+
+        String name = txtName.getText();
+        String disease = txtDisease.getText();
         Integer age =0;
-        
-         try
-       {                
-            age = Integer.parseInt(ageTxtField.getText());
-       }
-       catch(NumberFormatException e)
-       {
-           JOptionPane.showMessageDialog(null, "Please enter a valid Integer");
-       } 
-        
-         if(name.equalsIgnoreCase("") || ageTxtField.getText().equalsIgnoreCase("") || disease == null ){
+        ArrayList<String> sideEffects = new ArrayList();
+        try
+        {
+            age = Integer.parseInt(txtAge.getText());
+        }
+        catch(NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(null, "Please enter a valid Integer");
+        }
+
+        if(name.equalsIgnoreCase("") || txtAge.getText().equalsIgnoreCase("") || disease.trim().length()==0 || effect1.getText().trim().length()==0 || effect2.getText().trim().length()==0 || effect3.getText().trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter valid details", "Invalid Details", JOptionPane.ERROR_MESSAGE);
             return;
         }
-         else 
-         {
-             Person person = system.getPersonDirectory().addPerson();
-             person.setName(name);
-             person.setAge(age);
-             person.setDisease(disease);
-            
-            JOptionPane.showMessageDialog(null,"Person Successfully created."); 
-            NameTxtField.setText("");
-            ageTxtField.setText("");
-            diseaseTxtField.setText("");
-             
-         }
-        
-        
-    }//GEN-LAST:event_addJButtonActionPerformed
+        else
+        {
+            sideEffects.add(effect1.getText());
+            sideEffects.add(effect2.getText());
+            sideEffects.add(effect3.getText());
+            Person person = system.getPersonDirectory().addPerson();
+            person.setName(name);
+            person.setAge(age);
+            person.setDisease(disease);
+            person.setDiseaseList(sideEffects);
+            JOptionPane.showMessageDialog(null,"Person Successfully created.");
+            txtName.setText("");
+            txtAge.setText("");
+            txtDisease.setText("");
+            effect1.setText("");
+            effect2.setText("");
+            effect3.setText("");
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
-    private void ageTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtFieldActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ageTxtFieldActionPerformed
 
-    private void cancelJbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelJbuttonActionPerformed
-        // TODO add your handling code here:
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        PostClinicalPubSecJPanel manageperson = (PostClinicalPubSecJPanel) component;
-        //manageperson.refreshTable();
+        PostClinicalPubSecJPanel pcpsj = (PostClinicalPubSecJPanel) component;
+        pcpsj.populatePostClinicalPubSecTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_cancelJbuttonActionPerformed
+
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField NameTxtField;
-    private javax.swing.JButton addJButton;
-    private javax.swing.JTextField ageTxtField;
-    private javax.swing.JButton cancelJbutton;
-    private javax.swing.JTextField diseaseTxtField;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JTextField effect1;
+    private javax.swing.JTextField effect2;
+    private javax.swing.JTextField effect3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtDisease;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
