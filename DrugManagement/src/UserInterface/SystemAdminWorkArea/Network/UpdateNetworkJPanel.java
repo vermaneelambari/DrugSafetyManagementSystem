@@ -63,11 +63,11 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
 
         btnUpdate.setText("Update");
         btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnUpdateMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnUpdateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUpdateMouseExited(evt);
             }
         });
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
         jLabel2.setText("Update Network");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 340, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Downloads/rsz_approve-and-update-filled.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/SystemAdminWorkArea/rsz_approve-and-update-filled.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 130, 80));
     }// </editor-fold>//GEN-END:initComponents
 

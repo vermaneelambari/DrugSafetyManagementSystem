@@ -9,6 +9,7 @@ import UserInterface.SystemAdminWorkArea.Disease.ManageDiseaseCatalog;
 import Business.Disease.Disease;
 import Business.EcoSystem;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -45,11 +46,12 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
         addBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 130, 30));
+        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 30));
 
-        jLabel1.setText("Disease Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 90, 30));
+        jLabel1.setText("Disease Name:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 90, 30));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,19 +59,28 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         addBtn.setText("Add");
+        addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addBtnMouseEntered(evt);
+            }
+        });
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 90, 40));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Add Disease");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 230, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 230, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -103,6 +114,18 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Disease Added Successfully");
         vacName.setText("");
     }//GEN-LAST:event_addBtnActionPerformed
+
+    private void addBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseEntered
+        // TODO add your handling code here:
+        this.addBtn.setBackground(Color.cyan); 
+
+    }//GEN-LAST:event_addBtnMouseEntered
+
+    private void addBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBtnMouseExited
+        // TODO add your handling code here:
+        this.addBtn.setBackground(Color.cyan); 
+
+    }//GEN-LAST:event_addBtnMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
