@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.PostClinicalTrialOrganization;
 import Business.Person.Person;
+import Business.PostClinicalPerson.PostClinicalPerson;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
@@ -73,7 +74,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                 List<String> list4 = Arrays.asList(new String());
                 list4 = Arrays.asList(valuesOfArray[3].split("\\|"));
                 ArrayList<String> arrlist = new ArrayList<String>(list4);
-                Person p = system.getPersonDirectory().addPerson();
+                PostClinicalPerson p = system.getPostClinicalPersonDirectory().addPerson();
                 p.setDiseaseList(arrlist);
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
@@ -91,7 +92,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel)tblPostClinical.getModel();
         dtm.setRowCount(0);
         
-        for(Person person: system.getPersonDirectory().getPersonList()){
+        for(PostClinicalPerson person: system.getPostClinicalPersonDirectory().getPostClinicalPersonList()){
             Object row[] = new Object[3];
             row[0] = person;
             row[1] = person.getAge();
