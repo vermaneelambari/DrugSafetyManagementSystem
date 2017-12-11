@@ -1,31 +1,37 @@
-Name ,Age,Disease,Effects of Disease,,
-Jenna,64,Arthritis,Joint pain|Stiffness|Anemic,,
-Wyoming,29,Arthritis,Joint pain|Stiffness|Anemic,,
-Jessica,40,Arthritis,Joint pain|Stiffness|Anemic,,
-John,59,Cancer,Anemia|unusual mole|cough,,
-Stuart,63,Cancer,Tiredness|unusual mole|cough,,
-Jennifer,65,Cancer,Anemia|unusual mole|cough,,
-Sasha,19,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-Yasmeen,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-yashira,60,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-jasmine,35,Arthritis,Joint pain|Stiffness|Anemic,,
-clara,20,Arthritis,Joint pain|Stiffness|Anemic,,
-clinton,72,Arthritis,Joint pain|Stiffness|Anemic,,
-bernard,67,Arthritis,Joint pain|Stiffness|Anemic,,redness
-beethoven,35,Arthritis,Joint pain|Stiffness|Anemic,,redness
-zen,78,Arthritis,Joint pain|Stiffness|Anemic,,
-zafir,67,Arthritis,Joint pain|Stiffness|Anemic,,
-mugar,62,Cancer,Tiredness|unusual mole|cough,,
-ell,35,Cancer,Tiredness|unusual mole|cough,,
-bruno,50,Cancer,Tiredness|unusual mole|cough,,
-tom,48,Cancer,Tiredness|unusual mole|cough,,
-jerry,35,Cancer,Tiredness|unusual mole|cough,,
-sophia,67,Cancer,Anemia|unusual mole|cough,,
-simer,35,Cancer,Anemia|unusual mole|cough,,
-santa,85,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-victoria,20,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-sam,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-srujan,20,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-shazzy,67,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-kenny,35,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
-benny,20,Asthma,Difficulty in breathing|Wheezing|Chest tightness,,
+Name ,Age,Disease,Effects of disease
+Johnny,18,Arthritis,Joint Pain
+Wyoming,25,Arthritis,Joint Pain
+Jessica,50,Arthritis,Joint Pain
+Magneto,45,Arthritis,Joint Pain
+Thor,60,Arthritis,Joint Pain
+Scott,19,Arthritis,Joint Pain
+Wolverine,24,Arthritis,Anemic
+mickey,27,Arthritis,Anemic
+mike,50,Arthritis,Anemic
+Logan,30,Arthritis,Anemic
+yashira,45,Arthritis,Stiffness
+simer,48,Arthritis,Stiffness
+Jane,25,Cancer,Tiredness
+will,24,Cancer,Tiredness
+jelly,45,Cancer,Tiredness
+joy,30,Cancer,Tiredness
+shaley,50,Cancer,Tiredness
+shazzy,48,Cancer,Tiredness
+sartz,60,Cancer,unusual mole
+collen,24,Cancer,unusual mole
+edward,20,Cancer,unusual mole
+jacob,30,Cancer,unusual mole
+bella,19,Cancer,cough
+bin,24,Cancer,cough
+victoria,50,Asthma,Difficulty in breathing
+Anna,30,Asthma,Difficulty in breathing
+clark,24,Asthma,Difficulty in breathing
+naina,45,Asthma,Difficulty in breathing
+chen,48,Asthma,Difficulty in breathing
+xiu,30,Asthma,Difficulty in breathing
+alex,25,Asthma,Wheezing
+alice,24,Asthma,Wheezing
+meera,16,Asthma,Wheezing
+michael,60,Asthma,Wheezing
+jaffer,30,Asthma,Chest Tightness
+justin,48,Asthma,Chest Tightness
