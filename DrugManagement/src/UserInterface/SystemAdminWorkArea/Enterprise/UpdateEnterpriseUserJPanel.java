@@ -102,6 +102,10 @@ public class UpdateEnterpriseUserJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter User Name");
             return;
         }
+        if ( !(name.matches("[a-zA-Z0-9]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for UserName.");
+                  return;
+            }
         u.setUsername(name);
         JOptionPane.showMessageDialog(null, "Username Updated Successfully");
         vacName.setText("");

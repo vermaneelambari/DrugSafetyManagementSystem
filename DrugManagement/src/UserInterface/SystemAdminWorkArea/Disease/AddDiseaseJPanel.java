@@ -89,6 +89,10 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Disease Name already present");
                 return;
             }
+            if ( !(name.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
+                  return;
+            }
         }
         if(name.trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter Disease Name");

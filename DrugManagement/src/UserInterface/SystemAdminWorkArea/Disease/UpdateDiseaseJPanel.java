@@ -103,6 +103,10 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Disease Name");
             return;
         }
+        if ( !(name.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
+                  return;
+            }
         disease.setdName(name);
         JOptionPane.showMessageDialog(null, "Disease Updated Successfully");
         vacName.setText("");

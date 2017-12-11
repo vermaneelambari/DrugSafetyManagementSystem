@@ -230,6 +230,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter all fields");
             return;
         }
+        if ( !(userName.matches("[a-zA-Z0-9]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         if(organization==null){
             JOptionPane.showMessageDialog(null, "Please create Organization");

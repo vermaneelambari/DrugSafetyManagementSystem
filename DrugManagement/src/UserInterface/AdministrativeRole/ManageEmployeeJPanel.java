@@ -284,6 +284,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter name");
             return;
         }
+        if ( !(name.matches("[a-zA-Z]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         if (enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DrugManufacturing)) {
             check = true;
         }
@@ -297,6 +301,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             if (vname.trim().length() == 0) {
                 JOptionPane.showMessageDialog(null, "Please enter Vaccine name");
                 return;
+            }
+            if ( !(vname.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
+                  return;
             }
         }
         Employee e = organization.getEmployeeDirectory().createEmployee(name);

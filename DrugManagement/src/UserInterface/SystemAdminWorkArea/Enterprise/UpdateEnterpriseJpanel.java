@@ -107,6 +107,11 @@ public class UpdateEnterpriseJpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Enterprise Name");
             return;
         }
+        
+        if ( !(name.matches("[a-zA-Z0-9]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         enterprise.setName(name);
         JOptionPane.showMessageDialog(null, "Enterprise Updated Successfully");
         vacName.setText("");

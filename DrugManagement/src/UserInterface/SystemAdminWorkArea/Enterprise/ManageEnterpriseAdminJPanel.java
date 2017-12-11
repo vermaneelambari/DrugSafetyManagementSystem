@@ -250,6 +250,14 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter all the fields");
             return;
         }
+        if ( !(username.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters Allowed");
+                  return;
+            }
+        if ( !(name.matches("[a-zA-Z]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         if(!check){
             JOptionPane.showMessageDialog(null, "UserName already exists");
             return;

@@ -91,6 +91,10 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter User Name");
             return;
         }
+        if ( !(name.matches("[a-zA-Z0-9]+"))) {
+                  JOptionPane.showMessageDialog(null,"No Special Characters Allowed");
+                  return;
+            }
         u.setUsername(name);
         JOptionPane.showMessageDialog(null, "Employee Updated Successfully");
     }//GEN-LAST:event_addBtnActionPerformed

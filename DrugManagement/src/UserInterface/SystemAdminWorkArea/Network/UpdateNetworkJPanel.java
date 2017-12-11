@@ -102,6 +102,10 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Network Name");
             return;
         }
+        if ( !(name.matches("[a-zA-Z]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         network.setName(name);
         JOptionPane.showMessageDialog(null, "Network Updated Successfully");
         vacName.setText("");

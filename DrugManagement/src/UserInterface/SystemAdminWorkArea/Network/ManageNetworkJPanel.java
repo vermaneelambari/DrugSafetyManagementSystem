@@ -179,6 +179,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter name");
             return;
         }
+        
+        if ( !(name.matches("[a-zA-Z]+"))) {
+                  JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
+                  return;
+            }
         if (system.searchNetwork(name) != null) {
             JOptionPane.showMessageDialog(null, "Network already present");
             return;
@@ -233,10 +238,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private void nameJTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameJTextFieldKeyPressed
         // TODO add your handling code here:
-         if(!(Character.isLetter(evt.getKeyChar()))){
-                evt.consume();
-                JOptionPane.showMessageDialog(null, "Enter letters only");
-            }
+         
     }//GEN-LAST:event_nameJTextFieldKeyPressed
 
     private void submitJButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitJButtonMouseEntered
