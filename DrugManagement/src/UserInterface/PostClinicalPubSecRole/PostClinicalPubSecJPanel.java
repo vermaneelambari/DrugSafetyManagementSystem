@@ -43,16 +43,19 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.organization = (PostClinicalTrialOrganization)organization;
+        this.organization = organization;
         this.enterprise = enterprise;
         this.system = system;
-        createData();
+        if(system.getPersonDirectory().getPersonList().size()==0){
+            createData();
+        }
+        
         populatePostClinicalPubSecTable();
           
     }
     
     public void createData(){
-        String csvFile = "Project_Disease.csv";
+        String csvFile = "Project_Disease_All_Persons.csv";
         BufferedReader bufferedReader = null;
         String line = "";
         String cvsSplitBy = ",";
@@ -93,7 +96,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
             row[0] = person;
             row[1] = person.getAge();
             row[2] = person.getDisease();
-            
+            dtm.addRow(row);
         }  
         
         

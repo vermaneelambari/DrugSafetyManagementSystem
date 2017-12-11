@@ -24,7 +24,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
     Person person;
     
 
-    UpdateJPanel(JPanel userProcessContainer, Person p) {
+    UpdateJPanel(JPanel userProcessContainer, Person person) {
     initComponents();
         this.userProcessContainer = userProcessContainer;
         this.person = person;
@@ -161,7 +161,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         PostClinicalPubSecJPanel post = (PostClinicalPubSecJPanel) component;
-      
+      post.populatePostClinicalPubSecTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
         
