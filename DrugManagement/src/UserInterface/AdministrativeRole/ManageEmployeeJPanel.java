@@ -346,6 +346,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null,"Please enter float values for Insurance Money Reserved");
                 return;
             }
+            if(val<=0){
+                JOptionPane.showMessageDialog(null,"Please enter float values greater than 0");
+                return;
+            }
         }
         Employee e = organization.getEmployeeDirectory().createEmployee(name);
         if (check) {
