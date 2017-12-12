@@ -144,7 +144,7 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     public Void createExcelFile() {
 
         XSSFWorkbook workbook = new XSSFWorkbook();
-        for (ClinicalReport c : request.getClinicalReportDirectory().clinicalReportDirectory) {
+        for (ClinicalReport c : request.getClinicalReportDirectory().getClinicalReportDirectory()) {
             XSSFSheet sheet = workbook.createSheet(c.getPerson().getName());
             int rownum = 0;
             int cellnum = 0;
