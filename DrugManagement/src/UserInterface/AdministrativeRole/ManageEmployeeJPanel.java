@@ -117,6 +117,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        organizationJTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 51)));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -148,6 +149,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 82, 610, 90));
 
         addJButton.setText("Create Employee");
+        addJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
         addJButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addJButtonMouseEntered(evt);
@@ -161,9 +163,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, -1, -1));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 100, 30));
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationJComboBoxActionPerformed(evt);
@@ -176,20 +179,23 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 70, 30));
 
+        nameJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 180, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 190, -1));
 
+        organizationEmpJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationEmpJComboBoxActionPerformed(evt);
@@ -206,30 +212,35 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 50, -1));
 
         remobeBtn.setText("Delete Employee");
+        remobeBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
         remobeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remobeBtnActionPerformed(evt);
             }
         });
-        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 180, -1));
+        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 180, 30));
 
         updateBtn.setText("Update");
+        updateBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 153), new java.awt.Color(255, 255, 102), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 50, 30));
 
         vaccineLabel.setText("Disease Catalog");
 
         jLabel2.setText("Vaccine Name:");
 
+        diseaseCatalogBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         diseaseCatalogBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 diseaseCatalogBoxActionPerformed(evt);
             }
         });
+
+        vaccinetxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
 
         javax.swing.GroupLayout pharmaPanelLayout = new javax.swing.GroupLayout(pharmaPanel);
         pharmaPanel.setLayout(pharmaPanelLayout);
@@ -241,9 +252,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(vaccineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(vaccinetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(diseaseCatalogBox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(diseaseCatalogBox, 0, 190, Short.MAX_VALUE)
+                    .addComponent(vaccinetxt))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pharmaPanelLayout.setVerticalGroup(
@@ -257,7 +268,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vaccinetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         add(pharmaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 340, 110));

@@ -26,17 +26,39 @@
     <Component class="javax.swing.JButton" name="createUserJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Create"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="0" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createUserJButtonActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="600" y="440" width="-1" height="-1"/>
+          <AbsoluteConstraints x="290" y="440" width="80" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="nameJTextField">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="0" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="350" width="146" height="-1"/>
@@ -119,6 +141,16 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="0" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="33" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -132,13 +164,23 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;&lt; Back"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="99" green="ff" red="0" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backjButton1ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="440" width="112" height="-1"/>
+          <AbsoluteConstraints x="30" y="440" width="100" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -156,6 +198,16 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="cc" green="ff" red="33" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
         </Property>
       </Properties>
       <Events>
@@ -182,6 +234,16 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="99" green="ff" red="0" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -192,6 +254,16 @@
     <Component class="javax.swing.JButton" name="updateBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Update"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="99" green="ff" red="0" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updateBtnMouseExited"/>
@@ -200,13 +272,23 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="480" y="220" width="-1" height="-1"/>
+          <AbsoluteConstraints x="470" y="220" width="60" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="removeBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="33" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="removeBtnMouseExited"/>
@@ -215,11 +297,23 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="570" y="220" width="120" height="-1"/>
+          <AbsoluteConstraints x="570" y="220" width="120" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JPasswordField" name="passwordJTextField">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="0" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="380" width="150" height="-1"/>

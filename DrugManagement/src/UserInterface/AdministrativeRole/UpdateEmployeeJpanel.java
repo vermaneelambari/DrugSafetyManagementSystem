@@ -47,13 +47,17 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
         addBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        vacName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 130, 30));
 
         jLabel1.setText("Employee Name :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 140, 30));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -62,12 +66,13 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 129, 100, 40));
 
         addBtn.setText("Update");
+        addBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 133, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Update Employee");

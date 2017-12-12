@@ -64,27 +64,33 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Message:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 320, -1));
 
+        messageJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 320, 20));
+
+        requestTestJButton.setBackground(new java.awt.Color(153, 255, 153));
         requestTestJButton.setText("Request for Approval of Drug");
+        requestTestJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 300, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 300, 30));
 
         backJButton.setText("<<Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 249, 60, 30));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel2.setText("Pharma Request Work Area");

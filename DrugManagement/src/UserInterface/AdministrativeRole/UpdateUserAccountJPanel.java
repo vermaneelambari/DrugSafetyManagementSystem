@@ -52,26 +52,30 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        vacName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 30));
 
         jLabel1.setText("User Name:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 90, 30));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 209, 100, 40));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 100, 40));
 
         addBtn.setText("Update");
+        addBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                addBtnMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addBtnMouseExited(evt);
             }
         });
         addBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +83,7 @@ public class UpdateUserAccountJPanel extends javax.swing.JPanel {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 90, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 153));

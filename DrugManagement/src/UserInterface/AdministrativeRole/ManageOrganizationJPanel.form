@@ -61,6 +61,16 @@
     <Component class="javax.swing.JButton" name="addJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add Organization"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="33" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addJButtonMouseEntered"/>
@@ -69,7 +79,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="720" y="590" width="-1" height="-1"/>
+          <AbsoluteConstraints x="720" y="579" width="110" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -82,6 +92,16 @@
             <StringItem index="2" value="Item 3"/>
             <StringItem index="3" value="Item 4"/>
           </StringArray>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="0" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="33" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
         </Property>
       </Properties>
       <Events>
@@ -106,13 +126,23 @@
     <Component class="javax.swing.JButton" name="backJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;&lt; Back"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder>
+              <Color PropertyName="highlightOuter" blue="99" green="ff" red="0" type="rgb"/>
+              <Color PropertyName="highlightInner" blue="33" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
+              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
+            </BevelBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backJButtonActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="720" y="630" width="150" height="-1"/>
+          <AbsoluteConstraints x="720" y="630" width="110" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -140,7 +170,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="230" width="840" height="440"/>
+          <AbsoluteConstraints x="40" y="230" width="650" height="440"/>
         </Constraint>
       </Constraints>
     </Component>

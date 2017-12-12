@@ -86,6 +86,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Disease:");
@@ -94,7 +95,10 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setText("Vaccine:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 80, 40));
 
+        checkBtn.setBackground(new java.awt.Color(204, 255, 0));
+        checkBtn.setForeground(new java.awt.Color(0, 51, 51));
         checkBtn.setText("Send request about drug manufacture");
+        checkBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         checkBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBtnActionPerformed(evt);
@@ -118,14 +122,16 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
 
         enterpriseLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel2.setText("Organization:");
-        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 50, 130, -1));
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 130, -1));
 
         orgText.setText("<value>");
         add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 120, 20));
 
+        diseaseTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         diseaseTxt.setEnabled(false);
         add(diseaseTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 110, 30));
 
+        vaccineTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         vaccineTxt.setEnabled(false);
         add(vaccineTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 110, 30));
 
