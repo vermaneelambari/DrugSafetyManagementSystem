@@ -149,6 +149,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         personCombo = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,14 +162,19 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
 
         jLabel3.setText("Disease");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 68, 26));
+
+        nameTxtField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 140, -1));
 
+        ageTxtField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         ageTxtField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageTxtFieldActionPerformed(evt);
             }
         });
         add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 140, -1));
+
+        diseaseTxtField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(0, 204, 153)));
         add(diseaseTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -415,6 +421,8 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
 
         effectsCombo6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
         add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 100, -1));
+
+        effectPercTxt13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 570, 90, -1));
         add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 90, 40));
 
@@ -426,10 +434,15 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
 
         jLabel14.setText("Percentage of Increase/Decrease");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 600, 190, 40));
+
+        effectPercTxt7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(effectPercTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 90, -1));
+
+        effectPercTxt6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(effectPercTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 560, 90, -1));
 
         compResultJpanel.setText("Compute Result");
+        compResultJpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         compResultJpanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compResultJpanelActionPerformed(evt);
@@ -447,14 +460,16 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 570, 20, -1));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 80, 30));
 
         personCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        personCombo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         personCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personComboActionPerformed(evt);
