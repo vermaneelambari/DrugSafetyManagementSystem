@@ -9,8 +9,13 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.InsuranceOrganization;
 import Business.Organization.Organization;
+import Business.Request.Request;
+import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,9 +36,27 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.organization = (InsuranceOrganization)organization;
+        this.organization = (InsuranceOrganization) organization;
         this.enterprise = enterprise;
         this.system = system;
+        enterPrText.setText(enterprise.getName());
+        orgText.setText(organization.getName());
+        empNameTxt.setText(account.getEmployee().getName());
+        populateTable();
+    }
+
+    void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        model.setRowCount(0);
+        for (Request request : organization.getRequestList().getRequestList()) {
+            Object[] row = new Object[5];
+            row[0] = request.getSender();
+            row[1] = request;
+            row[2] = request.getSender().getEmployee().getName();
+            row[3] = account;
+            row[4] = request.getStatus();
+            model.addRow(row);
+        }
     }
 
     /**
@@ -53,6 +76,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         enterPrText = new javax.swing.JLabel();
         enterpriseLabel3 = new javax.swing.JLabel();
         orgText = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -103,7 +127,36 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
 
         orgText.setText("<value>");
         add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
+
+        jButton1.setText("Distribute money");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 220, 60));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int selectedRow = workRequestJTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please Select Any Row");
+            return;
+        }
+        String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
+        WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        if(status.equals("Pre Clinical Trial Denied")){
+            InsurancePreClinicalDistribution muajp = new InsurancePreClinicalDistribution(userProcessContainer, account, organization, enterprise, system,r);
+                userProcessContainer.add("InsurancePreClinicalDistribution", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+        }else if(status.equals("Post Clinical Trial Denied")){
+            InsurancePostClinicalDistribution muajp = new InsurancePostClinicalDistribution(userProcessContainer, account, organization, enterprise, system,r);
+                userProcessContainer.add("InsurancePostClinicalDistribution", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -112,6 +165,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JLabel enterpriseLabel3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel orgText;
     private javax.swing.JTable workRequestJTable;
