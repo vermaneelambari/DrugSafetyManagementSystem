@@ -45,6 +45,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         empNameTxt.setText(account.getEmployee().getName());
         vaccineTxt.setText(account.getEmployee().getVaccine().getvName());
         diseaseTxt.setText(account.getEmployee().getDisease().getdName());
+        mnyTxt.setText(String.valueOf(account.getEmployee().getPharmaMoney().getMoney()));
         populateRequestTable();
     }
     
@@ -85,6 +86,8 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        mnyTxt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,7 +96,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 60, 40));
 
         jLabel2.setText("Vaccine:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 80, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 80, 40));
 
         checkBtn.setBackground(new java.awt.Color(204, 255, 0));
         checkBtn.setForeground(new java.awt.Color(0, 51, 51));
@@ -104,7 +107,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 checkBtnActionPerformed(evt);
             }
         });
-        add(checkBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 280, 50));
+        add(checkBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 280, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Employee Name:");
@@ -133,7 +136,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
 
         vaccineTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         vaccineTxt.setEnabled(false);
-        add(vaccineTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 110, 30));
+        add(vaccineTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 110, 30));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -163,12 +166,19 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 630, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 630, 100));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 153));
         jLabel3.setText("Pharma Work Area");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 440, 80));
+
+        jLabel4.setText("Insurance Money");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 100, 20));
+
+        mnyTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        mnyTxt.setEnabled(false);
+        add(mnyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBtnActionPerformed
@@ -192,7 +202,9 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField mnyTxt;
     private javax.swing.JLabel orgText;
     private javax.swing.JTextField vaccineTxt;
     private javax.swing.JTable workRequestJTable;

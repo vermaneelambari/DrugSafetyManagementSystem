@@ -68,9 +68,11 @@ public class InsurancePreClinicalDistribution extends javax.swing.JPanel {
             row[3] = distMoney;
             model.addRow(row);
         }
-        request.setStatus("Request Denied and Insrance Money Distributed");
+        request.getPharmaAcc().getEmployee().getPharmaMoney().setMoney(request.getPharmaAcc().getEmployee().getPharmaMoney().getMoney()-mny);
+        request.setStatus("Request Denied and Insurance Money Distributed");
         request.setReceiver(request.getSender());
         request.setSender(account);
+        avalMnyTxt.setText(String.valueOf(request.getPharmaAcc().getEmployee().getPharmaMoney().getMoney()));
         jButton2.setEnabled(false);
     }
 
@@ -154,6 +156,7 @@ public class InsurancePreClinicalDistribution extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         InsuranceWorkAreaJPanel sysAdminwjp = (InsuranceWorkAreaJPanel) component;
