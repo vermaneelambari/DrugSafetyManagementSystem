@@ -69,7 +69,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText(" Person's Effects of Disease");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 509, 44));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 509, 44));
 
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 134, -1, -1));

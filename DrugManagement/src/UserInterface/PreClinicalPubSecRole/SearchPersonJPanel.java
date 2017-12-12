@@ -70,9 +70,10 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText(" Person's Effects of Disease");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 27, 509, 44));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 410, 44));
 
         btnBack.setText("<<Back");
         btnBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -84,7 +85,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 110, 30));
 
         jLabel2.setText("Name: ");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 134, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
         txtSearchName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         txtSearchName.setEnabled(false);
@@ -93,24 +94,24 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
                 txtSearchNameActionPerformed(evt);
             }
         });
-        add(txtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 131, 177, -1));
+        add(txtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 177, -1));
 
         jLabel3.setText("Age:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 172, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
         txtSearchDisease.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(0, 204, 153)));
         txtSearchDisease.setEnabled(false);
-        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 207, 177, 28));
+        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 180, 20));
 
         jLabel4.setText("Disease:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 207, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         txtSearchAge.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
         txtSearchAge.setEnabled(false);
-        add(txtSearchAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 169, 177, -1));
+        add(txtSearchAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 177, -1));
 
         jLabel5.setText("Effect's of Disease:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 249, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         searchCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         searchCombo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -119,7 +120,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
                 searchComboActionPerformed(evt);
             }
         });
-        add(searchCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 246, 194, -1));
+        add(searchCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 194, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

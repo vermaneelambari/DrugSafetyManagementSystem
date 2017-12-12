@@ -149,9 +149,10 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         valueSlider.setEnabled(false);
         add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 43));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("Final Score for request");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 260, 47));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 340, 47));
 
         backJButton.setText("<< Back");
         backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -166,6 +167,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt1.setEditable(false);
+        txt1.setBackground(new java.awt.Color(204, 255, 204));
         txt1.setColumns(20);
         txt1.setRows(5);
         txt1.setText("1. Are there previous conclusive reports on this reaction?\n");
@@ -179,6 +181,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt2.setEditable(false);
+        txt2.setBackground(new java.awt.Color(204, 255, 204));
         txt2.setColumns(20);
         txt2.setRows(5);
         txt2.setText("2. Did the adverse event appear after the suspected drug \nwas administered?\n");
@@ -192,6 +195,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt3.setEditable(false);
+        txt3.setBackground(new java.awt.Color(204, 255, 204));
         txt3.setColumns(20);
         txt3.setRows(5);
         txt3.setText("3. Did the adverse reaction improve when the \ndrug was discontinued or a specific \nantagonist was administered? ");
@@ -205,6 +209,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt4.setEditable(false);
+        txt4.setBackground(new java.awt.Color(204, 255, 204));
         txt4.setColumns(20);
         txt4.setRows(5);
         txt4.setText("4. Did the adverse reaction reappear when the drug \nwas readministered?\n");
@@ -218,6 +223,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt5.setEditable(false);
+        txt5.setBackground(new java.awt.Color(204, 255, 204));
         txt5.setColumns(20);
         txt5.setRows(5);
         txt5.setText("5. Are there alternative causes (other than the drug) \nthat could on their own have caused the reaction?\n");
@@ -233,6 +239,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt8.setEditable(false);
+        txt8.setBackground(new java.awt.Color(204, 255, 204));
         txt8.setColumns(20);
         txt8.setRows(5);
         txt8.setText("8. Did the reaction reappear \nwhen a placebo was given?\n");
@@ -246,6 +253,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt9.setEditable(false);
+        txt9.setBackground(new java.awt.Color(204, 255, 204));
         txt9.setColumns(20);
         txt9.setRows(5);
         txt9.setText("9. Was the drug detected \nin the blood (or other fluids) \nin concentrations known to be toxic?\n");
@@ -259,6 +267,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt10.setEditable(false);
+        txt10.setBackground(new java.awt.Color(204, 255, 204));
         txt10.setColumns(20);
         txt10.setRows(5);
         txt10.setText("10. Was the reaction more severe \nwhen the dose was increased, \nor less severe when the dose was decreased?\n");
@@ -272,6 +281,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt11.setEditable(false);
+        txt11.setBackground(new java.awt.Color(204, 255, 204));
         txt11.setColumns(20);
         txt11.setRows(5);
         txt11.setText("11. Did the patient have a similar \nreaction to the same or similar drugs \nin any previous exposure?\n");
@@ -285,6 +295,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txt12.setEditable(false);
+        txt12.setBackground(new java.awt.Color(204, 255, 204));
         txt12.setColumns(20);
         txt12.setRows(5);
         txt12.setText("12. Was the adverse event \nconfirmed by any objective evidence?\n");
@@ -296,23 +307,18 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, 160, 40));
 
         scoreTxt1.setEditable(false);
-        scoreTxt1.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 100, 40));
 
         scoreTxt2.setEditable(false);
-        scoreTxt2.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 100, 40));
 
         scoreTxt3.setEditable(false);
-        scoreTxt3.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, 40));
 
         scoreTxt4.setEditable(false);
-        scoreTxt4.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 100, 40));
 
         scoreTxt5.setEditable(false);
-        scoreTxt5.setBackground(new java.awt.Color(255, 255, 255));
         scoreTxt5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scoreTxt5ActionPerformed(evt);
@@ -329,23 +335,18 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         add(scoreTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, 100, 40));
 
         scoreTxt8.setEditable(false);
-        scoreTxt8.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 210, 100, 40));
 
         scoreTxt9.setEditable(false);
-        scoreTxt9.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 280, 100, 40));
 
         scoreTxt10.setEditable(false);
-        scoreTxt10.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 340, 100, 40));
 
         scoreTxt11.setEditable(false);
-        scoreTxt11.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 410, 100, 40));
 
         scoreTxt12.setEditable(false);
-        scoreTxt12.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 480, 100, 40));
 
         scoreTxt13.setEnabled(false);

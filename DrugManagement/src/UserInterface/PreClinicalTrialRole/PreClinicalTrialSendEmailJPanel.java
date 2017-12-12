@@ -87,12 +87,14 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         progressBarJPanel1 = new UserInterface.ProgressBar.ProgressBarJPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Enter Email to send request");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 74, 156, -1));
+        jLabel1.setText("Enter Email to send request:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 74, 190, -1));
 
         jButton1.setText("Send email");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -101,10 +103,10 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 118, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 118, 30));
 
         jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 71, 98, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 71, 560, -1));
 
         backJButton.setText("<< Back");
         backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -113,7 +115,7 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 349, 100, 30));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 100, 30));
 
         progressBarJPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -128,7 +130,15 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             .addGap(0, 280, Short.MAX_VALUE)
         );
 
-        add(progressBarJPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 370, 280));
+        add(progressBarJPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 370, 280));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel2.setText("Email Request");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 210, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PreClinicalTrialRole/Email-Logo.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 210, 180));
     }// </editor-fold>//GEN-END:initComponents
 
     public Void createExcelFile() {
@@ -311,6 +321,8 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private UserInterface.ProgressBar.ProgressBarJPanel progressBarJPanel1;
     // End of variables declaration//GEN-END:variables

@@ -123,9 +123,10 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         });
         add(btnBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, 110, 30));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("Final Score for request");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 260, 47));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 290, 47));
 
         valueSlider.setBackground(new java.awt.Color(153, 153, 153));
         valueSlider.setForeground(new java.awt.Color(255, 255, 102));

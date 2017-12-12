@@ -88,28 +88,29 @@ public class UpdateJPanel extends javax.swing.JPanel {
         });
         add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 90, 40));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Update Person");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 66, 190, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 290, 70));
 
         jLabel3.setText("Name: ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 149, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jLabel4.setText("Age:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 193, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         jLabel5.setText("Disease:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 236, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         txtName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         txtName.setEnabled(false);
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 146, 184, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 184, -1));
 
         txtAge.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(204, 204, 0)));
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 184, -1));
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 184, -1));
 
         txtDisease.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 233, 184, -1));
+        add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 184, -1));
 
         btnSave.setText("Save");
         btnSave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));

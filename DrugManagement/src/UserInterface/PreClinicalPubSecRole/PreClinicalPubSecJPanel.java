@@ -134,9 +134,10 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPreClinical);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 112, 666, 212));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 112, 810, 212));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("Pre-Clinical Public Sector Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 34, -1, -1));
 
@@ -147,7 +148,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 335, 72, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 90, 40));
 
         btnUpdate.setText("Update");
         btnUpdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 204), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -156,7 +157,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 335, -1, -1));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, 70, 40));
 
         btnDelete.setText("Delete");
         btnDelete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 204, 0), new java.awt.Color(255, 255, 0)));
@@ -165,7 +166,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(719, 335, -1, -1));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 340, 70, 40));
 
         btnSearchByName.setText("Search by Name :");
         btnSearchByName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(204, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -174,7 +175,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 btnSearchByNameActionPerformed(evt);
             }
         });
-        add(btnSearchByName, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 400, -1, -1));
+        add(btnSearchByName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 140, 40));
 
         TxtSearch.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         TxtSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -182,7 +183,7 @@ public class PreClinicalPubSecJPanel extends javax.swing.JPanel {
                 TxtSearchActionPerformed(evt);
             }
         });
-        add(TxtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 399, 178, -1));
+        add(TxtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 180, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
