@@ -33,11 +33,12 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
+
     public PreClinicalTrialJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.organization = (PreClinicalTrialOrganization)organization;
+        this.organization = (PreClinicalTrialOrganization) organization;
         this.enterprise = enterprise;
         this.system = system;
         enterPrText.setText(enterprise.getName());
@@ -45,19 +46,19 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         empNameTxt.setText(account.getEmployee().getName());
         populateTable();
     }
-    
+
     void populateTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
-                for (Request request : organization.getRequestList().getRequestList()) {
-                    Object[] row = new Object[5];
-                    row[0] = request.getSender();
-                    row[1] = request;
-                    row[2] = request.getSender().getEmployee().getName();
-                    row[3] = account;
-                    row[4] = request.getStatus();
-                    model.addRow(row);
-                }
+        for (Request request : organization.getRequestList().getRequestList()) {
+            Object[] row = new Object[5];
+            row[0] = request.getSender();
+            row[1] = request;
+            row[2] = request.getSender().getEmployee().getName();
+            row[3] = account;
+            row[4] = request.getStatus();
+            model.addRow(row);
+        }
     }
 
     /**
@@ -159,10 +160,10 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         if (status.equals("Approved drug for Initial Test")) {
-            PreClinicalTrialProcessJpanel muajp = new PreClinicalTrialProcessJpanel(userProcessContainer, account, organization, enterprise, system,request);
-                userProcessContainer.add("PreClinicalTrialProcessJpanel", muajp);
-                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
+            PreClinicalTrialProcessJpanel muajp = new PreClinicalTrialProcessJpanel(userProcessContainer, account, organization, enterprise, system, request);
+            userProcessContainer.add("PreClinicalTrialProcessJpanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
             populateTable();
         } else {
             JOptionPane.showMessageDialog(null, "Already approved");
@@ -171,7 +172,7 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_approveBtnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
@@ -179,15 +180,20 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         if (status.equals("Approved drug for Initial Test")) {
-            if(request.getClinicalReportDirectory().getClinicalReportDirectory().size()==0){
-               JOptionPane.showMessageDialog(null, "Request is not processed");
-               return; 
+            if (request.getClinicalReportDirectory().getClinicalReportDirectory().size() == 0) {
+                JOptionPane.showMessageDialog(null, "Request is not processed");
+                return;
             }
         }
-        PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system,request);
-                userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
-                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
+        if (!status.equals("Pre Clinical Trial Completed")) {
+            PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
+            userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        } else {
+            JOptionPane.showMessageDialog(null, "Request already approved and sent");
+            return;
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

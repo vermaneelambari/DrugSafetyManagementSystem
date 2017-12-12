@@ -157,7 +157,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                     message.setRecipients(Message.RecipientType.TO,
                             InternetAddress.parse(toAddr));
                     message.setSubject("Testing Subject");
-                    String file = "H:/NEU/Java_Netbeans/Git_Final_Project/explorers/DrugManagement/PostClinicalReport.xlsx";
+                    String file = "PostClinicalReport.xlsx";
                     Multipart multipart = new MimeMultipart();
                     MimeBodyPart messageBodyPart = new MimeBodyPart();
                     messageBodyPart.setText("Dear Admin,"

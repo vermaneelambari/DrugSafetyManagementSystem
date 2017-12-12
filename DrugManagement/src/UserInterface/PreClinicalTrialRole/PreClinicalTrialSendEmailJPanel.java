@@ -187,7 +187,6 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             FileOutputStream out = new FileOutputStream(new File("PreClinicalReport.xlsx"));
             workbook.write(out);
             out.close();
-            System.out.println("PreClinicalReport.xlsx has been created successfully");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -237,7 +236,7 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                     message.setRecipients(Message.RecipientType.TO,
                             InternetAddress.parse(toAddr));
                     message.setSubject("Testing Subject");
-                    String file = "H:/NEU/Java_Netbeans/Git_Final_Project/explorers/DrugManagement/PreClinicalReport.xlsx";
+                    String file = "PreClinicalReport.xlsx";
                     Multipart multipart = new MimeMultipart();
                     MimeBodyPart messageBodyPart = new MimeBodyPart();
                     messageBodyPart.setText("Dear Admin,"
