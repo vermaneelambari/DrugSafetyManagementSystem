@@ -94,6 +94,7 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
         enteredMny = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -128,6 +129,7 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 390, 50));
 
         jButton1.setText("<< Back");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -136,6 +138,7 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 30));
 
         avalMnyTxt.setEditable(false);
+        avalMnyTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(avalMnyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 130, 40));
 
         jLabel2.setText("Available Money");
@@ -143,9 +146,12 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
 
         jLabel3.setText("Money To be distributed");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 200, 40));
+
+        enteredMny.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(enteredMny, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 110, 40));
 
         jButton2.setText("Distribute Money");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
