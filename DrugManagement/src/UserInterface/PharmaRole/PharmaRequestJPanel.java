@@ -117,6 +117,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         request.setDisease(disease);
         request.setVaccine(vaccine);
         request.setPharmaAcc(account);
+        request.setDrugValid(true);
         Organization org = null;
         for (Network n : system.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {

@@ -204,15 +204,15 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
                 return;
             }
         }
-        //if (status.equals("Post Clinical Trial Calculation Completed")) {
+        if (status.equals("Post Clinical Trial Calculation Completed")) {
             PostClinicalTrialSendEmailJPanel muajp = new PostClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
             userProcessContainer.add("PostClinicalTrialSendEmailJPanel", muajp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-        /*}else{
+        }else{
             JOptionPane.showMessageDialog(null, "Request sent to FDA");
                 return;
-        }*/
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
