@@ -296,7 +296,6 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             FileOutputStream out = new FileOutputStream(new File("PostClinicalReport.xlsx"));
             workbook.write(out);
             out.close();
-            System.out.println("PostClinicalReport.xlsx has been created successfully");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
