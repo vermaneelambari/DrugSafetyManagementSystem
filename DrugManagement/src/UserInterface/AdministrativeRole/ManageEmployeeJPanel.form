@@ -89,7 +89,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="390" y="390" width="100" height="30"/>
+          <AbsoluteConstraints x="390" y="410" width="100" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -155,7 +155,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="390" width="70" height="30"/>
+          <AbsoluteConstraints x="20" y="410" width="70" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -281,7 +281,7 @@
     <Container class="javax.swing.JPanel" name="pharmaPanel">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="260" width="340" height="110"/>
+          <AbsoluteConstraints x="30" y="260" width="480" height="130"/>
         </Constraint>
       </Constraints>
 
@@ -293,13 +293,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="vaccineLabel" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" pref="154" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="diseaseCatalogBox" pref="190" max="32767" attributes="0"/>
-                      <Component id="vaccinetxt" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="vaccinetxt" min="-2" pref="190" max="-2" attributes="0"/>
+                      <Component id="mnyTxt" min="-2" pref="190" max="-2" attributes="0"/>
+                      <Component id="diseaseCatalogBox" min="-2" pref="190" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="108" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -316,7 +318,12 @@
                       <Component id="jLabel2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="vaccinetxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel7" alignment="3" pref="30" max="32767" attributes="0"/>
+                      <Component id="mnyTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -365,6 +372,13 @@
               </Border>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Insurance Money Reserved"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="mnyTxt">
         </Component>
       </SubComponents>
     </Container>

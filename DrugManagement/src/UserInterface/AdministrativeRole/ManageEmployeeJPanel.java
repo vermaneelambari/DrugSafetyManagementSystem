@@ -10,6 +10,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.PharmaMoney.PharmaMoney;
 import Business.Vaccine.Vaccine;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -111,6 +112,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         diseaseCatalogBox = new javax.swing.JComboBox();
         vaccinetxt = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        mnyTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -163,7 +166,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 100, 30));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 100, 30));
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
@@ -185,7 +188,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 70, 30));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 70, 30));
 
         nameJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -242,6 +245,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         vaccinetxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
 
+        jLabel7.setText("Insurance Money Reserved");
+
         javax.swing.GroupLayout pharmaPanelLayout = new javax.swing.GroupLayout(pharmaPanel);
         pharmaPanel.setLayout(pharmaPanelLayout);
         pharmaPanelLayout.setHorizontalGroup(
@@ -250,12 +255,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 .addGap(19, 19, 19)
                 .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vaccineLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(diseaseCatalogBox, 0, 190, Short.MAX_VALUE)
-                    .addComponent(vaccinetxt))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vaccinetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mnyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diseaseCatalogBox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         pharmaPanelLayout.setVerticalGroup(
             pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,10 +275,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vaccinetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pharmaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(mnyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
-        add(pharmaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 340, 110));
+        add(pharmaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 480, 130));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 153, 153));
@@ -300,6 +311,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         if (enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DrugManufacturing)) {
             check = true;
         }
+        double val = 0;
         if (check) {
             d = (Disease) diseaseCatalogBox.getSelectedItem();
             if (d == null) {
@@ -315,15 +327,29 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                   JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
                   return;
             }
+            if(mnyTxt.getText().trim().length()==0){
+                JOptionPane.showMessageDialog(null,"Please enter Insurance Money Reserved");
+                return;
+            }
+            try{
+                val = Double.parseDouble(mnyTxt.getText());
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"Please enter float values for Insurance Money Reserved");
+                return;
+            }
         }
         Employee e = organization.getEmployeeDirectory().createEmployee(name);
         if (check) {
             e.setDisease(d);
             Vaccine v = new Vaccine();
+            PharmaMoney mny = new PharmaMoney();
+            mny.setMoney(val);
             v.setvName(vaccinetxt.getText());
             e.setVaccine(v);
+            e.setPharmaMoney(mny);
             vaccinetxt.setText("");
             nameJTextField.setText("");
+            mnyTxt.setText("");
         }
         populateTable(organization);
         JOptionPane.showMessageDialog(null, "Employee created successfully");
@@ -420,7 +446,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField mnyTxt;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationEmpJComboBox;
     private javax.swing.JComboBox organizationJComboBox;

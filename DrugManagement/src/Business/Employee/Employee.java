@@ -5,6 +5,7 @@
 package Business.Employee;
 
 import Business.Disease.Disease;
+import Business.PharmaMoney.PharmaMoney;
 import Business.Vaccine.Vaccine;
 
 /**
@@ -16,6 +17,15 @@ public class Employee {
     private String name;
     private Vaccine vaccine;
     private Disease disease;
+    private PharmaMoney pharmaMoney;
+
+    public PharmaMoney getPharmaMoney() {
+        return pharmaMoney;
+    }
+
+    public void setPharmaMoney(PharmaMoney pharmaMoney) {
+        this.pharmaMoney = pharmaMoney;
+    }
 
     public Vaccine getVaccine() {
         return vaccine;

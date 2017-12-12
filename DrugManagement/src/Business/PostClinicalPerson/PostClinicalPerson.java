@@ -16,6 +16,15 @@ public class PostClinicalPerson {
     private int age; 
     private String disease;
     private String sideEffects;
+    private double money;
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
 
     public String getSideEffects() {
         return sideEffects;

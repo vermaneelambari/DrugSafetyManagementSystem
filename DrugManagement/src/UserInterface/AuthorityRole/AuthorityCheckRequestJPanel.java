@@ -9,6 +9,7 @@ import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.InsuranceOrganization;
 import Business.Organization.Organization;
 import Business.Organization.PostClinicalTrialOrganization;
 import Business.Person.Person;
@@ -164,12 +165,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt1.setBackground(new java.awt.Color(204, 204, 255));
+        txt1.setEditable(false);
         txt1.setColumns(20);
         txt1.setRows(5);
         txt1.setText("1. Are there previous conclusive reports on this reaction?\n");
         txt1.setAutoscrolls(false);
-        txt1.setEnabled(false);
         txt1.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane6.setViewportView(txt1);
 
@@ -178,12 +178,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt2.setBackground(new java.awt.Color(204, 204, 255));
+        txt2.setEditable(false);
         txt2.setColumns(20);
         txt2.setRows(5);
         txt2.setText("2. Did the adverse event appear after the suspected drug \nwas administered?\n");
         txt2.setAutoscrolls(false);
-        txt2.setEnabled(false);
         txt2.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane3.setViewportView(txt2);
 
@@ -192,12 +191,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt3.setBackground(new java.awt.Color(204, 204, 255));
+        txt3.setEditable(false);
         txt3.setColumns(20);
         txt3.setRows(5);
         txt3.setText("3. Did the adverse reaction improve when the \ndrug was discontinued or a specific \nantagonist was administered? ");
         txt3.setAutoscrolls(false);
-        txt3.setEnabled(false);
         txt3.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane2.setViewportView(txt3);
 
@@ -206,12 +204,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt4.setBackground(new java.awt.Color(204, 204, 255));
+        txt4.setEditable(false);
         txt4.setColumns(20);
         txt4.setRows(5);
         txt4.setText("4. Did the adverse reaction reappear when the drug \nwas readministered?\n");
         txt4.setAutoscrolls(false);
-        txt4.setEnabled(false);
         txt4.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane5.setViewportView(txt4);
 
@@ -220,12 +217,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt5.setBackground(new java.awt.Color(204, 204, 255));
+        txt5.setEditable(false);
         txt5.setColumns(20);
         txt5.setRows(5);
         txt5.setText("5. Are there alternative causes (other than the drug) \nthat could on their own have caused the reaction?\n");
         txt5.setAutoscrolls(false);
-        txt5.setEnabled(false);
         txt5.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane1.setViewportView(txt5);
 
@@ -236,12 +232,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt8.setBackground(new java.awt.Color(204, 204, 255));
+        txt8.setEditable(false);
         txt8.setColumns(20);
         txt8.setRows(5);
         txt8.setText("8. Did the reaction reappear \nwhen a placebo was given?\n");
         txt8.setAutoscrolls(false);
-        txt8.setEnabled(false);
         txt8.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane7.setViewportView(txt8);
 
@@ -250,12 +245,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt9.setBackground(new java.awt.Color(204, 204, 255));
+        txt9.setEditable(false);
         txt9.setColumns(20);
         txt9.setRows(5);
         txt9.setText("9. Was the drug detected \nin the blood (or other fluids) \nin concentrations known to be toxic?\n");
         txt9.setAutoscrolls(false);
-        txt9.setEnabled(false);
         txt9.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane8.setViewportView(txt9);
 
@@ -264,12 +258,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt10.setBackground(new java.awt.Color(204, 204, 255));
+        txt10.setEditable(false);
         txt10.setColumns(20);
         txt10.setRows(5);
         txt10.setText("10. Was the reaction more severe \nwhen the dose was increased, \nor less severe when the dose was decreased?\n");
         txt10.setAutoscrolls(false);
-        txt10.setEnabled(false);
         txt10.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane9.setViewportView(txt10);
 
@@ -278,12 +271,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt11.setBackground(new java.awt.Color(204, 204, 255));
+        txt11.setEditable(false);
         txt11.setColumns(20);
         txt11.setRows(5);
         txt11.setText("11. Did the patient have a similar \nreaction to the same or similar drugs \nin any previous exposure?\n");
         txt11.setAutoscrolls(false);
-        txt11.setEnabled(false);
         txt11.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane10.setViewportView(txt11);
 
@@ -292,31 +284,35 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt12.setBackground(new java.awt.Color(204, 204, 255));
+        txt12.setEditable(false);
         txt12.setColumns(20);
         txt12.setRows(5);
         txt12.setText("12. Was the adverse event \nconfirmed by any objective evidence?\n");
         txt12.setAutoscrolls(false);
-        txt12.setEnabled(false);
         txt12.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane4.setViewportView(txt12);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 360, 70));
         add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, 160, 40));
 
-        scoreTxt1.setEnabled(false);
+        scoreTxt1.setEditable(false);
+        scoreTxt1.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 100, 40));
 
-        scoreTxt2.setEnabled(false);
+        scoreTxt2.setEditable(false);
+        scoreTxt2.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 100, 40));
 
-        scoreTxt3.setEnabled(false);
+        scoreTxt3.setEditable(false);
+        scoreTxt3.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, 40));
 
-        scoreTxt4.setEnabled(false);
+        scoreTxt4.setEditable(false);
+        scoreTxt4.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 100, 40));
 
-        scoreTxt5.setEnabled(false);
+        scoreTxt5.setEditable(false);
+        scoreTxt5.setBackground(new java.awt.Color(255, 255, 255));
         scoreTxt5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scoreTxt5ActionPerformed(evt);
@@ -332,19 +328,24 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         scoreTxt7.setEnabled(false);
         add(scoreTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, 100, 40));
 
-        scoreTxt8.setEnabled(false);
+        scoreTxt8.setEditable(false);
+        scoreTxt8.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 210, 100, 40));
 
-        scoreTxt9.setEnabled(false);
+        scoreTxt9.setEditable(false);
+        scoreTxt9.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 280, 100, 40));
 
-        scoreTxt10.setEnabled(false);
+        scoreTxt10.setEditable(false);
+        scoreTxt10.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 340, 100, 40));
 
-        scoreTxt11.setEnabled(false);
+        scoreTxt11.setEditable(false);
+        scoreTxt11.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 410, 100, 40));
 
-        scoreTxt12.setEnabled(false);
+        scoreTxt12.setEditable(false);
+        scoreTxt12.setBackground(new java.awt.Color(255, 255, 255));
         add(scoreTxt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 480, 100, 40));
 
         scoreTxt13.setEnabled(false);
@@ -361,6 +362,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
 
         denyBtn.setText("Deny Drug");
         denyBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        denyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                denyBtnActionPerformed(evt);
+            }
+        });
         add(denyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 650, 170, 40));
 
         personCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -399,7 +405,12 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
+        int dialogResult;
+        if(request.getInterpretationScore()>=9){
+            dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is > 9 .Do you still want to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
+        }else{
+            dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
+        }
         if (dialogResult == JOptionPane.YES_OPTION) {
             request.setStatus("Approved for Post Clinical Trail");
             request.setReceiver(request.getSender());
@@ -427,6 +438,42 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
             layout.previous(userProcessContainer);
         }
     }//GEN-LAST:event_approveBtnActionPerformed
+
+    private void denyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_denyBtnActionPerformed
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult;
+        if(request.getInterpretationScore()<9){
+            dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is < 9 .Do you still want to Deny the request? ", "Warning", dialogButton);
+        }else{
+            dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
+        }
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            request.setStatus("Pre Clinical Trial Denied");
+            request.setReceiver(request.getSender());
+            request.setSender(account);
+            Organization org = null;
+            for (Network n : system.getNetworkList()) {
+                for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
+                    for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
+                        if (o instanceof InsuranceOrganization) {
+                            org = o;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (org != null) {
+                org.getRequestList().getRequestList().add(request);
+            }
+            userProcessContainer.remove(this);
+            Component[] componentArray = userProcessContainer.getComponents();
+            Component component = componentArray[componentArray.length - 1];
+            AuthorityWorkAreaJPanel sysAdminwjp = (AuthorityWorkAreaJPanel) component;
+            sysAdminwjp.populateTable();
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
+        }
+    }//GEN-LAST:event_denyBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -17,7 +17,16 @@ public class Person {
     private String name;
     private int age; 
     private String disease;
-    private ArrayList<String> diseaseList; 
+    private double money;
+    private ArrayList<String> diseaseList;
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
 
     public String getName() {
         return name;

@@ -7,14 +7,20 @@ package UserInterface.AuthorityRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.InsuranceOrganization;
 import Business.Organization.Organization;
+import Business.Organization.PostClinicalTrialOrganization;
 import Business.PostClinicalPerson.PostClinicalPerson;
 import Business.PostClinicalReport.PostClinicalReport;
 import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -40,7 +46,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Request request;
-    
+
     AuthorityCheckForPostCTRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, WorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -49,13 +55,15 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.request = request;
+        valueSlider.setValue((int) request.getPostCtInterpretationScore());
         pnChart.setLayout(new java.awt.BorderLayout());
+        pieChartCreation();
     }
-    
+
     private DefaultCategoryDataset createDataset() {
         // same dataset for line chart and bar chart
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for(PostClinicalReport p:request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()){
+        for (PostClinicalReport p : request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()) {
             dataset.addValue(p.getFinalReportValue(), "Person", p.getPostClinicalPerson().getName());
         }
         return dataset;
@@ -75,6 +83,8 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         btnBarChart = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         valueSlider = new javax.swing.JSlider();
+        approveBtn = new javax.swing.JButton();
+        denyBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,21 +137,59 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         valueSlider.setSnapToTicks(true);
         valueSlider.setEnabled(false);
         add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 43));
+
+        approveBtn.setText("Approve Drug");
+        approveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        approveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approveBtnActionPerformed(evt);
+            }
+        });
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 620, 220, 40));
+
+        denyBtn.setText("Deny Drug");
+        denyBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        denyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                denyBtnActionPerformed(evt);
+            }
+        });
+        add(denyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 620, 170, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn3DPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3DPieActionPerformed
         // create dataset for pie chart
+        pieChartCreation();
+    }//GEN-LAST:event_btn3DPieActionPerformed
+
+    private void btnBarChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarChartActionPerformed
+        // create bar chart
+        JFreeChart barChart = ChartFactory.createBarChart(
+                "Score Interpretation vs Person",
+                "Person", "Score Interpretation",
+                createDataset(),
+                PlotOrientation.VERTICAL,
+                true, true, false);
+        CategoryPlot plot = (CategoryPlot) barChart.getPlot();
+        plot.getRenderer().setSeriesPaint(0, Color.BLUE);
+        ChartPanel chartPanel = new ChartPanel(barChart);
+        pnChart.removeAll();
+        pnChart.add(chartPanel, BorderLayout.CENTER);
+        pnChart.validate();
+    }//GEN-LAST:event_btnBarChartActionPerformed
+
+    public void pieChartCreation() {
         DefaultPieDataset dataset = new DefaultPieDataset();
-        for(PostClinicalReport p:request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()){
+        for (PostClinicalReport p : request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()) {
             dataset.setValue(p.getPostClinicalPerson().getName(), p.getFinalReportValue());
         }
         // create pir chart
         JFreeChart chart = ChartFactory.createPieChart3D(
-            "Score Interpretation", // chart title
-            dataset, // data
-            true, // include legend
-            true,
-            false);
+                "Score Interpretation", // chart title
+                dataset, // data
+                true, // include legend
+                true,
+                false);
         // set chart properties
         final PiePlot3D plot = (PiePlot3D) chart.getPlot();
         plot.setStartAngle(270);
@@ -152,30 +200,72 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         pnChart.removeAll();        // clear panel before add new chart
         pnChart.add(chartPanel, BorderLayout.CENTER);
         pnChart.validate();         // refresh panel to display new chart
-    }//GEN-LAST:event_btn3DPieActionPerformed
+    }
 
-    private void btnBarChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarChartActionPerformed
-        // create bar chart
-        JFreeChart barChart = ChartFactory.createBarChart(
-            "Score Interpretation vs Person",
-            "Person", "Score Interpretation",
-            createDataset(),
-            PlotOrientation.VERTICAL,
-            true, true, false);
-        // set color
-        CategoryPlot plot = (CategoryPlot) barChart.getPlot();
-        plot.getRenderer().setSeriesPaint(0, Color.BLUE);
-        // create chart panel the add it to swing panel in  jframe
-        ChartPanel chartPanel = new ChartPanel(barChart);
-        pnChart.removeAll();        // clear panel before add new chart
-        pnChart.add(chartPanel, BorderLayout.CENTER);
-        pnChart.validate();          // refresh panel to display new chart
-    }//GEN-LAST:event_btnBarChartActionPerformed
+    private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult;
+        if(request.getInterpretationScore()>=9){
+            dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is > 9 .Do you still want to Approve the request? ", "Warning", dialogButton);
+        }else{
+            dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve the Drug? ", "Warning", dialogButton);
+        }
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            request.setStatus("Final Approval Completed");
+            request.setReceiver(request.getSender());
+            request.setSender(account);
+            userProcessContainer.remove(this);
+            Component[] componentArray = userProcessContainer.getComponents();
+            Component component = componentArray[componentArray.length - 1];
+            AuthorityWorkAreaJPanel sysAdminwjp = (AuthorityWorkAreaJPanel) component;
+            sysAdminwjp.populateTable();
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
+        }
+    }//GEN-LAST:event_approveBtnActionPerformed
+
+    private void denyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_denyBtnActionPerformed
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult;
+        if(request.getInterpretationScore()<9){
+            dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is < 9 .Do you still want to Deny the request? ", "Warning", dialogButton);
+        }else{
+            dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Deny the Drug? ", "Warning", dialogButton);
+        }
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            request.setStatus("Post Clinical Trial Denied");
+            request.setReceiver(request.getSender());
+            request.setSender(account);
+            Organization org = null;
+            for (Network n : system.getNetworkList()) {
+                for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
+                    for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
+                        if (o instanceof InsuranceOrganization) {
+                            org = o;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (org != null) {
+                org.getRequestList().getRequestList().add(request);
+            }
+            userProcessContainer.remove(this);
+            Component[] componentArray = userProcessContainer.getComponents();
+            Component component = componentArray[componentArray.length - 1];
+            AuthorityWorkAreaJPanel sysAdminwjp = (AuthorityWorkAreaJPanel) component;
+            sysAdminwjp.populateTable();
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.previous(userProcessContainer);
+        }
+    }//GEN-LAST:event_denyBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton approveBtn;
     private javax.swing.JButton btn3DPie;
     private javax.swing.JButton btnBarChart;
+    private javax.swing.JButton denyBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel pnChart;
     private javax.swing.JSlider valueSlider;

@@ -50,7 +50,6 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
         model.setRowCount(0);
         for (Request request : account.getRequestList().getRequestList()){
             Object[] row = new Object[4];
