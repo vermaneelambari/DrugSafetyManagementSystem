@@ -437,36 +437,36 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         no12.setSelected(true);
         no12.setText("No");
         add(no12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 500, 80, -1));
-        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 610, 90, 40));
-        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 590, 60, 20));
+        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 90, 40));
+        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, 60, 20));
 
         effectsCombo7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 120, -1));
+        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 600, 120, -1));
 
         effectsCombo13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 130, -1));
+        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 560, 130, -1));
 
         effectsCombo6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 120, -1));
+        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, 120, -1));
 
         effectPercTxt13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 560, 130, -1));
-        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 90, 40));
+        add(effectPercTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 560, 130, -1));
+        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 90, 40));
 
         jLabel10.setText("Percentage of Increase/Decrease");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 230, 40));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 230, 40));
 
         jLabel13.setText("Percentage of Increase/Decrease");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, 220, 40));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 220, 40));
 
         jLabel14.setText("Percentage of Increase/Decrease");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, 230, 40));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 590, 230, 40));
 
         effectPercTxt7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(effectPercTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 600, 90, -1));
+        add(effectPercTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 600, 90, -1));
 
         effectPercTxt6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(effectPercTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 90, -1));
+        add(effectPercTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 90, -1));
 
         compResultJpanel.setText("Compute Result");
         compResultJpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -484,7 +484,7 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 40, -1));
 
         jLabel8.setText("13.");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, 20, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, 20, -1));
 
         backJButton.setText("<< Back");
         backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
