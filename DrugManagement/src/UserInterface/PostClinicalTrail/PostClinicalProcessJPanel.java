@@ -80,7 +80,6 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
             }
             effects.put(count+1, effect);
         }
-        System.out.println(effects);
     }
 
     void calculateCommonSideEffectPer() {
