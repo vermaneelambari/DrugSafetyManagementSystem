@@ -85,15 +85,16 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         vaccineTxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Disease:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 60, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 60, 40));
 
         jLabel2.setText("Vaccine:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 80, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 80, 40));
 
         checkBtn.setBackground(new java.awt.Color(204, 255, 0));
         checkBtn.setForeground(new java.awt.Color(0, 51, 51));
@@ -104,36 +105,36 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 checkBtnActionPerformed(evt);
             }
         });
-        add(checkBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 280, 50));
+        add(checkBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 280, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Employee Name:");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         empNameTxt.setText("<Value>");
-        add(empNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 120, 20));
+        add(empNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 120, 20));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("EnterPrise :");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         enterPrText.setText("<value>");
-        add(enterPrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 120, 20));
+        add(enterPrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 120, 20));
 
         enterpriseLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel2.setText("Organization:");
-        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 130, -1));
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 130, -1));
 
         orgText.setText("<value>");
-        add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 120, 20));
+        add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 120, 20));
 
         diseaseTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         diseaseTxt.setEnabled(false);
-        add(diseaseTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 110, 30));
+        add(diseaseTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 110, 30));
 
         vaccineTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         vaccineTxt.setEnabled(false);
-        add(vaccineTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 110, 30));
+        add(vaccineTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 110, 30));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -163,7 +164,12 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 630, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 630, 100));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel3.setText("Pharma Work Area");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 440, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBtnActionPerformed
@@ -186,6 +192,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel orgText;
     private javax.swing.JTextField vaccineTxt;
