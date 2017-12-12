@@ -197,7 +197,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 190, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 190, -1));
 
         organizationEmpJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
