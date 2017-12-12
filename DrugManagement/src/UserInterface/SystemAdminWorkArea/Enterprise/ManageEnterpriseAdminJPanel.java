@@ -129,26 +129,28 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel1.setText("Network");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
-        networkJComboBox.setBackground(new java.awt.Color(0, 153, 153));
+        networkJComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        networkJComboBox.setForeground(new java.awt.Color(0, 153, 153));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
             }
         });
-        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 310, 140, -1));
+        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 310, 150, -1));
 
         jLabel2.setText("Username");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
 
         usernameJTextField.setBackground(new java.awt.Color(0, 153, 153));
         usernameJTextField.setBorder(null);
-        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 130, -1));
+        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 396, 140, 20));
 
         jLabel3.setText("Enterprise");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
-        enterpriseJComboBox.setBackground(new java.awt.Color(0, 153, 153));
-        add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 350, 140, -1));
+        enterpriseJComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        enterpriseJComboBox.setForeground(new java.awt.Color(0, 153, 153));
+        add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 350, 150, 30));
 
         submitJButton.setText("Submit");
         submitJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -172,7 +174,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         nameJTextField.setBackground(new java.awt.Color(0, 153, 153));
         nameJTextField.setBorder(null);
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 130, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 140, 20));
 
         jLabel5.setText("Name");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, -1));
@@ -184,7 +186,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 passwordJPasswordFieldActionPerformed(evt);
             }
         });
-        add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 130, -1));
+        add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 436, 140, 20));
 
         backJButton.setText("<< Back");
         backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));

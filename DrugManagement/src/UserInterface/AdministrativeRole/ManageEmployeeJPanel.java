@@ -155,11 +155,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         addJButton.setText("Create Employee");
         addJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
         addJButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                addJButtonMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addJButtonMouseExited(evt);
             }
         });
         addJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -218,6 +218,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         remobeBtn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         remobeBtn.setText("Delete Employee");
         remobeBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 204), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
+        remobeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                remobeBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                remobeBtnMouseEntered(evt);
+            }
+        });
         remobeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remobeBtnActionPerformed(evt);
@@ -227,6 +235,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         updateBtn.setText("Update");
         updateBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 153), new java.awt.Color(255, 255, 102), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        updateBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateBtnMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateBtnMouseEntered(evt);
+            }
+        });
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBtnActionPerformed(evt);
@@ -448,6 +464,34 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
      this.addJButton.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_addJButtonMouseExited
+
+    private void updateBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseEntered
+        // TODO add your handling code here:
+        
+     this.updateBtn.setBackground(Color.YELLOW);
+        
+    }//GEN-LAST:event_updateBtnMouseEntered
+
+    private void updateBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateBtnMouseExited
+        // TODO add your handling code here:
+        
+     this.updateBtn.setBackground(Color.lightGray);
+
+    }//GEN-LAST:event_updateBtnMouseExited
+
+    private void remobeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remobeBtnMouseEntered
+        // TODO add your handling code here:
+        
+    this.remobeBtn.setBackground(Color.red);
+
+    }//GEN-LAST:event_remobeBtnMouseEntered
+
+    private void remobeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remobeBtnMouseExited
+        // TODO add your handling code here:
+     this.remobeBtn.setBackground(Color.lightGray);
+    
+        
+    }//GEN-LAST:event_remobeBtnMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;

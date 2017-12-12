@@ -67,15 +67,16 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("Add Person ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 54, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         jLabel2.setText("Name: ");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 133, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
 
         jLabel3.setText("Age:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 177, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
 
         jLabel4.setText("Disease:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 220, -1, -1));
@@ -86,13 +87,13 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 130, 235, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 235, -1));
 
         txtAge.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(0, 204, 153)));
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 174, 235, -1));
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 235, -1));
 
         txtDisease.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 217, 235, -1));
+        add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 235, -1));
 
         btnAdd.setText("Add");
         btnAdd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -113,22 +114,22 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 381, 70, 30));
 
         jLabel5.setText("Side Effect 1:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 258, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         effect1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(effect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 255, 235, -1));
+        add(effect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 235, -1));
 
         effect2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
-        add(effect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 293, 235, -1));
+        add(effect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 235, -1));
 
         effect3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(204, 204, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(effect3, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 331, 235, -1));
+        add(effect3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 235, -1));
 
         jLabel8.setText("Side Effect 2:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 293, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         jLabel9.setText("Side Effect 3:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 334, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed

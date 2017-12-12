@@ -113,6 +113,7 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         jTextField1.setEditable(false);
         add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 610, 240, 30));
 
+        jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setText("Start Computation");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {

@@ -87,7 +87,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setForeground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Enter Email to send request");
@@ -99,8 +99,8 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 142, 118, -1));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 480, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 150, 50));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 530, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +109,8 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
+
+        progressBarJPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout progressBarJPanel1Layout = new javax.swing.GroupLayout(progressBarJPanel1);
         progressBarJPanel1.setLayout(progressBarJPanel1Layout);
@@ -129,7 +131,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PostClinicalTrail/Email-Logo.jpg"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 170, 190));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 170, 190));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

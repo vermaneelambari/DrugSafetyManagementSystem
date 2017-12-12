@@ -50,10 +50,10 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         vacName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 130, 30));
+        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 130, 30));
 
         jLabel1.setText("Disease Name:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 90, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 120, 30));
 
         backJButton.setText("<< Back");
         backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -79,7 +79,7 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 153));
