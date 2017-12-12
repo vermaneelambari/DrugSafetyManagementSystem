@@ -79,6 +79,7 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
         approveBtn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -106,11 +107,11 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 730, 130));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 860, 130));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Employee Name:");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         empNameTxt.setText("<Value>");
         add(empNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 230, 20));
@@ -135,7 +136,7 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
                 approveBtnActionPerformed(evt);
             }
         });
-        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 150, 40));
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 150, 40));
 
         jButton1.setText("Complete Request");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +144,7 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 293, 130, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed

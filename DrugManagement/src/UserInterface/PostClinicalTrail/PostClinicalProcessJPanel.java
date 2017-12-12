@@ -167,16 +167,18 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         txt13 = new javax.swing.JTextArea();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 153));
         jLabel5.setText("Post Clinical Trial Process Panel");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 380, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 540, -1));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt5.setBackground(new java.awt.Color(204, 204, 255));
+        txt5.setBackground(new java.awt.Color(204, 255, 204));
         txt5.setColumns(20);
         txt5.setRows(5);
         txt5.setText("5. Are there alternative causes (other than the drug) \nthat could on their own have caused the reaction?\n");
@@ -190,7 +192,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt3.setBackground(new java.awt.Color(204, 204, 255));
+        txt3.setBackground(new java.awt.Color(204, 255, 204));
         txt3.setColumns(20);
         txt3.setRows(5);
         txt3.setText("3. Did the adverse reaction improve when the \ndrug was discontinued or a specific \nantagonist was administered? ");
@@ -204,7 +206,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt2.setBackground(new java.awt.Color(204, 204, 255));
+        txt2.setBackground(new java.awt.Color(204, 255, 204));
         txt2.setColumns(20);
         txt2.setRows(5);
         txt2.setText("2. Did the adverse event appear after the suspected drug \nwas administered?\n");
@@ -218,7 +220,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt12.setBackground(new java.awt.Color(204, 204, 255));
+        txt12.setBackground(new java.awt.Color(204, 255, 204));
         txt12.setColumns(20);
         txt12.setRows(5);
         txt12.setText("12. Was the adverse event \nconfirmed by any objective evidence?\n");
@@ -232,7 +234,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt4.setBackground(new java.awt.Color(204, 204, 255));
+        txt4.setBackground(new java.awt.Color(204, 255, 204));
         txt4.setColumns(20);
         txt4.setRows(5);
         txt4.setText("4. Did the adverse reaction reappear when the drug \nwas readministered?\n");
@@ -246,7 +248,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt1.setBackground(new java.awt.Color(204, 204, 255));
+        txt1.setBackground(new java.awt.Color(204, 255, 204));
         txt1.setColumns(20);
         txt1.setRows(5);
         txt1.setText("1. Are there previous conclusive reports on this reaction?\n");
@@ -260,7 +262,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt8.setBackground(new java.awt.Color(204, 204, 255));
+        txt8.setBackground(new java.awt.Color(204, 255, 204));
         txt8.setColumns(20);
         txt8.setRows(5);
         txt8.setText("8. Did the reaction reappear \nwhen a placebo was given?\n");
@@ -274,7 +276,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt9.setBackground(new java.awt.Color(204, 204, 255));
+        txt9.setBackground(new java.awt.Color(204, 255, 204));
         txt9.setColumns(20);
         txt9.setRows(5);
         txt9.setText("9. Was the drug detected \nin the blood (or other fluids) \nin concentrations known to be toxic?\n");
@@ -288,7 +290,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt10.setBackground(new java.awt.Color(204, 204, 255));
+        txt10.setBackground(new java.awt.Color(204, 255, 204));
         txt10.setColumns(20);
         txt10.setRows(5);
         txt10.setText("10. Was the reaction more severe \nwhen the dose was increased, \nor less severe when the dose was decreased?\n");
@@ -302,7 +304,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt11.setBackground(new java.awt.Color(204, 204, 255));
+        txt11.setBackground(new java.awt.Color(204, 255, 204));
         txt11.setColumns(20);
         txt11.setRows(5);
         txt11.setText("11. Did the patient have a similar \nreaction to the same or similar drugs \nin any previous exposure?\n");
@@ -384,13 +386,13 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         add(no12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 360, 80, -1));
 
         effectsCombo7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 100, -1));
+        add(effectsCombo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 130, -1));
 
         effectsCombo13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 430, 100, -1));
+        add(effectsCombo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 430, 120, -1));
 
         effectsCombo6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Increased", "Decreased" }));
-        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 100, -1));
+        add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 130, -1));
 
         compResultJpanel.setText("Proceed For Calculation");
         compResultJpanel.addActionListener(new java.awt.event.ActionListener() {
@@ -398,12 +400,12 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
                 compResultJpanelActionPerformed(evt);
             }
         });
-        add(compResultJpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 530, 200, 30));
+        add(compResultJpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 480, 210, 60));
 
         jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane12.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt7.setBackground(new java.awt.Color(204, 204, 255));
+        txt7.setBackground(new java.awt.Color(204, 255, 204));
         txt7.setColumns(20);
         txt7.setRows(5);
         txt7.setText("7. >25% Common Side  Effects");
@@ -417,7 +419,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane13.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane13.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt6.setBackground(new java.awt.Color(204, 204, 255));
+        txt6.setBackground(new java.awt.Color(204, 255, 204));
         txt6.setColumns(20);
         txt6.setRows(5);
         txt6.setText("6. >50% Common  Side  Effects");
@@ -431,7 +433,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane14.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane14.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt13.setBackground(new java.awt.Color(204, 204, 255));
+        txt13.setBackground(new java.awt.Color(204, 255, 204));
         txt13.setColumns(20);
         txt13.setRows(5);
         txt13.setText("13. <25% Common Side Effects");

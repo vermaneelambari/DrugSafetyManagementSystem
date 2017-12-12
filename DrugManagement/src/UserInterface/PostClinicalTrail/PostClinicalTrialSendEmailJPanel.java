@@ -84,11 +84,14 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         progressBarJPanel1 = new UserInterface.ProgressBar.ProgressBarJPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
+        setForeground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Enter Email to send request");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 74, 156, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 200, -1));
 
         jButton1.setText("Send email");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +100,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 142, 118, -1));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 71, 98, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 480, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +108,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 328, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
 
         javax.swing.GroupLayout progressBarJPanel1Layout = new javax.swing.GroupLayout(progressBarJPanel1);
         progressBarJPanel1.setLayout(progressBarJPanel1Layout);
@@ -118,7 +121,15 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             .addGap(0, 268, Short.MAX_VALUE)
         );
 
-        add(progressBarJPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 130, -1, -1));
+        add(progressBarJPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel2.setText("Email Request ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PostClinicalTrail/Email-Logo.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 170, 190));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -320,6 +331,8 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private UserInterface.ProgressBar.ProgressBarJPanel progressBarJPanel1;
     // End of variables declaration//GEN-END:variables

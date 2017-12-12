@@ -13,6 +13,7 @@ import Business.PostClinicalReport.PostClinicalReport;
 import Business.Request.Request;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -70,6 +71,7 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         perTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,7 +92,7 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(perTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 640, 240));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 640, 430));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -99,17 +101,26 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 450, 430));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel5.setText("Post Clinical Trial Calculation Panel");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 380, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 530, -1));
 
-        jLabel1.setText("Final Interpretation Score");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, 180, 30));
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setText("Final Interpretation Score:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 610, 190, 30));
 
         jTextField1.setEditable(false);
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 610, 170, 30));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 610, 240, 30));
 
         jButton1.setText("Start Computation");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -280,6 +291,20 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        // TODO add your handling code here:
+        this.jButton1.setBackground(Color.MAGENTA); 
+
+        
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        // TODO add your handling code here:
+        
+     this.jButton1.setBackground(Color.lightGray); 
+
+    }//GEN-LAST:event_jButton1MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
