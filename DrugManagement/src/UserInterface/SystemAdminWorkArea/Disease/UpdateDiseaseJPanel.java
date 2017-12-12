@@ -53,14 +53,16 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 110, 30));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 183, 70, 40));
 
         btnupdate.setText("Update");
+        btnupdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         btnupdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnupdateMouseEntered(evt);
@@ -74,7 +76,9 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
                 btnupdateActionPerformed(evt);
             }
         });
-        add(btnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 90, 40));
+        add(btnupdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 90, 40));
+
+        vacName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 130, 30));
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 153));

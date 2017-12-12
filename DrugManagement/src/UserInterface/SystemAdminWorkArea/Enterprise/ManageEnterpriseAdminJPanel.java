@@ -130,6 +130,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel1.setText("Network");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
+        networkJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
@@ -139,20 +140,24 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Username");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+
+        usernameJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 130, -1));
 
         jLabel3.setText("Enterprise");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
+        enterpriseJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 136, -1));
 
         submitJButton.setText("Submit");
+        submitJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         submitJButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                submitJButtonMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 submitJButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                submitJButtonMouseExited(evt);
             }
         });
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -160,25 +165,31 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 579, 60, 30));
 
         jLabel4.setText("Password");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, -1, -1));
+
+        nameJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 130, -1));
 
         jLabel5.setText("Name");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
+
+        passwordJPasswordField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 130, -1));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 579, 70, 30));
 
         updateBtn.setText("Update");
+        updateBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         updateBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 updateBtnMouseExited(evt);
@@ -192,9 +203,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, -1, -1));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 230, 50, 30));
 
         delBtn.setText("Delete");
+        delBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         delBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 delBtnMouseExited(evt);
@@ -208,15 +220,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 delBtnActionPerformed(evt);
             }
         });
-        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, -1, -1));
+        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 60, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 153, 153));
         jLabel6.setText("Manage Enterprise Admin");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 110, 80));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/neelambariverma/Downloads/NTgxMDg.jpg")); // NOI18N
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 570, 340));
     }// </editor-fold>//GEN-END:initComponents
 

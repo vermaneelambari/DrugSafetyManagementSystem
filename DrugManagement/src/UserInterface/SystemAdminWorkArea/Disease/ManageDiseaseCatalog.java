@@ -75,6 +75,7 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 690, 120));
 
         delBtn.setText("Delete Disease");
+        delBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         delBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 delBtnMouseExited(evt);
@@ -88,9 +89,10 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
                 delBtnActionPerformed(evt);
             }
         });
-        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 150, -1));
+        add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 150, 30));
 
         addBtn.setText("Add Disease");
+        addBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 addBtnMouseExited(evt);
@@ -104,9 +106,10 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 110, -1));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 110, 30));
 
         updBtn.setText("Update Disease");
+        updBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         updBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 updBtnMouseExited(evt);
@@ -120,15 +123,16 @@ public class ManageDiseaseCatalog extends javax.swing.JPanel {
                 updBtnActionPerformed(evt);
             }
         });
-        add(updBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 150, -1));
+        add(updBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 150, 30));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 153));
