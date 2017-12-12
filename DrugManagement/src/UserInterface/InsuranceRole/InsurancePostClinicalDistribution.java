@@ -5,13 +5,22 @@
  */
 package UserInterface.InsuranceRole;
 
+import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
+import Business.PostClinicalPerson.PostClinicalPerson;
+import Business.PostClinicalReport.PostClinicalReport;
 import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -28,6 +37,7 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Request request;
+
     public InsurancePostClinicalDistribution(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, WorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -36,6 +46,32 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.request = request;
+        jButton2.setEnabled(true);
+        double mny = request.getPharmaAcc().getEmployee().getPharmaMoney().getMoney();
+        avalMnyTxt.setText(String.valueOf(mny));
+    }
+
+    void distributeMoney(double mny) {
+        Map<Integer, PostClinicalPerson> perList = new HashMap();
+        for (PostClinicalReport c : request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()) {
+            perList.put(c.getFinalReportValue(), c.getPostClinicalPerson());
+        }
+        double distMoney = mny / (request.getPostClinicalReportDirectory().getPostClinicalReportDirectory().size());
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        model.setRowCount(0);
+        for (Map.Entry<Integer, PostClinicalPerson> entry : perList.entrySet()) {
+            Object[] row = new Object[4];
+            row[0] = entry.getValue();
+            row[1] = entry.getValue().getAge();
+            row[2] = entry.getKey();
+            row[3] = distMoney;
+            model.addRow(row);
+        }
+        request.getPharmaAcc().getEmployee().getPharmaMoney().setMoney(request.getPharmaAcc().getEmployee().getPharmaMoney().getMoney()-mny);
+        request.setStatus("Request Denied and Insrance Money Distributed");
+        request.setReceiver(request.getSender());
+        request.setSender(account);
+        jButton2.setEnabled(false);
     }
 
     /**
@@ -47,19 +83,115 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jScrollPane1 = new javax.swing.JScrollPane();
+        workRequestJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        avalMnyTxt = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        enteredMny = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Person", "Age", "Interpretation Value", "Insurance Money Given"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(workRequestJTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 840, 130));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Distribution of Money for Post Clinical Trial");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 390, 50));
+
+        jButton1.setText("<< Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 30));
+
+        avalMnyTxt.setEditable(false);
+        add(avalMnyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 130, 40));
+
+        jLabel2.setText("Available Money");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 120, 40));
+
+        jLabel3.setText("Money To be distributed");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 200, 40));
+        add(enteredMny, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 110, 40));
+
+        jButton2.setText("Distribute Money");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 170, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        InsuranceWorkAreaJPanel sysAdminwjp = (InsuranceWorkAreaJPanel) component;
+        sysAdminwjp.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (enteredMny.getText().trim().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Please enter Money To be distributed");
+            return;
+        }
+        double mnyEntered = 0;
+        double mny = request.getPharmaAcc().getEmployee().getPharmaMoney().getMoney();
+        try {
+            mnyEntered = Double.parseDouble(enteredMny.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please enter float values for Money To be distributed");
+            return;
+        }
+        if (mnyEntered > mny || mnyEntered <= 0) {
+            JOptionPane.showMessageDialog(null, "Please enter Money greater than 0 and less than " + mny);
+            return;
+        }
+        distributeMoney(mnyEntered);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField avalMnyTxt;
+    private javax.swing.JTextField enteredMny;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

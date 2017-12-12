@@ -45,7 +45,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
     }
 
-    void populateTable() {
+    public void populateTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
         for (Request request : organization.getRequestList().getRequestList()) {
