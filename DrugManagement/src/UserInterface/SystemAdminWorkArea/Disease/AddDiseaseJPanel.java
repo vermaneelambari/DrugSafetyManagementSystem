@@ -62,7 +62,7 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 80, 30));
 
         addBtn.setText("Add");
         addBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -104,15 +104,16 @@ public class AddDiseaseJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Disease Name already present");
                 return;
             }
-            if ( !(name.matches("^[a-zA-Z0-9]+$"))) {
-                  JOptionPane.showMessageDialog(null,"No Special characters for Vaccine Name");
-                  return;
-            }
+            
         }
         if(name.trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter Disease Name");
             return;
         }
+        if ( !(name.matches("^[a-zA-Z0-9]+$"))) {
+                  JOptionPane.showMessageDialog(null,"No Special characters for Disease Name");
+                  return;
+            }
         Disease disease = system.getDiseaseCatalog().addDisease();
         disease.setdName(name);
         JOptionPane.showMessageDialog(null, "Disease Added Successfully");

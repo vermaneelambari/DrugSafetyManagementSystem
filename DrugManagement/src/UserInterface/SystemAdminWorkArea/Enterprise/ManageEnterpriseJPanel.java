@@ -217,7 +217,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             return;
         }
         
-        if ( !(name.matches("[a-zA-Z0-9]+"))) {
+        if ( !(name.matches("[a-zA-Z]+"))) {
                   JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
                   return;
             }
