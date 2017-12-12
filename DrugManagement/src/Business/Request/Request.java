@@ -23,6 +23,7 @@ public abstract class Request {
     private String message;
     private UserAccount sender;
     private UserAccount receiver;
+    private UserAccount pharmaAcc;
     private String status;
     private Date requestDate;
     private Date resolveDate;
@@ -41,6 +42,14 @@ public abstract class Request {
         clinicalReportDirectory = new ClinicalReportDirectory();
         postClinicalReportDirectory = new PostClinicalReportDirectory();
         postClinicalTrialDataEntry = new PostClinicalTrialDataEntry();
+    }
+
+    public UserAccount getPharmaAcc() {
+        return pharmaAcc;
+    }
+
+    public void setPharmaAcc(UserAccount pharmaAcc) {
+        this.pharmaAcc = pharmaAcc;
     }
 
     public PostClinicalTrialDataEntry getPostClinicalTrialDataEntry() {

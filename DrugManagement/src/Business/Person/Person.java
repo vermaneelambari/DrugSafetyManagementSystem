@@ -17,15 +17,15 @@ public class Person {
     private String name;
     private int age; 
     private String disease;
-    private double money;
     private ArrayList<String> diseaseList;
+    private double insuranceMoney;
 
-    public double getMoney() {
-        return money;
+    public double getInsuranceMoney() {
+        return insuranceMoney;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public void setInsuranceMoney(double insuranceMoney) {
+        this.insuranceMoney = insuranceMoney;
     }
 
     public String getName() {
