@@ -115,6 +115,8 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 349, 100, 30));
 
+        progressBarJPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
         javax.swing.GroupLayout progressBarJPanel1Layout = new javax.swing.GroupLayout(progressBarJPanel1);
         progressBarJPanel1.setLayout(progressBarJPanel1Layout);
         progressBarJPanel1Layout.setHorizontalGroup(

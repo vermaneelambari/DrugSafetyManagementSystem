@@ -48,20 +48,24 @@ public class UpdateEnterpriseUserJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        vacName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 130, 30));
 
         jLabel1.setText("UserName:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 90, 30));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 239, 70, 30));
 
         btnUpdate.setText("Update");
+        btnUpdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnUpdateMouseEntered(evt);
