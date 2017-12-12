@@ -50,7 +50,6 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
         if(system.getPostClinicalPersonDirectory().getPostClinicalPersonList().size()==0){
             createData();
         }
-        
         populatePostClinicalPubSecTable();
           
     }
@@ -75,7 +74,7 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
                 p.setDisease(valuesOfArray[2]);
                 p.setName(valuesOfArray[0]);
                 p.setAge(Integer.parseInt(valuesOfArray[1]));
-                p.setDisease(valuesOfArray[2]);
+                p.setSideEffects(valuesOfArray[3]);
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {
@@ -221,8 +220,6 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Select Any Row");
             return;
         }*/
-        
-        JOptionPane.showMessageDialog(null, "Person deleted successfully");
         
         int selectedRow = tblPostClinical.getSelectedRow();
         if (selectedRow < 0) {

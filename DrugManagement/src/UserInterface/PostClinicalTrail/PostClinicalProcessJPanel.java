@@ -13,6 +13,7 @@ import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,6 +49,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.request = request;
+        compResultJpanel.setEnabled(true);
         getCommonEffects();
         calculateCommonSideEffectPer();
         txt6.setText("6. "+sideEffectName.get(0)+ " (Common  Side  Effects greater than 50%)");
@@ -58,27 +60,32 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
     void getCommonEffects() {
         effects = new HashMap();
         persons = new ArrayList();
+        ArrayList<String> personsTemp = new ArrayList();
         for (PostClinicalPerson p : system.getPostClinicalPersonDirectory().getPostClinicalPersonList()) {
             if(p.getDisease().equals(request.getDisease().getdName())){
                 persons.add(p);
+                personsTemp.add(p.getSideEffects());
             }
         }
-        for (int i = 0; i < persons.size(); i++) {
+        for (int i = 0; i < personsTemp.size(); i++) {
             int count = 0;
             String effect = null;
-            for (int j = i + 1; j < persons.size(); j++) {
-                if (persons.get(i).getSideEffects().equals(persons.get(j).getSideEffects())) {
-                    effect = persons.get(i).getSideEffects();
+            for (int j = i + 1; j < personsTemp.size(); j++) {
+                if (personsTemp.get(i).equals(personsTemp.get(j))) {
+                    effect = personsTemp.get(i);
                     count++;
+                    personsTemp.remove(j);
                     j--;
                 }
-                effects.put(count, effect);
             }
+            effects.put(count+1, effect);
         }
+        System.out.println(effects);
     }
 
     void calculateCommonSideEffectPer() {
         Map<Integer, String> sorted = new TreeMap<Integer, String>(Collections.reverseOrder());
+        sorted.putAll(effects);
         sideEffectName = new ArrayList();
         boolean checkHigh = false;
         boolean checkMiddle = false;
@@ -153,13 +160,13 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         effectsCombo13 = new javax.swing.JComboBox<>();
         effectsCombo6 = new javax.swing.JComboBox<>();
         compResultJpanel = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         txt7 = new javax.swing.JTextArea();
         jScrollPane13 = new javax.swing.JScrollPane();
         txt6 = new javax.swing.JTextArea();
         jScrollPane14 = new javax.swing.JScrollPane();
         txt13 = new javax.swing.JTextArea();
+        backJButton = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -394,14 +401,6 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         });
         add(compResultJpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 530, 200, 30));
 
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
-            }
-        });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, -1));
-
         jScrollPane12.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane12.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -443,11 +442,19 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         jScrollPane14.setViewportView(txt13);
 
         add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, 360, 70));
+
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void compResultJpanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compResultJpanelActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to delete the Disease ", "Warning", dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Proceed for calculation? ", "Warning", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             String[] txtValue = {txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), "", "", txt8.getText(), txt9.getText(), txt10.getText(), txt11.getText(), txt12.getText(), ""};
             boolean[] yesValue = {yes1.isSelected(), yes2.isSelected(), yes3.isSelected(), yes4.isSelected(), yes5.isSelected(), false, false, yes8.isSelected(), yes9.isSelected(), yes10.isSelected(), yes11.isSelected(), yes12.isSelected(), false};
@@ -505,6 +512,10 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PostClinicalTrialJPanel sysAdminwjp = (PostClinicalTrialJPanel) component;
+        sysAdminwjp.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
@@ -512,7 +523,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
-    private javax.swing.JButton compResultJpanel;
+    public javax.swing.JButton compResultJpanel;
     private javax.swing.JComboBox<String> effectsCombo13;
     private javax.swing.JComboBox<String> effectsCombo6;
     private javax.swing.JComboBox<String> effectsCombo7;

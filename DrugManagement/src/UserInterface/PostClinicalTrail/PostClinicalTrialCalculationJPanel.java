@@ -12,10 +12,14 @@ import Business.PostClinicalPerson.PostClinicalPerson;
 import Business.PostClinicalReport.PostClinicalReport;
 import Business.Request.Request;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -44,6 +48,7 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         this.request = request;
         this.persons = persons;
         this.sideEffectName = sideEffectName;
+        jButton1.setEnabled(true);
     }
 
     /**
@@ -63,7 +68,7 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        backJButton = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -85,14 +90,14 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(perTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 700, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 640, 240));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 720, 260));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 450, 430));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel5.setText("Post Clinical Trial Calculation Panel");
@@ -112,131 +117,174 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 200, 50));
 
-        jButton2.setText("jButton2");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 620, -1, -1));
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel dtm = (DefaultTableModel) perTable.getModel();
         dtm.setRowCount(0);
         Object[] row = new Object[3];
-        new Thread(new Runnable() {
-            public void run() {
-                for (PostClinicalPerson p : persons) {
-                    int val = 0;
-                    if (jTextArea1.getText().trim().length() == 0) {
-                        jTextArea1.setText(p.getName() + " Calculation Started/n");
-                    } else {
-                        jTextArea1.append(p.getName() + " Calculation Started/n");
-                    }
-                    for (int i = 0; i < 13; i++) {
-                        if (i == 5) {
-                            if (sideEffectName.get(0).equals(p.getSideEffects())) {
-                                if (request.getPostClinicalTrialDataEntry().getReportValue().get(i).equals("Increased")) {
-                                    if (p.getAge() >= 75) {
-                                        val = val + 12;
-                                    } else if (p.getAge() < 75 && p.getAge() >= 50) {
-                                        val = val + 11;
-                                    } else if (p.getAge() < 50 && p.getAge() >= 25) {
-                                        val = val + 10;
-                                    } else {
-                                        val = val + 9;
+        new SwingWorker<Void, String>() {
+            @Override
+            protected Void doInBackground() throws Exception {
+                new Thread(new Runnable() {
+                    public void run() {
+                        for (PostClinicalPerson p : persons) {
+                            int val = 0;
+                            if (jTextArea1.getText().trim().length() == 0) {
+                                jTextArea1.setText(p.getName() + " Calculation Started\n");
+                            } else {
+                                jTextArea1.append(p.getName() + " Calculation Started\n");
+                            }
+                            try {
+                                Thread.sleep(1500);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(PostClinicalTrialCalculationJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                            for (int i = 0; i < 13; i++) {
+                                if (i == 5) {
+                                    if (sideEffectName.get(0).equals(p.getSideEffects())) {
+                                        if (request.getPostClinicalTrialDataEntry().getReportValue().get(i).equals("Increased")) {
+                                            if (p.getAge() >= 75) {
+                                                val = val + 12;
+                                            } else if (p.getAge() < 75 && p.getAge() >= 50) {
+                                                val = val + 11;
+                                            } else if (p.getAge() < 50 && p.getAge() >= 25) {
+                                                val = val + 10;
+                                            } else {
+                                                val = val + 9;
+                                            }
+                                        } else {
+                                            if (p.getAge() >= 75) {
+                                                val = val - 12;
+                                            } else if (p.getAge() < 75 && p.getAge() >= 50) {
+                                                val = val - 11;
+                                            } else if (p.getAge() < 50 && p.getAge() >= 25) {
+                                                val = val - 10;
+                                            } else {
+                                                val = val - 9;
+                                            }
+                                        }
+                                    }
+                                } else if (i == 6) {
+                                    if (sideEffectName.get(1).equals(p.getSideEffects())) {
+                                        if (request.getPostClinicalTrialDataEntry().getReportValue().get(i).equals("Increased")) {
+                                            if (p.getAge() >= 75) {
+                                                val = val + 10;
+                                            } else if (p.getAge() < 75 && p.getAge() >= 50) {
+                                                val = val + 8;
+                                            } else if (p.getAge() < 50 && p.getAge() >= 25) {
+                                                val = val + 6;
+                                            } else {
+                                                val = val + 4;
+                                            }
+                                        } else {
+                                            if (p.getAge() >= 75) {
+                                                val = val - 10;
+                                            } else if (p.getAge() < 75 && p.getAge() >= 50) {
+                                                val = val - 8;
+                                            } else if (p.getAge() < 50 && p.getAge() >= 25) {
+                                                val = val - 6;
+                                            } else {
+                                                val = val - 4;
+                                            }
+                                        }
+                                    }
+                                } else if (i == 12) {
+                                    if (sideEffectName.get(2).equals(p.getSideEffects())) {
+                                        if (request.getPostClinicalTrialDataEntry().getReportValue().get(i).equals("Increased")) {
+                                            if (p.getAge() >= 75) {
+                                                val = val + 6;
+                                            } else if (p.getAge() < 75 && p.getAge() >= 50) {
+                                                val = val + 5;
+                                            } else if (p.getAge() < 50 && p.getAge() >= 25) {
+                                                val = val + 4;
+                                            } else {
+                                                val = val + 3;
+                                            }
+                                        } else {
+                                            if (p.getAge() >= 75) {
+                                                val = val - 6;
+                                            } else if (p.getAge() < 75 && p.getAge() >= 50) {
+                                                val = val - 5;
+                                            } else if (p.getAge() < 50 && p.getAge() >= 25) {
+                                                val = val - 4;
+                                            } else {
+                                                val = val - 3;
+                                            }
+                                        }
                                     }
                                 } else {
-                                    if (p.getAge() >= 75) {
-                                        val = val - 12;
-                                    } else if (p.getAge() < 75 && p.getAge() >= 50) {
-                                        val = val - 11;
-                                    } else if (p.getAge() < 50 && p.getAge() >= 25) {
-                                        val = val - 10;
-                                    } else {
-                                        val = val - 9;
-                                    }
+                                    val = val + Integer.parseInt(request.getPostClinicalTrialDataEntry().getReportValue().get(i));
                                 }
                             }
-                        } else if (i == 6) {
-                            if (sideEffectName.get(1).equals(p.getSideEffects())) {
-                                if (request.getPostClinicalTrialDataEntry().getReportValue().get(i).equals("Increased")) {
-                                    if (p.getAge() >= 75) {
-                                        val = val + 10;
-                                    } else if (p.getAge() < 75 && p.getAge() >= 50) {
-                                        val = val + 8;
-                                    } else if (p.getAge() < 50 && p.getAge() >= 25) {
-                                        val = val + 6;
-                                    } else {
-                                        val = val + 4;
-                                    }
-                                } else {
-                                    if (p.getAge() >= 75) {
-                                        val = val - 10;
-                                    } else if (p.getAge() < 75 && p.getAge() >= 50) {
-                                        val = val - 8;
-                                    } else if (p.getAge() < 50 && p.getAge() >= 25) {
-                                        val = val - 6;
-                                    } else {
-                                        val = val - 4;
-                                    }
-                                }
+                            jTextArea1.append(p.getName() + " Calculation Completed\n\n");
+                            PostClinicalReport rep = request.getPostClinicalReportDirectory().addClinicalReport();
+                            rep.setPostClinicalPerson(p);
+                            rep.setFinalReportValue(val);
+                            if (val >= 9) {
+                                rep.setStatus("Definite Adverse Event");
+                            } else if (val < 9 && val >= 5) {
+                                rep.setStatus("Probable Adverse Event");
+                            } else if (val < 5 && val >= 1) {
+                                rep.setStatus("Possible Adverse Event");
+                            } else if (val < 1) {
+                                rep.setStatus("Doubtful Adverse Event");
                             }
-                        } else if (i == 12) {
-                            if (sideEffectName.get(2).equals(p.getSideEffects())) {
-                                if (request.getPostClinicalTrialDataEntry().getReportValue().get(i).equals("Increased")) {
-                                    if (p.getAge() >= 75) {
-                                        val = val + 6;
-                                    } else if (p.getAge() < 75 && p.getAge() >= 50) {
-                                        val = val + 5;
-                                    } else if (p.getAge() < 50 && p.getAge() >= 25) {
-                                        val = val + 4;
-                                    } else {
-                                        val = val + 3;
-                                    }
-                                } else {
-                                    if (p.getAge() >= 75) {
-                                        val = val - 6;
-                                    } else if (p.getAge() < 75 && p.getAge() >= 50) {
-                                        val = val - 5;
-                                    } else if (p.getAge() < 50 && p.getAge() >= 25) {
-                                        val = val - 4;
-                                    } else {
-                                        val = val - 3;
-                                    }
-                                }
+                            row[0] = p;
+                            row[1] = val;
+                            row[2] = rep.getStatus();
+                            dtm.addRow(row);
+                            try {
+                                Thread.sleep(500);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(PostClinicalTrialCalculationJPanel.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                        } else {
-                            val = val + Integer.parseInt(request.getPostClinicalTrialDataEntry().getReportValue().get(i));
                         }
                     }
-                    jTextArea1.append(p.getName() + " Calculation Completed/n");
-                    PostClinicalReport rep = request.getPostClinicalReportDirectory().addClinicalReport();
-                    rep.setPostClinicalPerson(p);
-                    rep.setFinalReportValue(val);
-                    if (val >= 9) {
-                        rep.setStatus("Definite Adverse Event");
-                    } else if (val < 9 && val >= 5) {
-                        rep.setStatus("Probable Adverse Event");
-                    } else if (val < 5 && val >= 1) {
-                        rep.setStatus("Possible Adverse Event");
-                    } else if (val < 1) {
-                        rep.setStatus("Doubtful Adverse Event");
-                    }
-                    row[0] = p;
-                    row[1] = val;
-                    row[2] = rep.getStatus();
-                    dtm.addRow(row);
-                }
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(PostClinicalTrialCalculationJPanel.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }).start();
+                 try {
+                                Thread.sleep((2000*persons.size())+500);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(PostClinicalTrialCalculationJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                return null;
             }
-        }).start();
+            protected void done() {
+                float finalValue = 0;
+                for (PostClinicalReport r : request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()) {
+                    finalValue = finalValue + r.getFinalReportValue();
+                }
+                finalValue = finalValue / request.getPostClinicalReportDirectory().getPostClinicalReportDirectory().size();
+                request.setPostCtInterpretationScore(finalValue);
+                request.setStatus("Post Clinical Trial Calculation Completed");
+                jTextField1.setText(String.valueOf(finalValue));
+                jButton1.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "Computation Completed");
+            }
+        }.execute();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PostClinicalProcessJPanel sysAdminwjp = (PostClinicalProcessJPanel) component;
+        sysAdminwjp.compResultJpanel.setEnabled(false);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backJButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;

@@ -180,10 +180,12 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
                 return;
             }
         }
-        /*PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
-        userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
+        if(status.equals("Post Clinical Trial Calculation Completed")){
+        PostClinicalTrialSendEmailJPanel muajp = new PostClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
+        userProcessContainer.add("PostClinicalTrialSendEmailJPanel", muajp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);*/
+        layout.next(userProcessContainer);
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
