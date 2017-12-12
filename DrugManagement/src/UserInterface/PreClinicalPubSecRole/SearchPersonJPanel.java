@@ -66,6 +66,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         txtSearchAge = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         searchCombo = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,7 +88,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
-        txtSearchName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        txtSearchName.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 0), null));
         txtSearchName.setEnabled(false);
         txtSearchName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,14 +100,14 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel3.setText("Age:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
-        txtSearchDisease.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(0, 204, 153)));
+        txtSearchDisease.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 0), null));
         txtSearchDisease.setEnabled(false);
-        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 180, 20));
+        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 180, 20));
 
         jLabel4.setText("Disease:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
-        txtSearchAge.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
+        txtSearchAge.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 51), null));
         txtSearchAge.setEnabled(false);
         add(txtSearchAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 177, -1));
 
@@ -114,13 +115,16 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         searchCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        searchCombo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
+        searchCombo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 0), null));
         searchCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchComboActionPerformed(evt);
             }
         });
-        add(searchCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 194, -1));
+        add(searchCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 180, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PreClinicalPubSecRole/UMH_L_DRWARD@1x-2.jpg"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 890, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -153,6 +157,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JComboBox<String> searchCombo;
     private javax.swing.JTextField txtSearchAge;
     private javax.swing.JTextField txtSearchDisease;

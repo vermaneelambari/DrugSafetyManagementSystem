@@ -75,13 +75,10 @@
     <Component class="javax.swing.JTextField" name="txtSearchName">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder>
+              <Color PropertyName="highlight" blue="0" green="0" red="cc" type="rgb"/>
+            </EtchetBorder>
           </Border>
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
@@ -108,20 +105,17 @@
     <Component class="javax.swing.JTextField" name="txtSearchDisease">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="99" green="cc" red="0" type="rgb"/>
-            </BevelBorder>
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder>
+              <Color PropertyName="highlight" blue="0" green="0" red="cc" type="rgb"/>
+            </EtchetBorder>
           </Border>
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="170" y="180" width="180" height="20"/>
+          <AbsoluteConstraints x="180" y="180" width="180" height="20"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -138,13 +132,10 @@
     <Component class="javax.swing.JTextField" name="txtSearchAge">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="33" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder>
+              <Color PropertyName="highlight" blue="33" green="0" red="cc" type="rgb"/>
+            </EtchetBorder>
           </Border>
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
@@ -176,13 +167,10 @@
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder>
+              <Color PropertyName="highlight" blue="0" green="0" red="cc" type="rgb"/>
+            </EtchetBorder>
           </Border>
         </Property>
       </Properties>
@@ -194,7 +182,19 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="170" y="220" width="194" height="-1"/>
+          <AbsoluteConstraints x="180" y="220" width="180" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/UserInterface/PreClinicalPubSecRole/UMH_L_DRWARD@1x-2.jpg"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="30" y="30" width="890" height="590"/>
         </Constraint>
       </Constraints>
     </Component>

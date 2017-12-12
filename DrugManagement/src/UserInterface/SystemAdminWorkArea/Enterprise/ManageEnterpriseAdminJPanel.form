@@ -29,7 +29,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="70" width="820" height="150"/>
+          <AbsoluteConstraints x="40" y="70" width="830" height="150"/>
         </Constraint>
       </Constraints>
 
@@ -82,18 +82,11 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="networkJComboBox">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
-          </Border>
         </Property>
       </Properties>
       <Events>
@@ -101,7 +94,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="310" width="136" height="-1"/>
+          <AbsoluteConstraints x="156" y="310" width="140" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -117,20 +110,16 @@
     </Component>
     <Component class="javax.swing.JTextField" name="usernameJTextField">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
-          </Border>
+          <Border info="null"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="390" width="130" height="-1"/>
+          <AbsoluteConstraints x="160" y="400" width="130" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -146,23 +135,16 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="enterpriseJComboBox">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
-          </Border>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="350" width="136" height="-1"/>
+          <AbsoluteConstraints x="156" y="350" width="140" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -187,7 +169,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="290" y="579" width="60" height="30"/>
+          <AbsoluteConstraints x="810" y="580" width="60" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -203,15 +185,11 @@
     </Component>
     <Component class="javax.swing.JTextField" name="nameJTextField">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
-          </Border>
+          <Border info="null"/>
         </Property>
       </Properties>
       <Constraints>
@@ -226,26 +204,25 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="480" width="-1" height="-1"/>
+          <AbsoluteConstraints x="60" y="470" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JPasswordField" name="passwordJPasswordField">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder>
-              <Color PropertyName="highlightOuter" blue="99" green="cc" red="0" type="rgb"/>
-              <Color PropertyName="highlightInner" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowOuter" blue="0" green="ff" red="ff" type="rgb"/>
-              <Color PropertyName="shadowInner" blue="0" green="ff" red="ff" type="rgb"/>
-            </BevelBorder>
-          </Border>
+          <Border info="null"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordJPasswordFieldActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="430" width="130" height="-1"/>
+          <AbsoluteConstraints x="160" y="440" width="130" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -268,7 +245,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="579" width="70" height="30"/>
+          <AbsoluteConstraints x="40" y="580" width="70" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -339,16 +316,14 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/UserInterface/SystemAdminWorkArea/Enterprise/homepage_image2.png"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="440" y="280" width="110" height="80"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="390" y="290" width="570" height="340"/>
+          <AbsoluteConstraints x="40" y="210" width="830" height="370"/>
         </Constraint>
       </Constraints>
     </Component>
