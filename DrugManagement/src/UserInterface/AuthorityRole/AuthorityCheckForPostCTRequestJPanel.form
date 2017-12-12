@@ -115,7 +115,10 @@
     <Component class="javax.swing.JSlider" name="valueSlider">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="0" type="rgb"/>
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="majorTickSpacing" type="int" value="1"/>
         <Property name="maximum" type="int" value="15"/>
