@@ -497,8 +497,8 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
             }
         }
         String effect1Perc = effectPercTxt6.getText();
-        String effect2Perc = effectPercTxt6.getText();
-        String effect3Perc = effectPercTxt6.getText();
+        String effect2Perc = effectPercTxt7.getText();
+        String effect3Perc = effectPercTxt13.getText();
         if (effect1Perc.trim().length() == 0 || effect2Perc.trim().length() == 0 || effect3Perc.trim().length() == 0) {
             JOptionPane.showMessageDialog(null, "Please enter percentage values for Effects on Person");
             return;
@@ -524,8 +524,8 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter integer value for " + txt13.getText());
             return;
         }
-        if (effect3PercValue13 > 100 || effect2PercValue7 > 100 || effectPercValue6 > 100) {
-            JOptionPane.showMessageDialog(null, "Please enter Percentage values less than 100");
+        if (effect3PercValue13 > 100 || effect2PercValue7 > 100 || effectPercValue6 > 100 || effect3PercValue13 <= 0 || effect2PercValue7 <=0 || effectPercValue6 <= 0) {
+            JOptionPane.showMessageDialog(null, "Please enter Percentage values greater than 0 and less than 100");
             return;
         }
         String[] txtValue = {txt1.getText(), txt2.getText(), txt3.getText(), txt4.getText(), txt5.getText(), txt6.getText(), txt7.getText(), txt8.getText(), txt9.getText(), txt10.getText(), txt11.getText(), txt12.getText(), txt13.getText()};

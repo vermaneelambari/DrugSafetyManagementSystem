@@ -110,13 +110,13 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 840, 130));
 
-        approveBtn.setText("Approve for Pre Clinical Trial");
+        approveBtn.setText("Approve for Pre/Post Clinical Trial");
         approveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveBtnActionPerformed(evt);
             }
         });
-        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 200, 40));
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 220, 40));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Employee Name:");
@@ -192,6 +192,11 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         if (status.equals("Pre Clinical Trial Completed")) {
             AuthorityCheckRequestJPanel muajp = new AuthorityCheckRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
                 userProcessContainer.add("AuthorityCheckRequestJPanel", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+        }else if(status.equals("Post Clinical Trial Completed")){
+            AuthorityCheckForPostCTRequestJPanel muajp = new AuthorityCheckForPostCTRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
+                userProcessContainer.add("AuthorityCheckForPostCTRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
         }else{
