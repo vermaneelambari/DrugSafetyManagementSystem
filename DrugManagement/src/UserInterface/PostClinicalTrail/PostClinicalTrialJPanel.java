@@ -185,6 +185,9 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
             userProcessContainer.add("PostClinicalTrialSendEmailJPanel", muajp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
+        }else{
+            JOptionPane.showMessageDialog(null, "Request sent to FDA");
+                return;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
