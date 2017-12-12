@@ -60,14 +60,16 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setEnabled(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText(" Person's Effects of Disease");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 27, 509, 44));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 509, 44));
 
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 134, -1, -1));
@@ -105,6 +107,9 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
 
         jTextField1.setEnabled(false);
         add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 180, 30));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PostClinicalPubSecRole/UMH_L_DRWARD@1x-2.jpg"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 890, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNameActionPerformed
@@ -131,6 +136,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtSearchAge;
     private javax.swing.JTextField txtSearchDisease;
