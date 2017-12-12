@@ -184,11 +184,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt5.setBackground(new java.awt.Color(204, 204, 255));
+        txt5.setEditable(false);
         txt5.setColumns(20);
+        txt5.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt5.setRows(5);
         txt5.setText("5. Are there alternative causes (other than the drug) \nthat could on their own have caused the reaction?\n");
         txt5.setAutoscrolls(false);
+        txt5.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt5.setEnabled(false);
         txt5.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane1.setViewportView(txt5);
@@ -198,11 +200,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt3.setBackground(new java.awt.Color(204, 204, 255));
+        txt3.setEditable(false);
         txt3.setColumns(20);
+        txt3.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt3.setRows(5);
         txt3.setText("3. Did the adverse reaction improve when the \ndrug was discontinued or a specific \nantagonist was administered? ");
         txt3.setAutoscrolls(false);
+        txt3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt3.setEnabled(false);
         txt3.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane2.setViewportView(txt3);
@@ -212,11 +216,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt2.setBackground(new java.awt.Color(204, 204, 255));
+        txt2.setEditable(false);
         txt2.setColumns(20);
+        txt2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt2.setRows(5);
         txt2.setText("2. Did the adverse event appear after the suspected drug \nwas administered?\n");
         txt2.setAutoscrolls(false);
+        txt2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt2.setEnabled(false);
         txt2.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane3.setViewportView(txt2);
@@ -226,11 +232,12 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt12.setBackground(new java.awt.Color(204, 204, 255));
         txt12.setColumns(20);
+        txt12.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt12.setRows(5);
         txt12.setText("12. Was the adverse event \nconfirmed by any objective evidence?\n");
         txt12.setAutoscrolls(false);
+        txt12.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt12.setEnabled(false);
         txt12.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane4.setViewportView(txt12);
@@ -240,11 +247,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt4.setBackground(new java.awt.Color(204, 204, 255));
+        txt4.setEditable(false);
         txt4.setColumns(20);
+        txt4.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt4.setRows(5);
         txt4.setText("4. Did the adverse reaction reappear when the drug \nwas readministered?\n");
         txt4.setAutoscrolls(false);
+        txt4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt4.setEnabled(false);
         txt4.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane5.setViewportView(txt4);
@@ -254,12 +263,12 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt1.setBackground(new java.awt.Color(204, 204, 255));
+        txt1.setEditable(false);
         txt1.setColumns(20);
+        txt1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt1.setRows(5);
         txt1.setText("1. Are there previous conclusive reports on this reaction?\n");
         txt1.setAutoscrolls(false);
-        txt1.setEnabled(false);
         txt1.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane6.setViewportView(txt1);
 
@@ -268,11 +277,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt8.setBackground(new java.awt.Color(204, 204, 255));
+        txt8.setEditable(false);
         txt8.setColumns(20);
+        txt8.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt8.setRows(5);
         txt8.setText("8. Did the reaction reappear \nwhen a placebo was given?\n");
         txt8.setAutoscrolls(false);
+        txt8.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt8.setEnabled(false);
         txt8.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane7.setViewportView(txt8);
@@ -282,11 +293,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane8.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane8.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt9.setBackground(new java.awt.Color(204, 204, 255));
+        txt9.setEditable(false);
         txt9.setColumns(20);
+        txt9.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt9.setRows(5);
         txt9.setText("9. Was the drug detected \nin the blood (or other fluids) \nin concentrations known to be toxic?\n");
         txt9.setAutoscrolls(false);
+        txt9.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt9.setEnabled(false);
         txt9.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane8.setViewportView(txt9);
@@ -296,11 +309,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt10.setBackground(new java.awt.Color(204, 204, 255));
+        txt10.setEditable(false);
         txt10.setColumns(20);
+        txt10.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt10.setRows(5);
         txt10.setText("10. Was the reaction more severe \nwhen the dose was increased, \nor less severe when the dose was decreased?\n");
         txt10.setAutoscrolls(false);
+        txt10.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt10.setEnabled(false);
         txt10.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane9.setViewportView(txt10);
@@ -310,11 +325,13 @@ public class PreClinicalTrialProcessJpanel extends javax.swing.JPanel {
         jScrollPane10.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane10.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        txt11.setBackground(new java.awt.Color(204, 204, 255));
+        txt11.setEditable(false);
         txt11.setColumns(20);
+        txt11.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txt11.setRows(5);
         txt11.setText("11. Did the patient have a similar \nreaction to the same or similar drugs \nin any previous exposure?\n");
         txt11.setAutoscrolls(false);
+        txt11.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txt11.setEnabled(false);
         txt11.setSelectedTextColor(new java.awt.Color(204, 204, 255));
         jScrollPane10.setViewportView(txt11);
