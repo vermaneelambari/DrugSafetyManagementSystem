@@ -13,6 +13,7 @@ import Business.Request.Request;
 import Business.Request.WorkRequest;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -395,6 +396,14 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         add(effectsCombo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 130, -1));
 
         compResultJpanel.setText("Proceed For Calculation");
+        compResultJpanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                compResultJpanelMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                compResultJpanelMouseEntered(evt);
+            }
+        });
         compResultJpanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compResultJpanelActionPerformed(evt);
@@ -520,6 +529,20 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void compResultJpanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compResultJpanelMouseEntered
+        // TODO add your handling code here:
+        
+        this.compResultJpanel.setBackground(Color.green); 
+
+    }//GEN-LAST:event_compResultJpanelMouseEntered
+
+    private void compResultJpanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compResultJpanelMouseExited
+        // TODO add your handling code here:
+        
+        this.compResultJpanel.setBackground(Color.lightGray); 
+
+    }//GEN-LAST:event_compResultJpanelMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

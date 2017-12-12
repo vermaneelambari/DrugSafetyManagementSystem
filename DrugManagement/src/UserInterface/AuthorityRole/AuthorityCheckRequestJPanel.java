@@ -140,6 +140,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         valueSlider.setBackground(new java.awt.Color(0, 153, 153));
+        valueSlider.setFont(new java.awt.Font("Myanmar MN", 1, 14)); // NOI18N
         valueSlider.setMajorTickSpacing(1);
         valueSlider.setMaximum(15);
         valueSlider.setMinimum(-15);
@@ -147,7 +148,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         valueSlider.setPaintTicks(true);
         valueSlider.setSnapToTicks(true);
         valueSlider.setEnabled(false);
-        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 43));
+        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 890, 43));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 153));

@@ -101,7 +101,8 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 450, 430));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 153));
         jLabel5.setText("Post Clinical Trial Calculation Panel");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 530, -1));
 
@@ -126,7 +127,7 @@ public class PostClinicalTrialCalculationJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 200, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 240, 70));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {

@@ -46,15 +46,16 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         addBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         vacName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 130, 30));
+        add(vacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 130, 30));
 
         jLabel1.setText("Employee Name :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 140, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 140, 30));
 
         backJButton.setText("<< Back");
         backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -63,7 +64,7 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 129, 100, 40));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 100, 40));
 
         addBtn.setText("Update");
         addBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -72,11 +73,15 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
                 addBtnActionPerformed(evt);
             }
         });
-        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 40));
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 90, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Update Employee");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 240, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/AdministrativeRole/rsz_approve-and-update-filled.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, -10, 120, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -110,6 +115,7 @@ public class UpdateEmployeeJpanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField vacName;
     // End of variables declaration//GEN-END:variables
 }

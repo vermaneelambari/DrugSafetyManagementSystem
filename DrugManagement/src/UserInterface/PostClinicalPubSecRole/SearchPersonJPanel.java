@@ -74,6 +74,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 134, -1, -1));
 
+        txtSearchName.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 51), null));
         txtSearchName.setEnabled(false);
         txtSearchName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,14 +86,16 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         jLabel3.setText("Age:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 172, -1, -1));
 
+        txtSearchAge.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 0), null));
         txtSearchAge.setEnabled(false);
         add(txtSearchAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 169, 177, -1));
 
         jLabel4.setText("Disease:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 207, -1, -1));
 
+        txtSearchDisease.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
         txtSearchDisease.setEnabled(false);
-        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 207, 177, 30));
+        add(txtSearchDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 180, 20));
 
         jLabel5.setText("Effect's of Disease:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 249, -1, -1));
@@ -103,13 +106,14 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 311, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 51), null));
         jTextField1.setEnabled(false);
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 180, 30));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 180, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PostClinicalPubSecRole/UMH_L_DRWARD@1x-2.jpg"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 890, 590));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 890, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNameActionPerformed

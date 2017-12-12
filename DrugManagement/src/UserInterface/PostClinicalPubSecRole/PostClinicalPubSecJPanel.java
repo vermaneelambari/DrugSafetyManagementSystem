@@ -347,28 +347,28 @@ public class PostClinicalPubSecJPanel extends javax.swing.JPanel {
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
         // TODO add your handling code here:
         
-             this.btnAdd.setBackground(Color.yellow); 
+             this.btnUpdate.setBackground(Color.yellow); 
 
     }//GEN-LAST:event_btnUpdateMouseEntered
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
         // TODO add your handling code here:
         
-                     this.btnAdd.setBackground(Color.lightGray); 
+                     this.btnUpdate.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
         // TODO add your handling code here:
         
-                     this.btnAdd.setBackground(Color.red); 
+                     this.btnDelete.setBackground(Color.red); 
 
     }//GEN-LAST:event_btnDeleteMouseEntered
 
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
         // TODO add your handling code here:
         
-          this.btnAdd.setBackground(Color.lightGray); 
+          this.btnDelete.setBackground(Color.lightGray); 
 
     }//GEN-LAST:event_btnDeleteMouseExited
 

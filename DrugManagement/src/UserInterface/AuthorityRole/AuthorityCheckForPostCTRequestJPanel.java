@@ -128,8 +128,8 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         jLabel1.setText("Final Score for request");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 290, 47));
 
-        valueSlider.setBackground(new java.awt.Color(153, 153, 153));
-        valueSlider.setForeground(new java.awt.Color(255, 255, 102));
+        valueSlider.setBackground(new java.awt.Color(0, 0, 0));
+        valueSlider.setFont(new java.awt.Font("Thonburi", 1, 14)); // NOI18N
         valueSlider.setMajorTickSpacing(1);
         valueSlider.setMaximum(15);
         valueSlider.setMinimum(-15);
@@ -137,7 +137,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         valueSlider.setPaintTicks(true);
         valueSlider.setSnapToTicks(true);
         valueSlider.setEnabled(false);
-        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 820, 43));
+        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 850, 43));
 
         approveBtn.setText("Approve Drug");
         approveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));

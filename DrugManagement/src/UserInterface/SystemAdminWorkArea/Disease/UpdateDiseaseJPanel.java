@@ -59,7 +59,7 @@ public class UpdateDiseaseJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 183, 70, 40));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 70, 40));
 
         btnupdate.setText("Update");
         btnupdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
