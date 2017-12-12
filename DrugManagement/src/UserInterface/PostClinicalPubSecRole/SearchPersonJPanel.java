@@ -61,6 +61,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setEnabled(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -63,6 +63,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         requestTestJButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,8 +94,12 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 249, 60, 30));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("Pharma Request Work Area");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 490, 70));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PharmaRole/send_request.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 320, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -146,6 +151,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;
     // End of variables declaration//GEN-END:variables

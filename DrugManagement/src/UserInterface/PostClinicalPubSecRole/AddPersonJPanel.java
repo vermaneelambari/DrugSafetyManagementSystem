@@ -74,11 +74,13 @@ public class AddPersonJPanel extends javax.swing.JPanel {
 
         jTextField1.setText("jTextField1");
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 153));
         jLabel5.setText("Add Person ");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 250, 50));
 
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 133, -1, -1));
@@ -95,19 +97,19 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 174, 235, -1));
 
         jLabel4.setText("Disease:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 220, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
         add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 217, 235, -1));
 
         jLabel6.setText("Side Effect 1:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 258, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
         add(effect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 255, 235, -1));
 
         jLabel8.setText("Side Effect 2:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 293, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
         add(effect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 293, 235, -1));
 
         jLabel9.setText("Side Effect 3:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 334, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
         add(effect3, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 331, 235, -1));
 
         btnAdd.setText("Add");
@@ -116,7 +118,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 381, -1, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, -1, -1));
 
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +126,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 381, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
