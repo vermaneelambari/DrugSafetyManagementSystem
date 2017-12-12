@@ -88,7 +88,10 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         progressBarJPanel1 = new UserInterface.ProgressBar.ProgressBarJPanel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("Enter Email to send request");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 74, 156, -1));
 
         jButton1.setText("Send email");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +99,8 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 118, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 71, 98, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -103,57 +108,20 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         javax.swing.GroupLayout progressBarJPanel1Layout = new javax.swing.GroupLayout(progressBarJPanel1);
         progressBarJPanel1.setLayout(progressBarJPanel1Layout);
         progressBarJPanel1Layout.setHorizontalGroup(
             progressBarJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+            .addGap(0, 370, Short.MAX_VALUE)
         );
         progressBarJPanel1Layout.setVerticalGroup(
             progressBarJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 57, Short.MAX_VALUE)
+            .addGap(0, 280, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(progressBarJPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backJButton)))
-                .addContainerGap(116, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton1))
-                    .addComponent(progressBarJPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(backJButton)
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
+        add(progressBarJPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 370, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     public Void createExcelFile() {
@@ -194,6 +162,12 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            cellnum = 0;
+            row = sheet.createRow(rownum++);
+            cell = row.createCell(cellnum++);
+            cell.setCellValue("");
+            cell = row.createCell(cellnum++);
+            cell.setCellValue("");
             cellnum = 0;
             row = sheet.createRow(rownum++);
             cell = row.createCell(cellnum++);

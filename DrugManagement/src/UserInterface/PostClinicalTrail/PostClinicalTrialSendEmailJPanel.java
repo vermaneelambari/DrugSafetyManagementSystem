@@ -5,12 +5,43 @@
  */
 package UserInterface.PostClinicalTrail;
 
+import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
+import Business.PostClinicalPerson.PostClinicalPerson;
+import Business.PostClinicalReport.PostClinicalReport;
 import Business.Request.Request;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.Multipart;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -27,6 +58,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Request request;
+
     public PostClinicalTrialSendEmailJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Request request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -101,7 +133,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                     }
                 }
                 request.setInterpretationScore(score / request.getClinicalReportDirectory().getClinicalReportDirectory().size());
-                request.setStatus("Pre Clinical Trial Completed");
+                request.setStatus("Post Clinical Trial Completed");
                 final String username = "aedexplorers@gmail.com";
                 final String password = "aedexplorers123";
 
@@ -112,80 +144,171 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
                 props.put("mail.smtp.port", "587");
 
                 Session session = Session.getInstance(props,
-                    new javax.mail.Authenticator() {
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(username, password);
-                        }
-                    });
+                        new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
 
-                    try {
-                        String toAddr = jTextField1.getText();
-                        Message message = new MimeMessage(session);
-                        message.setFrom(new InternetAddress("aedexplorers@gmail.com"));
-                        message.setRecipients(Message.RecipientType.TO,
+                try {
+                    String toAddr = jTextField1.getText();
+                    Message message = new MimeMessage(session);
+                    message.setFrom(new InternetAddress("aedexplorers@gmail.com"));
+                    message.setRecipients(Message.RecipientType.TO,
                             InternetAddress.parse(toAddr));
-                        message.setSubject("Testing Subject");
-                        String file = "H:/NEU/Java_Netbeans/Git_Final_Project/explorers/DrugManagement/PreClinicalReport.xlsx";
-                        Multipart multipart = new MimeMultipart();
-                        MimeBodyPart messageBodyPart = new MimeBodyPart();
-                        messageBodyPart.setText("Dear Admin,"
-                            + "\n\n Score for the request sent is " + request.getInterpretationScore());
-                        multipart.addBodyPart(messageBodyPart);
-                        messageBodyPart = new MimeBodyPart();
-                        String fileName = "PreClinicalReport.xlsx";
-                        DataSource source = new FileDataSource(file);
-                        messageBodyPart.setDataHandler(new DataHandler(source));
-                        messageBodyPart.setFileName(fileName);
-                        multipart.addBodyPart(messageBodyPart);
-                        message.setContent(multipart);
-                        Transport.send(message);
-                    } catch (MessagingException e) {
-                        throw new RuntimeException(e);
-                    }
+                    message.setSubject("Testing Subject");
+                    String file = "H:/NEU/Java_Netbeans/Git_Final_Project/explorers/DrugManagement/PostClinicalReport.xlsx";
+                    Multipart multipart = new MimeMultipart();
+                    MimeBodyPart messageBodyPart = new MimeBodyPart();
+                    messageBodyPart.setText("Dear Admin,"
+                            + "\n\n Score for the request sent is " + request.getPostCtInterpretationScore());
+                    multipart.addBodyPart(messageBodyPart);
+                    messageBodyPart = new MimeBodyPart();
+                    String fileName = "PostClinicalReport.xlsx";
+                    DataSource source = new FileDataSource(file);
+                    messageBodyPart.setDataHandler(new DataHandler(source));
+                    messageBodyPart.setFileName(fileName);
+                    multipart.addBodyPart(messageBodyPart);
+                    message.setContent(multipart);
+                    Transport.send(message);
+                } catch (MessagingException e) {
+                    throw new RuntimeException(e);
                 }
-            };
-            Thread t2 = new Thread() {
-                public void run() {
-                    try {
-                        for (int num = 0; num <= 100; num++) {
-                            progressBarJPanel1.UpdateProgess(num);
-                            progressBarJPanel1.repaint();
-                            Thread.sleep(50);
-                        }
-                    } catch (Exception e) {
+            }
+        };
+        Thread t2 = new Thread() {
+            public void run() {
+                try {
+                    for (int num = 0; num <= 100; num++) {
+                        progressBarJPanel1.UpdateProgess(num);
+                        progressBarJPanel1.repaint();
+                        Thread.sleep(50);
+                    }
+                } catch (Exception e) {
 
-                    }
                 }
-            };
-            new SwingWorker<Void, String>() {
-                @Override
-                protected Void doInBackground() throws Exception {
-                    t1.start();
-                    t2.start();
-                    try {
-                        Thread.sleep(5500);
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(PreClinicalTrialSendEmailJPanel.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    return null;
+            }
+        };
+        new SwingWorker<Void, String>() {
+            @Override
+            protected Void doInBackground() throws Exception {
+                t1.start();
+                t2.start();
+                try {
+                    Thread.sleep(5500);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(PostClinicalTrialSendEmailJPanel.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                return null;
+            }
 
-                protected void done() {
-                    progressBarJPanel1.setVisible(false);
-                    JOptionPane.showMessageDialog(null, "Email Sent successfully");
-                    Component[] componentArray = userProcessContainer.getComponents();
-                    Component component = componentArray[componentArray.length - 1];
-                    PreClinicalTrialSendEmailJPanel aa = (PreClinicalTrialSendEmailJPanel) component;
-                    userProcessContainer.remove(aa);
-                    Component[] componentArray1 = userProcessContainer.getComponents();
-                    Component component1 = componentArray1[componentArray1.length - 1];
-                    PreClinicalTrialJPanel sysAdminwjp = (PreClinicalTrialJPanel) component1;
-                    sysAdminwjp.populateTable();
-                    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                    layout.previous(userProcessContainer);
-                }
-            }.execute();
+            protected void done() {
+                progressBarJPanel1.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Email Sent successfully");
+                Component[] componentArray = userProcessContainer.getComponents();
+                Component component = componentArray[componentArray.length - 1];
+                PostClinicalTrialSendEmailJPanel aa = (PostClinicalTrialSendEmailJPanel) component;
+                userProcessContainer.remove(aa);
+                Component[] componentArray1 = userProcessContainer.getComponents();
+                Component component1 = componentArray1[componentArray1.length - 1];
+                PostClinicalTrialJPanel sysAdminwjp = (PostClinicalTrialJPanel) component1;
+                sysAdminwjp.populateTable();
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.previous(userProcessContainer);
+            }
+        }.execute();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    public Void createExcelFile() {
+
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("InterPretation Questions");
+        int rownum = 0;
+        int cellnum = 0;
+        Row row = sheet.createRow(rownum++);
+        Cell cell = row.createCell(cellnum++);
+        cell.setCellValue("Question");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("Interpretation of Score");
+        for (int j = 0; j < 13; j++) {
+            cellnum = 0;
+            row = sheet.createRow(rownum++);
+            boolean check = false;
+            for (int i = 0; i < 2; i++) {
+                if (!check) {
+                    check = true;
+                    cell = row.createCell(cellnum++);
+                    cell.setCellValue(request.getPostClinicalTrialDataEntry().getQuestion().get(j));
+                } else {
+                    cell = row.createCell(cellnum++);
+                    cell.setCellValue(request.getPostClinicalTrialDataEntry().getReportValue().get(j));
+                }
+            }
+        }
+        cellnum = 0;
+        row = sheet.createRow(rownum++);
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("");
+        cellnum = 0;
+        row = sheet.createRow(rownum++);
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("Average Score");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue(request.getPostCtInterpretationScore());
+        XSSFSheet sheet1 = workbook.createSheet("Person Details");
+        cellnum = 0;
+        rownum = 0;
+        row = sheet1.createRow(rownum++);
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("Person Name");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("Status");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("Drug Valid Status");
+        for (PostClinicalReport p : request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()) {
+            cellnum = 0;
+            row = sheet1.createRow(rownum++);
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(p.getPostClinicalPerson().getName());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(p.getFinalReportValue());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(p.getStatus());
+        }
+        cellnum = 0;
+        row = sheet1.createRow(rownum++);
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("");
+        cellnum = 0;
+        row = sheet1.createRow(rownum++);
+        cell = row.createCell(cellnum++);
+        cell.setCellValue("Average Score");
+        cell = row.createCell(cellnum++);
+        cell.setCellValue(request.getPostCtInterpretationScore());
+
+        //Iterate over data and write to sheet
+        try {
+            //Write the workbook in file system
+            FileOutputStream out = new FileOutputStream(new File("PostClinicalReport.xlsx"));
+            workbook.write(out);
+            out.close();
+            System.out.println("PostClinicalReport.xlsx has been created successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                workbook.close();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);

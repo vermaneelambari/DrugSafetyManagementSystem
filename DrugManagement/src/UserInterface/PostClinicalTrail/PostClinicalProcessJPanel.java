@@ -504,7 +504,7 @@ public class PostClinicalProcessJPanel extends javax.swing.JPanel {
             request.getPostClinicalTrialDataEntry().setQuestion(que);
             request.getPostClinicalTrialDataEntry().setReportValue(val);
             PostClinicalTrialCalculationJPanel muajp = new PostClinicalTrialCalculationJPanel(userProcessContainer, account,persons, request,sideEffectName);
-            userProcessContainer.add("PostClinicalProcessJPanel", muajp);
+            userProcessContainer.add("PostClinicalTrialCalculationJPanel", muajp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
