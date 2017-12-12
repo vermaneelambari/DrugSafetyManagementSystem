@@ -76,8 +76,10 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         valueSlider = new javax.swing.JSlider();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnChart.setBackground(new java.awt.Color(0, 153, 153));
         pnChart.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout pnChartLayout = new javax.swing.GroupLayout(pnChart);
@@ -94,6 +96,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         add(pnChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 746, 390));
 
         btn3DPie.setText("3D Pie Chart");
+        btn3DPie.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         btn3DPie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3DPieActionPerformed(evt);
@@ -102,6 +105,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         add(btn3DPie, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 150, 30));
 
         btnBarChart.setText("Bar Chart");
+        btnBarChart.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         btnBarChart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBarChartActionPerformed(evt);
@@ -113,6 +117,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         jLabel1.setText("Final Score for request");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 260, 47));
 
+        valueSlider.setBackground(new java.awt.Color(0, 153, 153));
         valueSlider.setMajorTickSpacing(1);
         valueSlider.setMaximum(15);
         valueSlider.setMinimum(-15);

@@ -135,8 +135,10 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         totalScoreTxt = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        valueSlider.setBackground(new java.awt.Color(0, 153, 153));
         valueSlider.setMajorTickSpacing(1);
         valueSlider.setMaximum(15);
         valueSlider.setMinimum(-15);
@@ -151,12 +153,13 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 260, 47));
 
         backJButton.setText("<< Back");
+        backJButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 649, 70, 30));
 
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -321,9 +324,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         });
         add(scoreTxt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 480, 100, 40));
 
+        scoreTxt6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         scoreTxt6.setEnabled(false);
         add(scoreTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, 100, 40));
 
+        scoreTxt7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         scoreTxt7.setEnabled(false);
         add(scoreTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, 100, 40));
 
@@ -346,6 +351,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         add(scoreTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 100, 40));
 
         approveBtn.setText("Approve Drug for Post Clinical Trial");
+        approveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         approveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveBtnActionPerformed(evt);
@@ -354,9 +360,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 650, 220, 40));
 
         denyBtn.setText("Deny Drug");
+        denyBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(denyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 650, 170, 40));
 
         personCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        personCombo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         personCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personComboActionPerformed(evt);
@@ -370,6 +378,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jLabel3.setText("Total Score");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 604, 100, 30));
 
+        totalScoreTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
         totalScoreTxt.setEnabled(false);
         add(totalScoreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 100, 40));
     }// </editor-fold>//GEN-END:initComponents
