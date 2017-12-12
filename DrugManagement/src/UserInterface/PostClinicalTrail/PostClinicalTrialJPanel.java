@@ -58,6 +58,17 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
+    
+    boolean validateDrug(Request request) {
+        for (Request r : organization.getRequestList().getRequestList()) {
+            if (request.getPharmaAcc().getEmployee().getName().equals(r.getPharmaAcc().getEmployee().getName())) {
+                if (!r.isDrugValid()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,6 +166,12 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        boolean drugValid;
+        drugValid = validateDrug(request);
+        if (drugValid==false) {
+            JOptionPane.showMessageDialog(null, "Following request has been denied as Drug is banned");
+            return;
+        }
         if (status.equals("Approved for Post Clinical Trail")) {
             PostClinicalProcessJPanel muajp = new PostClinicalProcessJPanel(userProcessContainer, account, organization, enterprise, system, request);
             userProcessContainer.add("PostClinicalProcessJPanel", muajp);
@@ -175,6 +192,12 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        boolean drugValid;
+        drugValid = validateDrug(request);
+        if (drugValid==false) {
+            JOptionPane.showMessageDialog(null, "Following request has been denied as Drug is banned");
+            return;
+        }
         if (status.equals("Approved drug for Initial Test")) {
             if (request.getClinicalReportDirectory().getClinicalReportDirectory().size() == 0) {
                 JOptionPane.showMessageDialog(null, "Request is not processed");

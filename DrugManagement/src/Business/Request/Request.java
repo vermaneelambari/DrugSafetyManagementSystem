@@ -36,12 +36,21 @@ public abstract class Request {
     private PostClinicalReportDirectory postClinicalReportDirectory;
     private float postCtInterpretationScore;
     private PostClinicalTrialDataEntry postClinicalTrialDataEntry;
+    boolean drugValid;
     
     public Request(){
         requestDate = new Date();
         clinicalReportDirectory = new ClinicalReportDirectory();
         postClinicalReportDirectory = new PostClinicalReportDirectory();
         postClinicalTrialDataEntry = new PostClinicalTrialDataEntry();
+    }
+
+    public boolean isDrugValid() {
+        return drugValid;
+    }
+
+    public void setDrugValid(boolean drugValid) {
+        this.drugValid = drugValid;
     }
 
     public UserAccount getPharmaAcc() {

@@ -237,6 +237,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
             request.setStatus("Post Clinical Trial Denied");
             request.setReceiver(request.getSender());
             request.setSender(account);
+            request.setDrugValid(false);
             Organization org = null;
             for (Network n : system.getNetworkList()) {
                 for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {

@@ -32,6 +32,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     Organization clinicOrganization;
     Enterprise enterprise;
     EcoSystem system;
+    boolean drugValid;
 
     public PharmaWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system) {
         initComponents();
@@ -46,19 +47,33 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         vaccineTxt.setText(account.getEmployee().getVaccine().getvName());
         diseaseTxt.setText(account.getEmployee().getDisease().getdName());
         mnyTxt.setText(String.valueOf(account.getEmployee().getPharmaMoney().getMoney()));
+        drugValid = validateDrug();
         populateRequestTable();
     }
-    
-    public void populateRequestTable(){
+
+    boolean validateDrug() {
+        for (Request r : account.getRequestList().getRequestList()) {
+            if (r.getPharmaAcc() != null) {
+                if (account.getEmployee().getName().equals(r.getPharmaAcc().getEmployee().getName())) {
+                    if (!r.isDrugValid()) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    public void populateRequestTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
-        for (Request request : account.getRequestList().getRequestList()){
+        for (Request request : account.getRequestList().getRequestList()) {
             Object[] row = new Object[4];
             row[0] = request.getMessage();
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             row[3] = request.getResult();
-            
+
             model.addRow(row);
         }
     }
@@ -182,12 +197,17 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBtnActionPerformed
-        Disease disease = account.getEmployee().getDisease();
-        Vaccine vaccine = account.getEmployee().getVaccine();
-        PharmaRequestJPanel muajp = new PharmaRequestJPanel(userProcessContainer, account, clinicOrganization, enterprise, system,disease,vaccine);
-                userProcessContainer.add("PharmaRequestJPanel", muajp);
-                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-                layout.next(userProcessContainer);
+        if (drugValid==true) {
+            Disease disease = account.getEmployee().getDisease();
+            Vaccine vaccine = account.getEmployee().getVaccine();
+            PharmaRequestJPanel muajp = new PharmaRequestJPanel(userProcessContainer, account, clinicOrganization, enterprise, system, disease, vaccine);
+            userProcessContainer.add("PharmaRequestJPanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }else{
+            JOptionPane.showMessageDialog(null, "Creation of drug is denied for given drug");
+            return;
+        }
     }//GEN-LAST:event_checkBtnActionPerformed
 
 

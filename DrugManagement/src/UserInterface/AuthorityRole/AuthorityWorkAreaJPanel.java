@@ -60,6 +60,17 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
                     model.addRow(row);
                 }
     }
+    
+    boolean validateDrug(Request request) {
+        for (Request r : organization.getRequestList().getRequestList()) {
+            if (request.getPharmaAcc().getEmployee().getName().equals(r.getPharmaAcc().getEmployee().getName())) {
+                if (!r.isDrugValid()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,6 +170,12 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        boolean drugValid;
+        drugValid = validateDrug(r);
+        if (drugValid==false) {
+            JOptionPane.showMessageDialog(null, "Following request has been denied as Drug is banned");
+            return;
+        }
         if (status.equals("Sent to FDA for Initial Approval")) {
             r.setReceiver(r.getSender());
             r.setStatus("Approved drug for Initial Test");
@@ -192,6 +209,12 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest r = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        boolean drugValid;
+        drugValid = validateDrug(r);
+        if (drugValid==false) {
+            JOptionPane.showMessageDialog(null, "Following request has been denied as Drug is banned");
+            return;
+        }
         if (status.equals("Pre Clinical Trial Completed")) {
             AuthorityCheckRequestJPanel muajp = new AuthorityCheckRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
                 userProcessContainer.add("AuthorityCheckRequestJPanel", muajp);
