@@ -16,8 +16,10 @@ import java.awt.Color;
 import static java.awt.Color.green;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 
 /**
@@ -35,6 +37,8 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
+        JLabel picLabel = new JLabel(new ImageIcon("doctor-touch-translation.jpg"));
+        container.add(picLabel);
     }
 
     /**
@@ -60,7 +64,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         tickLabel = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(0, 51, 102));
@@ -182,12 +185,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        container.setBackground(new java.awt.Color(0, 153, 153));
         container.setLayout(new java.awt.CardLayout());
-
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
-        jLabel3.setText("Drug Development Lifecycle");
-        container.add(jLabel3, "card2");
-
         jSplitPane1.setRightComponent(container);
 
         getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
@@ -262,8 +261,8 @@ public class MainJFrame extends javax.swing.JFrame {
         passwordField.setText("");
 
         container.removeAll();
-        JPanel blankJP = new JPanel();
-        container.add("blank", blankJP);
+        JLabel picLabel = new JLabel(new ImageIcon("doctor-touch-translation.jpg"));
+        container.add(picLabel);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
@@ -335,7 +334,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;

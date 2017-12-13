@@ -208,7 +208,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
     public void pieChartCreation() {
         DefaultPieDataset dataset = new DefaultPieDataset();
         for (PostClinicalReport p : request.getPostClinicalReportDirectory().getPostClinicalReportDirectory()) {
-            dataset.setValue(p.getPostClinicalPerson().getName(), p.getFinalReportValue());
+            dataset.setValue(p.getPostClinicalPerson().getName(), Math.abs(p.getFinalReportValue()));
         }
         // create pir chart
         JFreeChart chart = ChartFactory.createPieChart3D(
