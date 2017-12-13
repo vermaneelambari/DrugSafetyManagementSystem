@@ -84,6 +84,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         jLabel2.setText("Name: ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 133, -1, -1));
 
+        txtName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -93,23 +94,30 @@ public class AddPersonJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Age:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 177, -1, -1));
+
+        txtAge.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 174, 235, -1));
 
         jLabel4.setText("Disease:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+
+        txtDisease.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 217, 235, -1));
 
         jLabel6.setText("Side Effect:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 80, -1));
+
+        effect1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         add(effect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 255, 235, -1));
 
         btnAdd.setText("Add");
+        btnAdd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnAddMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAddMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddMouseExited(evt);
             }
         });
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -117,15 +125,16 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 329, 80, 30));
 
         btnBack.setText("<<Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 329, 70, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PostClinicalPubSecRole/icons8-add-user-male-50.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, -20, 210, 220));
