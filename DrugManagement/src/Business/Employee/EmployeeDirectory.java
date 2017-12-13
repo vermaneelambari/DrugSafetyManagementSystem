@@ -29,6 +29,15 @@ public class EmployeeDirectory {
         return employee;
     }
     
+     public Employee searchEmployee(String name){
+        for(Employee n:employeeList){
+            if(n.getName().toLowerCase().equals(name.toLowerCase())){
+                return n;
+            }
+        }
+        return null;
+    }
+    
      public void  removeEmployee(Employee e){
         employeeList.remove(e);
     }

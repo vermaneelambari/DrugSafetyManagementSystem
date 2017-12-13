@@ -333,6 +333,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                   JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
                   return;
             }
+        
+        if (organization.getEmployeeDirectory().searchEmployee(name) != null) {
+            JOptionPane.showMessageDialog(null, "Employee already present");
+            return;
+        }
+        
         if (enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.DrugManufacturing)) {
             check = true;
         }
