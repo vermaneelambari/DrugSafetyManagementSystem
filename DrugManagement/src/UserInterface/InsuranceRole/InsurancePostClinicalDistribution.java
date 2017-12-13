@@ -188,6 +188,7 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
             return;
         }
         distributeMoney(mnyEntered);
+        JOptionPane.showMessageDialog(null, "Amount distribution Completed");
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

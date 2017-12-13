@@ -11,6 +11,7 @@ import Business.Person.Person;
 
 
 import Business.Person.PersonDirectory;
+import Business.PostClinicalPerson.PostClinicalPerson;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -66,10 +67,6 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         txtDisease = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         effect1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        effect2 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        effect3 = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -102,17 +99,9 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
         add(txtDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 217, 235, -1));
 
-        jLabel6.setText("Side Effect 1:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        jLabel6.setText("Side Effect:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 80, -1));
         add(effect1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 255, 235, -1));
-
-        jLabel8.setText("Side Effect 2:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
-        add(effect2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 293, 235, -1));
-
-        jLabel9.setText("Side Effect 3:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
-        add(effect3, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 331, 235, -1));
 
         btnAdd.setText("Add");
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,7 +117,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, -1, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +125,7 @@ public class AddPersonJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/PostClinicalPubSecRole/icons8-add-user-male-50.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, -20, 210, 220));
@@ -152,7 +141,6 @@ public class AddPersonJPanel extends javax.swing.JPanel {
         String name = txtName.getText();
         String disease = txtDisease.getText();
         Integer age =0;
-        ArrayList<String> sideEffects = new ArrayList();
         try
         {
             age = Integer.parseInt(txtAge.getText());
@@ -162,27 +150,22 @@ public class AddPersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter a valid Integer");
         }
 
-        if(name.equalsIgnoreCase("") || txtAge.getText().equalsIgnoreCase("") || disease.trim().length()==0 || effect1.getText().trim().length()==0 || effect2.getText().trim().length()==0 || effect3.getText().trim().length()==0){
+        if(name.equalsIgnoreCase("") || txtAge.getText().equalsIgnoreCase("") || disease.trim().length()==0 || effect1.getText().trim().length()==0){
             JOptionPane.showMessageDialog(null, "Please enter valid details", "Invalid Details", JOptionPane.ERROR_MESSAGE);
             return;
         }
         else
         {
-            sideEffects.add(effect1.getText());
-            sideEffects.add(effect2.getText());
-            sideEffects.add(effect3.getText());
-            Person person = system.getPersonDirectory().addPerson();
+            PostClinicalPerson person = system.getPostClinicalPersonDirectory().addPerson();
             person.setName(name);
             person.setAge(age);
             person.setDisease(disease);
-            person.setDiseaseList(sideEffects);
+            person.setSideEffects(effect1.getText());
             JOptionPane.showMessageDialog(null,"Person Successfully created.");
             txtName.setText("");
             txtAge.setText("");
             txtDisease.setText("");
             effect1.setText("");
-            effect2.setText("");
-            effect3.setText("");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -218,16 +201,12 @@ public class AddPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JTextField effect1;
-    private javax.swing.JTextField effect2;
-    private javax.swing.JTextField effect3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtDisease;
