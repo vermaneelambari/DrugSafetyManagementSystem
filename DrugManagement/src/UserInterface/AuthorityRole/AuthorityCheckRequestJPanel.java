@@ -38,8 +38,9 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Request request;
+    Network network;
 
-    AuthorityCheckRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, WorkRequest request) {
+    AuthorityCheckRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, WorkRequest request, Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -47,6 +48,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.request = request;
+        this.network = network;
         valueSlider.setValue((int) request.getInterpretationScore());
         populateCombo();
         assignValues();
@@ -430,9 +432,9 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult;
-        if(request.getInterpretationScore()>=9){
+        if (request.getInterpretationScore() >= 9) {
             dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is > 9 .Do you still want to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
-        }else{
+        } else {
             dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
         }
         if (dialogResult == JOptionPane.YES_OPTION) {
@@ -444,8 +446,10 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
                 for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
                     for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                         if (o instanceof PostClinicalTrialOrganization) {
-                            org = o;
-                            break;
+                            if (network.getName().equals(n.getName())) {
+                                org = o;
+                                break;
+                            }
                         }
                     }
                 }
@@ -466,9 +470,9 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
     private void denyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_denyBtnActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult;
-        if(request.getInterpretationScore()<9){
+        if (request.getInterpretationScore() < 9) {
             dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is < 9 .Do you still want to Deny the request? ", "Warning", dialogButton);
-        }else{
+        } else {
             dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Deny the drug? ", "Warning", dialogButton);
         }
         if (dialogResult == JOptionPane.YES_OPTION) {
@@ -481,8 +485,10 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
                 for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
                     for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                         if (o instanceof InsuranceOrganization) {
-                            org = o;
-                            break;
+                            if (network.getName().equals(n.getName())) {
+                                org = o;
+                                break;
+                            }
                         }
                     }
                 }

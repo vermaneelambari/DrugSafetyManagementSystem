@@ -47,8 +47,9 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Request request;
+    Network network;
 
-    AuthorityCheckForPostCTRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, WorkRequest request) {
+    AuthorityCheckForPostCTRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, WorkRequest request, Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -56,6 +57,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.request = request;
+        this.network = network;
         valueSlider.setValue((int) request.getPostCtInterpretationScore());
         pnChart.setLayout(new java.awt.BorderLayout());
         pieChartCreation();
@@ -232,9 +234,9 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult;
-        if(request.getInterpretationScore()>=9){
+        if (request.getInterpretationScore() >= 9) {
             dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is > 9 .Do you still want to Approve the request? ", "Warning", dialogButton);
-        }else{
+        } else {
             dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve the Drug? ", "Warning", dialogButton);
         }
         if (dialogResult == JOptionPane.YES_OPTION) {
@@ -256,9 +258,9 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
     private void denyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_denyBtnActionPerformed
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult;
-        if(request.getInterpretationScore()<9){
+        if (request.getInterpretationScore() < 9) {
             dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is < 9 .Do you still want to Deny the request? ", "Warning", dialogButton);
-        }else{
+        } else {
             dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Deny the Drug? ", "Warning", dialogButton);
         }
         if (dialogResult == JOptionPane.YES_OPTION) {
@@ -271,8 +273,10 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
                 for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
                     for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                         if (o instanceof InsuranceOrganization) {
-                            org = o;
-                            break;
+                            if (network.getName().equals(n.getName())) {
+                                org = o;
+                                break;
+                            }
                         }
                     }
                 }

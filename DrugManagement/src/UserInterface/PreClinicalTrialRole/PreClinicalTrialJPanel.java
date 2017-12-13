@@ -33,14 +33,16 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
+    Network network;
 
-    public PreClinicalTrialJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
+    public PreClinicalTrialJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system,Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = (PreClinicalTrialOrganization) organization;
         this.enterprise = enterprise;
         this.system = system;
+        this.network = network;
         enterPrText.setText(enterprise.getName());
         orgText.setText(organization.getName());
         empNameTxt.setText(account.getEmployee().getName());
@@ -207,7 +209,7 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Request is not processed");
                 return;
             } else {
-                PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
+                PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request,network);
                 userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);

@@ -204,6 +204,7 @@ public class MainJFrame extends javax.swing.JFrame {
         //Step1: Check in the system user account directory if you have the user
         UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
         Enterprise inEnterprise = null;
+        Network inNetwork = null;
         Organization inOrganization = null;
         if (userAccount == null) {
             //Step2: Go inside each network to check each enterprise
@@ -216,12 +217,14 @@ public class MainJFrame extends javax.swing.JFrame {
                         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
                             userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
                             if (userAccount != null) {
+                                inNetwork  = network;
                                 inEnterprise = enterprise;
                                 inOrganization = organization;
                                 break;
                             }
                         }
                     } else {
+                        inNetwork  = network;
                         inEnterprise = enterprise;
                         break;
                     }
@@ -241,7 +244,7 @@ public class MainJFrame extends javax.swing.JFrame {
         } else {
             tickLabel.setIcon(new ImageIcon("tickmark.png"));
             CardLayout layout = (CardLayout) container.getLayout();
-            container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+            container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system,inNetwork));
             layout.next(container);
         }
          loginJButton.setEnabled(false);

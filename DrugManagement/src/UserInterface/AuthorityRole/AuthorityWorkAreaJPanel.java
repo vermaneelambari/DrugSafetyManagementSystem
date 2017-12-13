@@ -34,13 +34,15 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
     Organization organization;
     Enterprise enterprise;
     EcoSystem system;
-    public AuthorityWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
+    Network network;
+    public AuthorityWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system,Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.organization = (AuthorityOrganization)organization;
         this.enterprise = enterprise;
         this.system = system;
+        this.network = network;
         enterPrText.setText(enterprise.getName());
         orgText.setText(organization.getName());
         empNameTxt.setText(account.getEmployee().getName());
@@ -185,8 +187,10 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
                 for (Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                     if (o instanceof PreClinicalTrialOrganization) {
-                        org = o;
+                        if (network.getName().equals(n.getName())) {
+                            org = o;
                         break;
+                        }
                     }
                 }
             }
@@ -216,12 +220,12 @@ public class AuthorityWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         if (status.equals("Pre Clinical Trial Completed")) {
-            AuthorityCheckRequestJPanel muajp = new AuthorityCheckRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
+            AuthorityCheckRequestJPanel muajp = new AuthorityCheckRequestJPanel(userProcessContainer, account, organization, enterprise, system,r,network);
                 userProcessContainer.add("AuthorityCheckRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
         }else if(status.equals("Post Clinical Trial Completed")){
-            AuthorityCheckForPostCTRequestJPanel muajp = new AuthorityCheckForPostCTRequestJPanel(userProcessContainer, account, organization, enterprise, system,r);
+            AuthorityCheckForPostCTRequestJPanel muajp = new AuthorityCheckForPostCTRequestJPanel(userProcessContainer, account, organization, enterprise, system,r,network);
                 userProcessContainer.add("AuthorityCheckForPostCTRequestJPanel", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);

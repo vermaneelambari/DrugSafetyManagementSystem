@@ -8,6 +8,7 @@ package UserInterface.PharmaRole;
 import Business.Disease.Disease;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
@@ -33,14 +34,16 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     boolean drugValid;
+    Network network;
 
-    public PharmaWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system) {
+    public PharmaWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system,Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.clinicOrganization = clinicOrganization;
         this.enterprise = enterprise;
         this.system = system;
+        this.network = network;
         enterPrText.setText(enterprise.getName());
         orgText.setText(clinicOrganization.getName());
         empNameTxt.setText(account.getEmployee().getName());
@@ -201,7 +204,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         if (drugValid==true) {
             Disease disease = account.getEmployee().getDisease();
             Vaccine vaccine = account.getEmployee().getVaccine();
-            PharmaRequestJPanel muajp = new PharmaRequestJPanel(userProcessContainer, account, clinicOrganization, enterprise, system, disease, vaccine);
+            PharmaRequestJPanel muajp = new PharmaRequestJPanel(userProcessContainer, account, clinicOrganization, enterprise, system, disease, vaccine,network);
             userProcessContainer.add("PharmaRequestJPanel", muajp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

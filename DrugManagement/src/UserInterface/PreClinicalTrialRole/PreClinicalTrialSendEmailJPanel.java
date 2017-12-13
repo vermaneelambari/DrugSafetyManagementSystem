@@ -8,6 +8,7 @@ package UserInterface.PreClinicalTrialRole;
 import Business.ClinicalReport.ClinicalReport;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Request.Request;
 import Business.UserAccount.UserAccount;
@@ -63,8 +64,9 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem system;
     Request request;
+    Network network;
 
-    PreClinicalTrialSendEmailJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Request request) {
+    PreClinicalTrialSendEmailJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Request request,Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -72,6 +74,7 @@ public class PreClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.request = request;
+        this.network = network;
         progressBarJPanel1.setVisible(false);
     }
 

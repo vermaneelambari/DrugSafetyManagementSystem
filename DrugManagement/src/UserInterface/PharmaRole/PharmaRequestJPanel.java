@@ -38,8 +38,9 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
     EcoSystem system;
     Disease disease;
     Vaccine vaccine;
+    Network network;
 
-    public PharmaRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system, Disease disease, Vaccine vaccine) {
+    public PharmaRequestJPanel(JPanel userProcessContainer, UserAccount account, Organization clinicOrganization, Enterprise enterprise, EcoSystem system, Disease disease, Vaccine vaccine, Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -48,6 +49,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         this.clinicOrganization = clinicOrganization;
         this.disease = disease;
         this.vaccine = vaccine;
+        this.network = network;
     }
 
     /**
@@ -122,14 +124,27 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         request.setRequestDate(new Date());
         request.setDrugValid(true);
         Organization org = null;
+        boolean check = false;
         for (Network n : system.getNetworkList()) {
             for (Enterprise e : n.getEnterpriseDirectory().getEnterPriseList()) {
                 for (Organization organization : e.getOrganizationDirectory().getOrganizationList()) {
                     if (organization instanceof AuthorityOrganization) {
-                        org = organization;
+                        if (network.getName().equals(n.getName())) {
+                            org = organization;
+                            check = true;
+                            break;
+                        }
+                    }
+                    if (check) {
                         break;
                     }
                 }
+            }
+            if (check) {
+                break;
+            }
+            if (check) {
+                break;
             }
         }
         if (org != null) {
