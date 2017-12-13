@@ -157,6 +157,9 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
                 userProcessContainer.add("InsurancePostClinicalDistribution", muajp);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
+        }else{
+            JOptionPane.showMessageDialog(null, "Money already distributed for selected request");
+            return;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

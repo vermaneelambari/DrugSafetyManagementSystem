@@ -447,7 +447,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         if(request.getInterpretationScore()<9){
             dialogResult = JOptionPane.showConfirmDialog(null, "Interpretation Score is < 9 .Do you still want to Deny the request? ", "Warning", dialogButton);
         }else{
-            dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Approve and pass request to Post Clinical trial? ", "Warning", dialogButton);
+            dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to Deny the drug? ", "Warning", dialogButton);
         }
         if (dialogResult == JOptionPane.YES_OPTION) {
             request.setStatus("Pre Clinical Trial Denied");

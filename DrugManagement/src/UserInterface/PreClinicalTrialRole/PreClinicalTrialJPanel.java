@@ -172,7 +172,7 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
         boolean drugValid;
         drugValid = validateDrug(request);
-        if (drugValid==false) {
+        if (drugValid == false) {
             JOptionPane.showMessageDialog(null, "Following request has been denied as Drug is banned");
             return;
         }
@@ -196,17 +196,22 @@ public class PreClinicalTrialJPanel extends javax.swing.JPanel {
         }
         String status = (String) workRequestJTable.getValueAt(selectedRow, 4);
         WorkRequest request = (WorkRequest) workRequestJTable.getValueAt(selectedRow, 1);
+        boolean drugValid;
+        drugValid = validateDrug(request);
+        if (drugValid == false) {
+            JOptionPane.showMessageDialog(null, "Following request has been denied as Drug is banned");
+            return;
+        }
         if (status.equals("Approved drug for Initial Test")) {
             if (request.getClinicalReportDirectory().getClinicalReportDirectory().size() == 0) {
                 JOptionPane.showMessageDialog(null, "Request is not processed");
                 return;
+            } else {
+                PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
+                userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
             }
-        }
-        if (!status.equals("Pre Clinical Trial Completed")) {
-            PreClinicalTrialSendEmailJPanel muajp = new PreClinicalTrialSendEmailJPanel(userProcessContainer, account, organization, enterprise, system, request);
-            userProcessContainer.add("PreClinicalTrialSendEmailJPanel", muajp);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
         } else {
             JOptionPane.showMessageDialog(null, "Request already approved and sent");
             return;
