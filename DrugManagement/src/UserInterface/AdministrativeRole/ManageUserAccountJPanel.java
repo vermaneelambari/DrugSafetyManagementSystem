@@ -120,7 +120,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, 80, 30));
 
         nameJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 146, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 280, -1));
 
         jLabel1.setText("User Name");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
@@ -163,7 +163,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
         employeeJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
-        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 146, -1));
+        add(employeeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 280, -1));
 
         backjButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         backjButton1.setText("<< Back");
@@ -184,13 +184,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 146, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 280, -1));
 
         jLabel4.setText("Role");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         roleJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(0, 255, 153)));
-        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 146, -1));
+        add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 280, -1));
 
         updateBtn.setText("Update");
         updateBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 51), new java.awt.Color(0, 255, 153)));
@@ -227,7 +227,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(removeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 120, 30));
 
         passwordJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 150, -1));
+        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 280, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 153, 153));

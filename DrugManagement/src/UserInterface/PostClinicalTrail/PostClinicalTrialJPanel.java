@@ -142,20 +142,22 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
         add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
 
         approveBtn.setText("Process Request");
+        approveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 51), new java.awt.Color(255, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 204)));
         approveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveBtnActionPerformed(evt);
             }
         });
-        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 150, 40));
+        add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 190, 40));
 
         jButton1.setText("Complete Request");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 51), new java.awt.Color(255, 255, 153), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 204)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 130, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 160, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
@@ -209,8 +211,11 @@ public class PostClinicalTrialJPanel extends javax.swing.JPanel {
             userProcessContainer.add("PostClinicalTrialSendEmailJPanel", muajp);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
+        }else if(status.equals("Final Approval Completed")){
+            JOptionPane.showMessageDialog(null, "Final Approval Done");
+                return;
         }else{
-            JOptionPane.showMessageDialog(null, "Request sent to FDA");
+            JOptionPane.showMessageDialog(null, "Request Still under process");
                 return;
         }
     }//GEN-LAST:event_jButton1ActionPerformed

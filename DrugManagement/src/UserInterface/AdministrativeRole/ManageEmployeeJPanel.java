@@ -197,7 +197,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 190, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 270, -1));
 
         organizationEmpJComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
         organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +205,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 organizationEmpJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 190, -1));
+        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 270, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Organization");
@@ -231,7 +231,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 remobeBtnActionPerformed(evt);
             }
         });
-        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 180, 30));
+        add(remobeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 180, 30));
 
         updateBtn.setText("Update");
         updateBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 255, 153), new java.awt.Color(255, 255, 102), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -248,7 +248,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 70, 30));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 70, 30));
 
         pharmaPanel.setBackground(new java.awt.Color(0, 204, 153));
 
@@ -386,7 +386,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             nameJTextField.setText("");
             mnyTxt.setText("");
         }
-        populateTable(organization);
+        Organization org = (Organization) organizationJComboBox.getSelectedItem();
+        populateTable(org);
         JOptionPane.showMessageDialog(null, "Employee created successfully");
     }//GEN-LAST:event_addJButtonActionPerformed
 

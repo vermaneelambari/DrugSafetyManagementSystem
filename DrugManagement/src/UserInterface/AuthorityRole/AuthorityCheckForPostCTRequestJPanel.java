@@ -83,9 +83,10 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         btn3DPie = new javax.swing.JButton();
         btnBarChart = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        valueSlider = new javax.swing.JSlider();
         approveBtn = new javax.swing.JButton();
         denyBtn = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        valueSlider = new javax.swing.JSlider();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,18 +128,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("Final Score for request");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 290, 47));
-
-        valueSlider.setBackground(new java.awt.Color(0, 0, 0));
-        valueSlider.setFont(new java.awt.Font("Thonburi", 1, 14)); // NOI18N
-        valueSlider.setMajorTickSpacing(1);
-        valueSlider.setMaximum(15);
-        valueSlider.setMinimum(-15);
-        valueSlider.setPaintLabels(true);
-        valueSlider.setPaintTicks(true);
-        valueSlider.setSnapToTicks(true);
-        valueSlider.setEnabled(false);
-        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 850, 43));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 290, 47));
 
         approveBtn.setText("Approve Drug");
         approveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -157,6 +147,41 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
             }
         });
         add(denyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 620, 170, 40));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        valueSlider.setBackground(new java.awt.Color(255, 255, 255));
+        valueSlider.setFont(new java.awt.Font("Thonburi", 1, 14)); // NOI18N
+        valueSlider.setMajorTickSpacing(1);
+        valueSlider.setMaximum(15);
+        valueSlider.setMinimum(-15);
+        valueSlider.setPaintLabels(true);
+        valueSlider.setPaintTicks(true);
+        valueSlider.setSnapToTicks(true);
+        valueSlider.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 890, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 890, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn3DPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3DPieActionPerformed
@@ -272,6 +297,7 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBarChart;
     private javax.swing.JButton denyBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel pnChart;
     private javax.swing.JSlider valueSlider;
     // End of variables declaration//GEN-END:variables

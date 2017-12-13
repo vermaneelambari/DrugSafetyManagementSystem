@@ -90,7 +90,6 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        valueSlider = new javax.swing.JSlider();
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -135,20 +134,11 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         totalScoreTxt = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        valueSlider = new javax.swing.JSlider();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        valueSlider.setBackground(new java.awt.Color(0, 153, 153));
-        valueSlider.setFont(new java.awt.Font("Myanmar MN", 1, 14)); // NOI18N
-        valueSlider.setMajorTickSpacing(1);
-        valueSlider.setMaximum(15);
-        valueSlider.setMinimum(-15);
-        valueSlider.setPaintLabels(true);
-        valueSlider.setPaintTicks(true);
-        valueSlider.setSnapToTicks(true);
-        valueSlider.setEnabled(false);
-        add(valueSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 890, 43));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 153));
@@ -233,8 +223,8 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(txt5);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 400, 70));
-        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 140, 40));
-        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 170, 40));
+        add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 250, 40));
+        add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 260, 40));
 
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -305,7 +295,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jScrollPane4.setViewportView(txt12);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, 360, 70));
-        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, 160, 40));
+        add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, 240, 40));
 
         scoreTxt1.setEditable(false);
         add(scoreTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 100, 40));
@@ -327,13 +317,13 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         });
         add(scoreTxt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 480, 100, 40));
 
+        scoreTxt6.setEditable(false);
         scoreTxt6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 255, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        scoreTxt6.setEnabled(false);
-        add(scoreTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, 100, 40));
+        add(scoreTxt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 100, 40));
 
+        scoreTxt7.setEditable(false);
         scoreTxt7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        scoreTxt7.setEnabled(false);
-        add(scoreTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, 100, 40));
+        add(scoreTxt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 610, 100, 40));
 
         scoreTxt8.setEditable(false);
         add(scoreTxt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 210, 100, 40));
@@ -350,8 +340,8 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         scoreTxt12.setEditable(false);
         add(scoreTxt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 480, 100, 40));
 
-        scoreTxt13.setEnabled(false);
-        add(scoreTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 100, 40));
+        scoreTxt13.setEditable(false);
+        add(scoreTxt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 560, 100, 40));
 
         approveBtn.setText("Approve Drug for Post Clinical Trial");
         approveBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -386,9 +376,41 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
         jLabel3.setText("Total Score");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 604, 100, 30));
 
+        totalScoreTxt.setEditable(false);
         totalScoreTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51), new java.awt.Color(255, 255, 0)));
-        totalScoreTxt.setEnabled(false);
         add(totalScoreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 100, 40));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        valueSlider.setBackground(new java.awt.Color(255, 255, 255));
+        valueSlider.setFont(new java.awt.Font("Myanmar MN", 1, 14)); // NOI18N
+        valueSlider.setForeground(new java.awt.Color(255, 255, 255));
+        valueSlider.setMajorTickSpacing(1);
+        valueSlider.setMaximum(15);
+        valueSlider.setMinimum(-15);
+        valueSlider.setPaintLabels(true);
+        valueSlider.setPaintTicks(true);
+        valueSlider.setSnapToTicks(true);
+        valueSlider.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        valueSlider.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(valueSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(valueSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 920, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -486,6 +508,7 @@ public class AuthorityCheckRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;

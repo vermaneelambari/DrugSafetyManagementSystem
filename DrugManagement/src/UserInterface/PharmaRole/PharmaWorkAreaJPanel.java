@@ -74,6 +74,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
             row[2] = request.getStatus();
             row[3] = request.getResult();
             row[4] = request.getRequestDate();
+            row[5] = request.getResolveDate();
             model.addRow(row);
         }
     }
