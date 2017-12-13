@@ -68,11 +68,12 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel1.setText("Message:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         messageJTextField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 320, 20));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 330, 30));
 
         requestTestJButton.setBackground(new java.awt.Color(153, 255, 153));
         requestTestJButton.setText("Request for Approval of Drug");

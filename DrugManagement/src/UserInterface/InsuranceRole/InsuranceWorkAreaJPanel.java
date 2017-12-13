@@ -77,6 +77,8 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel3 = new javax.swing.JLabel();
         orgText = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -106,28 +108,28 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 840, 130));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 840, 130));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setText("Employee Name:");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         empNameTxt.setText("<Value>");
-        add(empNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 230, 20));
+        add(empNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 230, 20));
 
         enterpriseLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel2.setText("EnterPrise :");
-        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         enterPrText.setText("<value>");
-        add(enterPrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 260, 20));
+        add(enterPrText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 260, 20));
 
         enterpriseLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel3.setText("Organization:");
-        add(enterpriseLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 50, 130, -1));
+        add(enterpriseLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 130, -1));
 
         orgText.setText("<value>");
-        add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 300, 20));
+        add(orgText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 300, 20));
 
         jButton1.setText("Distribute money");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 51)));
@@ -136,7 +138,15 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 220, 60));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 220, 60));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel1.setText("Insurance Work Area ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 320, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/InsuranceRole/first-aid-kit-pills-money-and-clipboard_23-2147658475.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 330, 230));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -171,6 +181,8 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JLabel enterpriseLabel3;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel orgText;
     private javax.swing.JTable workRequestJTable;

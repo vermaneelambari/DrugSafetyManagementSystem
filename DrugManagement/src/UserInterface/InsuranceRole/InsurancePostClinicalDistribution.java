@@ -124,9 +124,10 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 840, 130));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
         jLabel1.setText("Distribution of Money for Post Clinical Trial");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 390, 50));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 530, 50));
 
         jButton1.setText("<< Back");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
@@ -135,7 +136,7 @@ public class InsurancePostClinicalDistribution extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 80, 30));
 
         avalMnyTxt.setEditable(false);
         avalMnyTxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 153), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0), new java.awt.Color(255, 255, 0)));
