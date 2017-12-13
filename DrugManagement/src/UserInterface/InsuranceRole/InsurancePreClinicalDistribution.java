@@ -17,6 +17,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -72,6 +73,8 @@ public class InsurancePreClinicalDistribution extends javax.swing.JPanel {
         request.setStatus("Request Denied and Insurance Money Distributed");
         request.setReceiver(request.getSender());
         request.setSender(account);
+        request.setResolveDate(new Date());
+        request.setResult("Completed");
         avalMnyTxt.setText(String.valueOf(request.getPharmaAcc().getEmployee().getPharmaMoney().getMoney()));
         jButton2.setEnabled(false);
     }

@@ -18,6 +18,7 @@ import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -118,6 +119,7 @@ public class PharmaRequestJPanel extends javax.swing.JPanel {
         request.setDisease(disease);
         request.setVaccine(vaccine);
         request.setPharmaAcc(account);
+        request.setRequestDate(new Date());
         request.setDrugValid(true);
         Organization org = null;
         for (Network n : system.getNetworkList()) {

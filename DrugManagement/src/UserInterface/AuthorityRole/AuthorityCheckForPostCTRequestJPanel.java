@@ -20,6 +20,7 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
@@ -215,6 +216,8 @@ public class AuthorityCheckForPostCTRequestJPanel extends javax.swing.JPanel {
             request.setStatus("Final Approval Completed");
             request.setReceiver(request.getSender());
             request.setSender(account);
+            request.setResolveDate(new Date());
+            request.setResult("Completed");
             userProcessContainer.remove(this);
             Component[] componentArray = userProcessContainer.getComponents();
             Component component = componentArray[componentArray.length - 1];
