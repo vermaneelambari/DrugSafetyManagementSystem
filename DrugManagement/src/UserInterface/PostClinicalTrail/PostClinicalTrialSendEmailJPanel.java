@@ -141,7 +141,7 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please enter Email");
             return;
         }
-        String emailPattern = "/^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+$/";
+        String emailPattern = "^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+$";
         Pattern pattern = Pattern.compile(emailPattern);
         Matcher matcher = pattern.matcher(jTextField1.getText());
         if(!matcher.matches()){
