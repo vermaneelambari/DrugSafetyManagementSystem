@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -135,6 +137,17 @@ public class PostClinicalTrialSendEmailJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (jTextField1.getText().trim().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Please enter Email");
+            return;
+        }
+        String emailPattern = "/^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+$/";
+        Pattern pattern = Pattern.compile(emailPattern);
+        Matcher matcher = pattern.matcher(jTextField1.getText());
+        if(!matcher.matches()){
+            JOptionPane.showMessageDialog(null, "Please enter Valid string for email");
+            return;
+        }
         progressBarJPanel1.setVisible(true);
         Thread t1 = new Thread() {
             public void run() {
