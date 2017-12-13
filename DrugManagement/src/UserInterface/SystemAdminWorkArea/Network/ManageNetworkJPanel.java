@@ -231,7 +231,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             return;
         }
         Network ntw = (Network) networkJTable.getValueAt(selectedRow, 0);
-        UpdateNetworkJPanel updateNetworkJPanel = new UpdateNetworkJPanel(userProcessContainer, ntw);
+        UpdateNetworkJPanel updateNetworkJPanel = new UpdateNetworkJPanel(userProcessContainer, ntw,system);
         userProcessContainer.add("UpdateNetworkJPanel", updateNetworkJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

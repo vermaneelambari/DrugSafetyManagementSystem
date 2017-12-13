@@ -54,7 +54,7 @@ public class EcoSystem extends Organization{
     
     public Network searchNetwork(String name){
         for(Network n:networkList){
-            if(n.getName().equals(name)){
+            if(n.getName().toLowerCase().equals(name.toLowerCase())){
                 return n;
             }
         }

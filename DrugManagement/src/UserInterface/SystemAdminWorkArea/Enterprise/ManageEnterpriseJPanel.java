@@ -227,7 +227,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         
         for(Enterprise e:network.getEnterpriseDirectory().getEnterPriseList()){
-            if(e.getName().equals(name)){
+            if(e.getName().toLowerCase().equals(name.toLowerCase())){
                 JOptionPane.showMessageDialog(null, "Enterprise name already present");
                 return;
             }
@@ -272,6 +272,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         }
         Network network = (Network) networkJComboBox.getSelectedItem();
         Enterprise e = (Enterprise) enterpriseJTable.getValueAt(selectedRow, 0);
+        if(e.getUserAccountDirectory()!=null){
+            if(e.getUserAccountDirectory().getUserAccountList().size()!=0){
+                JOptionPane.showMessageDialog(null, "Following enterprise has users. Please delete user inorder to delete enterprise");
+                return;
+            }
+        }
         network.getEnterpriseDirectory().deleteEnterprise(e);
         JOptionPane.showMessageDialog(null, "Enterprise deleted successfully");
         populateTable();

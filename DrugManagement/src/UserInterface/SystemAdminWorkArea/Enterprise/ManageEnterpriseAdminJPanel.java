@@ -323,6 +323,16 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
         UserAccount u  = (UserAccount) enterpriseJTable.getValueAt(selectedRow, 2);
+        boolean check = false;
+        for(UserAccount user:enterprise.getUserAccountDirectory().getUserAccountList()){
+            if(user.getUsername().equals(u.getUsername())){
+                check = true;
+            }
+        }
+        if(!check){
+           JOptionPane.showMessageDialog(null, "User not present for enterprise selected in combo");
+           return;
+        }
         enterprise.getUserAccountDirectory().deleteUserForEnterprise(u,system);
         JOptionPane.showMessageDialog(null, "User deleted successfully");
         populateTable();

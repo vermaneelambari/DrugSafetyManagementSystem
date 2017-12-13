@@ -75,8 +75,12 @@ public class UserAccountDirectory {
     public void deleteUserForEnterprise(UserAccount u, EcoSystem system) {
         for (Network network : system.getNetworkList()) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterPriseList()) {
-                enterprise.getUserAccountDirectory().getUserAccountList().remove(u);
-                break;
+                for(UserAccount acc:enterprise.getUserAccountDirectory().getUserAccountList()){
+                    if(acc.getUsername().equals(u.getUsername())){
+                        enterprise.getUserAccountDirectory().getUserAccountList().remove(u);
+                        break;
+                    }
+                }
             }
         }
     }

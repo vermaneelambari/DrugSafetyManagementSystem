@@ -5,6 +5,7 @@
  */
 package UserInterface.SystemAdminWorkArea.Network;
 
+import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -23,9 +24,11 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Network network;
-    public UpdateNetworkJPanel(JPanel userProcessContainer, Network network) {
+    EcoSystem system;
+    public UpdateNetworkJPanel(JPanel userProcessContainer, Network network,EcoSystem system) {
         this.userProcessContainer = userProcessContainer;
         this.network = network;
+        this.system = system;
         initComponents();
         vacName.setText(network.getName());
     }
@@ -110,6 +113,10 @@ public class UpdateNetworkJPanel extends javax.swing.JPanel {
                   JOptionPane.showMessageDialog(null,"Please insert only characters for Name.");
                   return;
             }
+        if (system.searchNetwork(name) != null) {
+            JOptionPane.showMessageDialog(null, "Network already present");
+            return;
+        }
         network.setName(name);
         JOptionPane.showMessageDialog(null, "Network Updated Successfully");
         vacName.setText("");
